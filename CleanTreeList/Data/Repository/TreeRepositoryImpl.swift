@@ -15,4 +15,9 @@ struct TreeRepositoryImpl: TreeListRepository {
         let trees = try await dataSource.getTreeList(startRow: startRow, nbRows: nbrRows)
         return trees
     }
+    
+    func getTreeListFromLocal() async throws -> [GeolocatedTree] {
+        let trees = try await dataSource.getTreeListFromLocal()
+        return trees
+    }
 }

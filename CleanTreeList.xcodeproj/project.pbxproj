@@ -25,6 +25,8 @@
 		D3C57B41282396E50028E4EB /* GeolocatedTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57B40282396E50028E4EB /* GeolocatedTree.swift */; };
 		D3C57B43282398960028E4EB /* APIServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57B42282398960028E4EB /* APIServiceError.swift */; };
 		D3C57B4528239D2F0028E4EB /* DataToDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57B4428239D2F0028E4EB /* DataToDomain.swift */; };
+		D3E40B47282502FD00025D14 /* CodableBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E40B46282502FC00025D14 /* CodableBundleExtension.swift */; };
+		D3E40B49282506B800025D14 /* JSONDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E40B48282506B800025D14 /* JSONDecodeError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		D3C57B40282396E50028E4EB /* GeolocatedTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocatedTree.swift; sourceTree = "<group>"; };
 		D3C57B42282398960028E4EB /* APIServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceError.swift; sourceTree = "<group>"; };
 		D3C57B4428239D2F0028E4EB /* DataToDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataToDomain.swift; sourceTree = "<group>"; };
+		D3E40B46282502FC00025D14 /* CodableBundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableBundleExtension.swift; sourceTree = "<group>"; };
+		D3E40B48282506B800025D14 /* JSONDecodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodeError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +195,7 @@
 				D3C57B3C282395BF0028E4EB /* TreeDataSource.swift */,
 				D3C57B39282395890028E4EB /* API */,
 				D3AA66C62823927F00862D43 /* Models */,
+				D3E40B44282502D400025D14 /* Extension */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -227,6 +232,15 @@
 				D31103E42823ADF60021299B /* TreeListViewModel.swift */,
 			);
 			path = TreeList;
+			sourceTree = "<group>";
+		};
+		D3E40B44282502D400025D14 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D3E40B46282502FC00025D14 /* CodableBundleExtension.swift */,
+				D3E40B48282506B800025D14 /* JSONDecodeError.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +322,8 @@
 				D31103E72823AE8D0021299B /* UseCaseError.swift in Sources */,
 				D3AA66C82823928E00862D43 /* Record.swift in Sources */,
 				D3C57B3B282395A20028E4EB /* TreeAPIlmpl.swift in Sources */,
+				D3E40B49282506B800025D14 /* JSONDecodeError.swift in Sources */,
+				D3E40B47282502FD00025D14 /* CodableBundleExtension.swift in Sources */,
 				D31103E32823ADE60021299B /* TreeListView.swift in Sources */,
 				D3C57B41282396E50028E4EB /* GeolocatedTree.swift in Sources */,
 				D31103E52823ADF60021299B /* TreeListViewModel.swift in Sources */,

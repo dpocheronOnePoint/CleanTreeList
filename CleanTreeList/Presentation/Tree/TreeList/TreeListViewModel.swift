@@ -16,7 +16,7 @@ class TreeListViewModel: ObservableObject {
     
     func getTrees() async {
         errorMessage = ""
-        let result = await getTreeListUseCase.execute()
+        let result = await getTreeListUseCase.execute() 
         switch result {
         case .success(let geolocatedTrees):
             DispatchQueue.main.async {

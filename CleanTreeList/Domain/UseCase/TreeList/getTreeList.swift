@@ -18,7 +18,7 @@ struct GetTreeListUseCase: getTreeList {
     func execute(startRow: Int = 0) async -> Result<[GeolocatedTree], UseCaseError> {
         do {
             
-            let treeList = try await treeListRepository.getTreeList(startRow: startRow, nbrRows: OpenDataAPI.nbrRowPerRequest)
+            let treeList = EnvironmentVariable.isFromWs ? try await treeListRepository.getTreeList(startRow: startRow, nbrRows: OpenDataAPI.nbrRowPerRequest) : try await treeListRepository.getTreeListFromLocal()
             return .success(treeList)
             
         } catch (let error) {

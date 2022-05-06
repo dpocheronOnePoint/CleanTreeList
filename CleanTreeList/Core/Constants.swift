@@ -14,3 +14,7 @@ struct OpenDataAPI {
     static let nbrRowPerRequest = 20
     static let facet = "&facet=&facet=arrondissement&facet=libellefrancais&facet=genre&facet=espece&facet=circonferenceencm&facet=hauteurenm"
 }
+
+struct EnvironmentVariable {
+    static let isFromWs = false
+}
