@@ -1,0 +1,3124 @@
+{
+    "nhits": 38295,
+    "parameters": {
+        "dataset": "les-arbres",
+        "q": "20",
+        "rows": 10,
+        "start": 0,
+        "facet": [
+            "",
+            "arrondissement",
+            "libellefrancais",
+            "genre",
+            "espece",
+            "circonferenceencm",
+            "hauteurenm"
+        ],
+        "format": "json",
+        "timezone": "UTC"
+    },
+    "records": [
+        {
+            "datasetid": "les-arbres",
+            "recordid": "c7e286e5976d85d51836cf93521cf46c7f177a84",
+            "fields": {
+                "adresse": "DAVOUT (147-149)",
+                "hauteurenm": 8,
+                "domanialite": "DFPE",
+                "idbase": 190008,
+                "libellefrancais": "Erable",
+                "idemplacement": "20180003",
+                "arrondissement": "PARIS 20E ARRDT",
+                "circonferenceencm": 100,
+                "geo_point_2d": [
+                    48.85871332531331,
+                    2.409169176020828
+                ],
+                "espece": "pseudoplatanus",
+                "typeemplacement": "Arbre",
+                "genre": "Acer"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.409169176020828,
+                    48.85871332531331
+                ]
+            },
+            "record_timestamp": "2022-04-29T08:26:23.405Z"
+        },
+        {
+            "datasetid": "les-arbres",
+            "recordid": "e51622e12bfdaa572da5ee1c9c03a678700f72b0",
+            "fields": {
+                "hauteurenm": 7,
+                "libellefrancais": "Pin",
+                "idemplacement": "20020089",
+                "circonferenceencm": 81,
+                "geo_point_2d": [
+                    48.890800794981146,
+                    2.298322332574395
+                ],
+                "espece": "nigra subsp. nigra",
+                "typeemplacement": "Arbre",
+                "genre": "Pinus",
+                "adresse": "PROMENADE BERNARD LAFAY C2",
+                "stadedeveloppement": "Jeune (arbre)Adulte",
+                "domanialite": "Jardin",
+                "remarquable": "NON",
+                "idbase": 139493,
+                "arrondissement": "PARIS 17E ARRDT"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.298322332574395,
+                    48.890800794981146
+                ]
+            },
+            "record_timestamp": "2022-04-29T08:26:23.405Z"
+        },
+        {
+            "datasetid": "les-arbres",
+            "recordid": "4ed03ef0d91fa687184bb95bc0703ec8a4b99d4f",
+            "fields": {
+                "hauteurenm": 9,
+                "libellefrancais": "Chêne",
+                "idemplacement": "20030156",
+                "circonferenceencm": 83,
+                "geo_point_2d": [
+                    48.89178945983005,
+                    2.298866950331405
+                ],
+                "espece": "rubra",
+                "typeemplacement": "Arbre",
+                "genre": "Quercus",
+                "adresse": "PROMENADE BERNARD LAFAY C2",
+                "stadedeveloppement": "Jeune (arbre)Adulte",
+                "domanialite": "Jardin",
+                "remarquable": "NON",
+                "idbase": 139562,
+                "arrondissement": "PARIS 17E ARRDT"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.298866950331405,
+                    48.89178945983005
+                ]
+            },
+            "record_timestamp": "2022-04-29T08:26:23.405Z"
+        },
+        {
+            "datasetid": "les-arbres",
+            "recordid": "3747b3f489c748f71a3d14d478efad6c3371ac03",
+            "fields": {
+                "hauteurenm": 16,
+                "libellefrancais": "Cèdre",
+                "idemplacement": "20010019",
+                "circonferenceencm": 197,
+                "geo_point_2d": [
+                    48.88881769640708,
+                    2.292410191001735
+                ],
+                "espece": "deodara",
+                "typeemplacement": "Arbre",
+                "genre": "Cedrus",
+                "adresse": "PROMENADE BERNARD LAFAY PR B2",
+                "stadedeveloppement": "Adulte",
+                "domanialite": "Jardin",
+                "remarquable": "NON",
+                "idbase": 127252,
+                "arrondissement": "PARIS 17E ARRDT"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.292410191001735,
+                    48.88881769640708
+                ]
+            },
+            "record_timestamp": "2022-04-29T08:26:23.405Z"
+        },
+        {
+            "datasetid": "les-arbres",
+            "recordid": "7e3819c37d79efc3432377e9aeb904d3acf1a4d3",
+            "fields": {
+                "hauteurenm": 4,
+                "libellefrancais": "Arbre de Judée",
+                "idemplacement": "20030186",
+                "circonferenceencm": 25,
+                "geo_point_2d": [
+                    48.891765564414364,
+                    2.299879828683001
+                ],
+                "espece": "siliquastrum",
+                "typeemplacement": "Arbre",
+                "genre": "Cercis",
+                "adresse": "PROMENADE BERNARD LAFAY C2",
+                "stadedeveloppement": "Jeune (arbre)",
+                "domanialite": "Jardin",
+                "remarquable": "NON",
+                "idbase": 139592,
+                "arrondissement": "PARIS 17E ARRDT"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.299879828683001,
+                    48.891765564414364
+                ]
+            },
+            "record_timestamp": "2022-04-29T08:26:23.405Z"
+        },
+        {
+            "datasetid": "les-arbres",
+            "recordid": "557aa06752e0fbdb01ab7e2a7e8249794b7fbd58",
+            "fields": {
+                "hauteurenm": 13,
+                "libellefrancais": "Erable",
+                "idemplacement": "20030180",
+                "circonferenceencm": 126,
+                "varieteoucultivar": "''Laciniatum Wieri''",
+                "geo_point_2d": [
+                    48.891701732833056,
+                    2.299189988495344
+                ],
+                "espece": "saccharinum",
+                "typeemplacement": "Arbre",
+                "genre": "Acer",
+                "adresse": "PROMENADE BERNARD LAFAY C2",
+                "stadedeveloppement": "Adulte",
+                "domanialite": "Jardin",
+                "remarquable": "NON",
+                "idbase": 139586,
+                "arrondissement": "PARIS 17E ARRDT"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.299189988495344,
+                    48.891701732833056
+                ]
+            },
+            "record_timestamp": "2022-04-29T08:26:23.405Z"
+        },
+        {
+            "datasetid": "les-arbres",
+            "recordid": "03663ae97b0da048a049d7a5915f5799847268a1",
+            "fields": {
+                "hauteurenm": 7,
+                "libellefrancais": "Charme",
+                "idemplacement": "20030164",
+                "circonferenceencm": 82,
+                "geo_point_2d": [
+                    48.89155087519918,
+                    2.29945359255652
+                ],
+                "espece": "betulus",
+                "typeemplacement": "Arbre",
+                "genre": "Carpinus",
+                "adresse": "PROMENADE BERNARD LAFAY C2",
+                "stadedeveloppement": "Jeune (arbre)Adulte",
+                "domanialite": "Jardin",
+                "remarquable": "NON",
+                "idbase": 139570,
+                "arrondissement": "PARIS 17E ARRDT"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.29945359255652,
+                    48.89155087519918
+                ]
+            },
+            "record_timestamp": "2022-04-29T08:26:23.405Z"
+        },
+        {
+            "datasetid": "les-arbres",
+            "recordid": "43d32bdda2bcdf8b2fe23907c7ddeda32f0b355c",
+            "fields": {
+                "hauteurenm": 9,
+                "libellefrancais": "Erable",
+                "idemplacement": "20010022",
+                "circonferenceencm": 116,
+                "geo_point_2d": [
+                    48.89055978747696,
+                    2.298005326339851
+                ],
+                "espece": "pseudoplatanus",
+                "typeemplacement": "Arbre",
+                "genre": "Acer",
+                "adresse": "PROMENADE BERNARD LAFAY C2",
+                "stadedeveloppement": "Adulte",
+                "domanialite": "Jardin",
+                "remarquable": "NON",
+                "idbase": 127113,
+                "arrondissement": "PARIS 17E ARRDT"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.298005326339851,
+                    48.89055978747696
+                ]
+            },
+            "record_timestamp": "2022-04-29T08:26:23.405Z"
+        },
+        {
+            "datasetid": "les-arbres",
+            "recordid": "b1fc14cac91d7f88f8f60d7470b2cf58cdb548d2",
+            "fields": {
+                "hauteurenm": 8,
+                "libellefrancais": "Cèdre",
+                "idemplacement": "20010065",
+                "circonferenceencm": 74,
+                "varieteoucultivar": "''Glauca''",
+                "geo_point_2d": [
+                    48.88786866608678,
+                    2.290505547325727
+                ],
+                "espece": "libani",
+                "typeemplacement": "Arbre",
+                "genre": "Cedrus",
+                "adresse": "PROMENADE BERNARD LAFAY PR B2",
+                "stadedeveloppement": "Jeune (arbre)Adulte",
+                "domanialite": "Jardin",
+                "remarquable": "NON",
+                "idbase": 127397,
+                "arrondissement": "PARIS 17E ARRDT"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.290505547325727,
+                    48.88786866608678
+                ]
+            },
+            "record_timestamp": "2022-04-29T08:26:23.405Z"
+        },
+        {
+            "datasetid": "les-arbres",
+            "recordid": "d758aa2e49d092a7aa7bb1928d328f8753bf997a",
+            "fields": {
+                "hauteurenm": 12,
+                "libellefrancais": "Tilleul",
+                "idemplacement": "20170001",
+                "circonferenceencm": 120,
+                "geo_point_2d": [
+                    48.86049066403484,
+                    2.306371476373961
+                ],
+                "espece": "n. sp.",
+                "typeemplacement": "Arbre",
+                "genre": "Tilia",
+                "adresse": "UNIVERSITE (145)",
+                "stadedeveloppement": "Adulte",
+                "domanialite": "DFPE",
+                "remarquable": "NON",
+                "idbase": 185064,
+                "arrondissement": "PARIS 7E ARRDT"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.306371476373961,
+                    48.86049066403484
+                ]
+            },
+            "record_timestamp": "2022-04-29T08:26:23.405Z"
+        }
+    ],
+    "facet_groups": [
+        {
+            "name": "arrondissement",
+            "facets": [
+                {
+                    "name": "PARIS 20E ARRDT",
+                    "count": 15735,
+                    "state": "displayed",
+                    "path": "PARIS 20E ARRDT"
+                },
+                {
+                    "name": "PARIS 19E ARRDT",
+                    "count": 1960,
+                    "state": "displayed",
+                    "path": "PARIS 19E ARRDT"
+                },
+                {
+                    "name": "PARIS 13E ARRDT",
+                    "count": 1952,
+                    "state": "displayed",
+                    "path": "PARIS 13E ARRDT"
+                },
+                {
+                    "name": "PARIS 16E ARRDT",
+                    "count": 1893,
+                    "state": "displayed",
+                    "path": "PARIS 16E ARRDT"
+                },
+                {
+                    "name": "SEINE-SAINT-DENIS",
+                    "count": 1725,
+                    "state": "displayed",
+                    "path": "SEINE-SAINT-DENIS"
+                },
+                {
+                    "name": "PARIS 15E ARRDT",
+                    "count": 1476,
+                    "state": "displayed",
+                    "path": "PARIS 15E ARRDT"
+                },
+                {
+                    "name": "PARIS 18E ARRDT",
+                    "count": 1418,
+                    "state": "displayed",
+                    "path": "PARIS 18E ARRDT"
+                },
+                {
+                    "name": "PARIS 11E ARRDT",
+                    "count": 1230,
+                    "state": "displayed",
+                    "path": "PARIS 11E ARRDT"
+                },
+                {
+                    "name": "BOIS DE VINCENNES",
+                    "count": 1228,
+                    "state": "displayed",
+                    "path": "BOIS DE VINCENNES"
+                },
+                {
+                    "name": "PARIS 12E ARRDT",
+                    "count": 1206,
+                    "state": "displayed",
+                    "path": "PARIS 12E ARRDT"
+                },
+                {
+                    "name": "PARIS 17E ARRDT",
+                    "count": 1190,
+                    "state": "displayed",
+                    "path": "PARIS 17E ARRDT"
+                },
+                {
+                    "name": "PARIS 7E ARRDT",
+                    "count": 1106,
+                    "state": "displayed",
+                    "path": "PARIS 7E ARRDT"
+                },
+                {
+                    "name": "VAL-DE-MARNE",
+                    "count": 949,
+                    "state": "displayed",
+                    "path": "VAL-DE-MARNE"
+                },
+                {
+                    "name": "PARIS 14E ARRDT",
+                    "count": 945,
+                    "state": "displayed",
+                    "path": "PARIS 14E ARRDT"
+                },
+                {
+                    "name": "PARIS 8E ARRDT",
+                    "count": 696,
+                    "state": "displayed",
+                    "path": "PARIS 8E ARRDT"
+                },
+                {
+                    "name": "PARIS 5E ARRDT",
+                    "count": 631,
+                    "state": "displayed",
+                    "path": "PARIS 5E ARRDT"
+                },
+                {
+                    "name": "HAUTS-DE-SEINE",
+                    "count": 582,
+                    "state": "displayed",
+                    "path": "HAUTS-DE-SEINE"
+                },
+                {
+                    "name": "PARIS 4E ARRDT",
+                    "count": 538,
+                    "state": "displayed",
+                    "path": "PARIS 4E ARRDT"
+                },
+                {
+                    "name": "PARIS 10E ARRDT",
+                    "count": 529,
+                    "state": "displayed",
+                    "path": "PARIS 10E ARRDT"
+                },
+                {
+                    "name": "BOIS DE BOULOGNE",
+                    "count": 454,
+                    "state": "displayed",
+                    "path": "BOIS DE BOULOGNE"
+                },
+                {
+                    "name": "PARIS 1ER ARRDT",
+                    "count": 233,
+                    "state": "displayed",
+                    "path": "PARIS 1ER ARRDT"
+                },
+                {
+                    "name": "PARIS 6E ARRDT",
+                    "count": 233,
+                    "state": "displayed",
+                    "path": "PARIS 6E ARRDT"
+                },
+                {
+                    "name": "PARIS 3E ARRDT",
+                    "count": 163,
+                    "state": "displayed",
+                    "path": "PARIS 3E ARRDT"
+                },
+                {
+                    "name": "PARIS 9E ARRDT",
+                    "count": 141,
+                    "state": "displayed",
+                    "path": "PARIS 9E ARRDT"
+                },
+                {
+                    "name": "PARIS 2E ARRDT",
+                    "count": 82,
+                    "state": "displayed",
+                    "path": "PARIS 2E ARRDT"
+                }
+            ]
+        },
+        {
+            "name": "libellefrancais",
+            "facets": [
+                {
+                    "name": "Platane",
+                    "count": 7641,
+                    "state": "displayed",
+                    "path": "Platane"
+                },
+                {
+                    "name": "Erable",
+                    "count": 4113,
+                    "state": "displayed",
+                    "path": "Erable"
+                },
+                {
+                    "name": "Marronnier",
+                    "count": 3673,
+                    "state": "displayed",
+                    "path": "Marronnier"
+                },
+                {
+                    "name": "Tilleul",
+                    "count": 3182,
+                    "state": "displayed",
+                    "path": "Tilleul"
+                },
+                {
+                    "name": "Sophora",
+                    "count": 1965,
+                    "state": "displayed",
+                    "path": "Sophora"
+                },
+                {
+                    "name": "Frêne",
+                    "count": 1190,
+                    "state": "displayed",
+                    "path": "Frêne"
+                },
+                {
+                    "name": "Peuplier",
+                    "count": 1082,
+                    "state": "displayed",
+                    "path": "Peuplier"
+                },
+                {
+                    "name": "Chêne",
+                    "count": 926,
+                    "state": "displayed",
+                    "path": "Chêne"
+                },
+                {
+                    "name": "Cerisier à fleurs",
+                    "count": 771,
+                    "state": "displayed",
+                    "path": "Cerisier à fleurs"
+                },
+                {
+                    "name": "Charme",
+                    "count": 752,
+                    "state": "displayed",
+                    "path": "Charme"
+                },
+                {
+                    "name": "Micocoulier",
+                    "count": 659,
+                    "state": "displayed",
+                    "path": "Micocoulier"
+                },
+                {
+                    "name": "Poirier à fleurs",
+                    "count": 598,
+                    "state": "displayed",
+                    "path": "Poirier à fleurs"
+                },
+                {
+                    "name": "Pin",
+                    "count": 542,
+                    "state": "displayed",
+                    "path": "Pin"
+                },
+                {
+                    "name": "Robinier",
+                    "count": 493,
+                    "state": "displayed",
+                    "path": "Robinier"
+                },
+                {
+                    "name": "Orme",
+                    "count": 417,
+                    "state": "displayed",
+                    "path": "Orme"
+                },
+                {
+                    "name": "Pommier à fruits",
+                    "count": 390,
+                    "state": "displayed",
+                    "path": "Pommier à fruits"
+                },
+                {
+                    "name": "Noisetier de Byzance",
+                    "count": 381,
+                    "state": "displayed",
+                    "path": "Noisetier de Byzance"
+                },
+                {
+                    "name": "Charme-Houblon",
+                    "count": 380,
+                    "state": "displayed",
+                    "path": "Charme-Houblon"
+                },
+                {
+                    "name": "Pommier à fleurs",
+                    "count": 367,
+                    "state": "displayed",
+                    "path": "Pommier à fleurs"
+                },
+                {
+                    "name": "Fevier",
+                    "count": 351,
+                    "state": "displayed",
+                    "path": "Fevier"
+                },
+                {
+                    "name": "If",
+                    "count": 330,
+                    "state": "displayed",
+                    "path": "If"
+                },
+                {
+                    "name": "Frêne à fleurs",
+                    "count": 272,
+                    "state": "displayed",
+                    "path": "Frêne à fleurs"
+                },
+                {
+                    "name": "Arbre de Judée",
+                    "count": 251,
+                    "state": "displayed",
+                    "path": "Arbre de Judée"
+                },
+                {
+                    "name": "Merisier",
+                    "count": 247,
+                    "state": "displayed",
+                    "path": "Merisier"
+                },
+                {
+                    "name": "Savonnier",
+                    "count": 247,
+                    "state": "displayed",
+                    "path": "Savonnier"
+                },
+                {
+                    "name": "Thuya",
+                    "count": 238,
+                    "state": "displayed",
+                    "path": "Thuya"
+                },
+                {
+                    "name": "Cèdre",
+                    "count": 235,
+                    "state": "displayed",
+                    "path": "Cèdre"
+                },
+                {
+                    "name": "Lilas des indes",
+                    "count": 235,
+                    "state": "displayed",
+                    "path": "Lilas des indes"
+                },
+                {
+                    "name": "Orme de Sibérie",
+                    "count": 234,
+                    "state": "displayed",
+                    "path": "Orme de Sibérie"
+                },
+                {
+                    "name": "Bouleau",
+                    "count": 225,
+                    "state": "displayed",
+                    "path": "Bouleau"
+                },
+                {
+                    "name": "Cerisier à grappes",
+                    "count": 225,
+                    "state": "displayed",
+                    "path": "Cerisier à grappes"
+                },
+                {
+                    "name": "Magnolia",
+                    "count": 221,
+                    "state": "displayed",
+                    "path": "Magnolia"
+                },
+                {
+                    "name": "Poirier à fruits",
+                    "count": 216,
+                    "state": "displayed",
+                    "path": "Poirier à fruits"
+                },
+                {
+                    "name": "Paulownia",
+                    "count": 206,
+                    "state": "displayed",
+                    "path": "Paulownia"
+                },
+                {
+                    "name": "Copalme",
+                    "count": 205,
+                    "state": "displayed",
+                    "path": "Copalme"
+                },
+                {
+                    "name": "Arbre aux quarante écus",
+                    "count": 194,
+                    "state": "displayed",
+                    "path": "Arbre aux quarante écus"
+                },
+                {
+                    "name": "Houx",
+                    "count": 194,
+                    "state": "displayed",
+                    "path": "Houx"
+                },
+                {
+                    "name": "Faux-cyprès",
+                    "count": 192,
+                    "state": "displayed",
+                    "path": "Faux-cyprès"
+                },
+                {
+                    "name": "Noyer",
+                    "count": 183,
+                    "state": "displayed",
+                    "path": "Noyer"
+                },
+                {
+                    "name": "Aulne",
+                    "count": 180,
+                    "state": "displayed",
+                    "path": "Aulne"
+                },
+                {
+                    "name": "Hêtre",
+                    "count": 178,
+                    "state": "displayed",
+                    "path": "Hêtre"
+                },
+                {
+                    "name": "Prunier à fleurs",
+                    "count": 171,
+                    "state": "displayed",
+                    "path": "Prunier à fleurs"
+                },
+                {
+                    "name": "Amélanchier",
+                    "count": 158,
+                    "state": "displayed",
+                    "path": "Amélanchier"
+                },
+                {
+                    "name": "Catalpa",
+                    "count": 139,
+                    "state": "displayed",
+                    "path": "Catalpa"
+                },
+                {
+                    "name": "Non spécifié",
+                    "count": 138,
+                    "state": "displayed",
+                    "path": "Non spécifié"
+                },
+                {
+                    "name": "Cornouiller",
+                    "count": 124,
+                    "state": "displayed",
+                    "path": "Cornouiller"
+                },
+                {
+                    "name": "Cyprès",
+                    "count": 122,
+                    "state": "displayed",
+                    "path": "Cyprès"
+                },
+                {
+                    "name": "Mûrier",
+                    "count": 120,
+                    "state": "displayed",
+                    "path": "Mûrier"
+                },
+                {
+                    "name": "Ailante",
+                    "count": 117,
+                    "state": "displayed",
+                    "path": "Ailante"
+                },
+                {
+                    "name": "Arbre à soie",
+                    "count": 110,
+                    "state": "displayed",
+                    "path": "Arbre à soie"
+                },
+                {
+                    "name": "Chicot du Canada",
+                    "count": 110,
+                    "state": "displayed",
+                    "path": "Chicot du Canada"
+                },
+                {
+                    "name": "Parrotie de Perse - Arbre de fer",
+                    "count": 106,
+                    "state": "displayed",
+                    "path": "Parrotie de Perse - Arbre de fer"
+                },
+                {
+                    "name": "Alisier",
+                    "count": 101,
+                    "state": "displayed",
+                    "path": "Alisier"
+                },
+                {
+                    "name": "Pterocarya",
+                    "count": 101,
+                    "state": "displayed",
+                    "path": "Pterocarya"
+                },
+                {
+                    "name": "Sorbier",
+                    "count": 101,
+                    "state": "displayed",
+                    "path": "Sorbier"
+                },
+                {
+                    "name": "Aubépine",
+                    "count": 96,
+                    "state": "displayed",
+                    "path": "Aubépine"
+                },
+                {
+                    "name": "Pommier",
+                    "count": 89,
+                    "state": "displayed",
+                    "path": "Pommier"
+                },
+                {
+                    "name": "Prunus n. sp.",
+                    "count": 77,
+                    "state": "displayed",
+                    "path": "Prunus n. sp."
+                },
+                {
+                    "name": "Tulipier",
+                    "count": 77,
+                    "state": "displayed",
+                    "path": "Tulipier"
+                },
+                {
+                    "name": "Saule",
+                    "count": 73,
+                    "state": "displayed",
+                    "path": "Saule"
+                },
+                {
+                    "name": "Cedrele",
+                    "count": 72,
+                    "state": "displayed",
+                    "path": "Cedrele"
+                },
+                {
+                    "name": "Eleagnus - Chalef",
+                    "count": 63,
+                    "state": "displayed",
+                    "path": "Eleagnus - Chalef"
+                },
+                {
+                    "name": "Aubepine",
+                    "count": 59,
+                    "state": "displayed",
+                    "path": "Aubepine"
+                },
+                {
+                    "name": "Troëne",
+                    "count": 58,
+                    "state": "displayed",
+                    "path": "Troëne"
+                },
+                {
+                    "name": "Parrotie de Perse",
+                    "count": 55,
+                    "state": "displayed",
+                    "path": "Parrotie de Perse"
+                },
+                {
+                    "name": "Palmier",
+                    "count": 47,
+                    "state": "displayed",
+                    "path": "Palmier"
+                },
+                {
+                    "name": "Troene",
+                    "count": 37,
+                    "state": "displayed",
+                    "path": "Troene"
+                },
+                {
+                    "name": "Epicéa",
+                    "count": 36,
+                    "state": "displayed",
+                    "path": "Epicéa"
+                },
+                {
+                    "name": "Plaqueminier",
+                    "count": 36,
+                    "state": "displayed",
+                    "path": "Plaqueminier"
+                },
+                {
+                    "name": "Prunier à fruits",
+                    "count": 35,
+                    "state": "displayed",
+                    "path": "Prunier à fruits"
+                },
+                {
+                    "name": "Pêcher",
+                    "count": 33,
+                    "state": "displayed",
+                    "path": "Pêcher"
+                },
+                {
+                    "name": "Olivier",
+                    "count": 32,
+                    "state": "displayed",
+                    "path": "Olivier"
+                },
+                {
+                    "name": "Noisetier",
+                    "count": 31,
+                    "state": "displayed",
+                    "path": "Noisetier"
+                },
+                {
+                    "name": "Lilas de Perse",
+                    "count": 29,
+                    "state": "displayed",
+                    "path": "Lilas de Perse"
+                },
+                {
+                    "name": "Sureau",
+                    "count": 27,
+                    "state": "displayed",
+                    "path": "Sureau"
+                },
+                {
+                    "name": "Abricotier",
+                    "count": 26,
+                    "state": "displayed",
+                    "path": "Abricotier"
+                },
+                {
+                    "name": "Arbre à caramel",
+                    "count": 26,
+                    "state": "displayed",
+                    "path": "Arbre à caramel"
+                },
+                {
+                    "name": "Châtaignier",
+                    "count": 26,
+                    "state": "displayed",
+                    "path": "Châtaignier"
+                },
+                {
+                    "name": "Photinia",
+                    "count": 26,
+                    "state": "displayed",
+                    "path": "Photinia"
+                },
+                {
+                    "name": "Buis",
+                    "count": 24,
+                    "state": "displayed",
+                    "path": "Buis"
+                },
+                {
+                    "name": "Poirier",
+                    "count": 23,
+                    "state": "displayed",
+                    "path": "Poirier"
+                },
+                {
+                    "name": "Chitalpa",
+                    "count": 22,
+                    "state": "displayed",
+                    "path": "Chitalpa"
+                },
+                {
+                    "name": "Amandier",
+                    "count": 21,
+                    "state": "displayed",
+                    "path": "Amandier"
+                },
+                {
+                    "name": "Cerisier à fruits",
+                    "count": 21,
+                    "state": "displayed",
+                    "path": "Cerisier à fruits"
+                },
+                {
+                    "name": "Cognassier",
+                    "count": 21,
+                    "state": "displayed",
+                    "path": "Cognassier"
+                },
+                {
+                    "name": "Sequoia",
+                    "count": 21,
+                    "state": "displayed",
+                    "path": "Sequoia"
+                },
+                {
+                    "name": "Figuier",
+                    "count": 20,
+                    "state": "displayed",
+                    "path": "Figuier"
+                },
+                {
+                    "name": "Cytise",
+                    "count": 19,
+                    "state": "displayed",
+                    "path": "Cytise"
+                },
+                {
+                    "name": "Clerodendron",
+                    "count": 18,
+                    "state": "displayed",
+                    "path": "Clerodendron"
+                },
+                {
+                    "name": "Arbre à miel",
+                    "count": 17,
+                    "state": "displayed",
+                    "path": "Arbre à miel"
+                },
+                {
+                    "name": "Laurier du Portugal",
+                    "count": 17,
+                    "state": "displayed",
+                    "path": "Laurier du Portugal"
+                },
+                {
+                    "name": "Sapin",
+                    "count": 17,
+                    "state": "displayed",
+                    "path": "Sapin"
+                },
+                {
+                    "name": "Eucalyptus",
+                    "count": 16,
+                    "state": "displayed",
+                    "path": "Eucalyptus"
+                },
+                {
+                    "name": "Metaséquoia",
+                    "count": 16,
+                    "state": "displayed",
+                    "path": "Metaséquoia"
+                },
+                {
+                    "name": "Tamaris",
+                    "count": 16,
+                    "state": "displayed",
+                    "path": "Tamaris"
+                },
+                {
+                    "name": "Prunus Fleur n. sp.",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "Prunus Fleur n. sp."
+                },
+                {
+                    "name": "Mélèze",
+                    "count": 12,
+                    "state": "displayed",
+                    "path": "Mélèze"
+                },
+                {
+                    "name": "Althéa",
+                    "count": 10,
+                    "state": "displayed",
+                    "path": "Althéa"
+                },
+                {
+                    "name": "Fusain",
+                    "count": 10,
+                    "state": "displayed",
+                    "path": "Fusain"
+                },
+                {
+                    "name": "Halesia",
+                    "count": 10,
+                    "state": "displayed",
+                    "path": "Halesia"
+                }
+            ]
+        },
+        {
+            "name": "genre",
+            "facets": [
+                {
+                    "name": "Platanus",
+                    "count": 7649,
+                    "state": "displayed",
+                    "path": "Platanus"
+                },
+                {
+                    "name": "Acer",
+                    "count": 4127,
+                    "state": "displayed",
+                    "path": "Acer"
+                },
+                {
+                    "name": "Aesculus",
+                    "count": 3675,
+                    "state": "displayed",
+                    "path": "Aesculus"
+                },
+                {
+                    "name": "Tilia",
+                    "count": 3192,
+                    "state": "displayed",
+                    "path": "Tilia"
+                },
+                {
+                    "name": "Sophora",
+                    "count": 1967,
+                    "state": "displayed",
+                    "path": "Sophora"
+                },
+                {
+                    "name": "Prunus",
+                    "count": 1720,
+                    "state": "displayed",
+                    "path": "Prunus"
+                },
+                {
+                    "name": "Fraxinus",
+                    "count": 1462,
+                    "state": "displayed",
+                    "path": "Fraxinus"
+                },
+                {
+                    "name": "Populus",
+                    "count": 1087,
+                    "state": "displayed",
+                    "path": "Populus"
+                },
+                {
+                    "name": "Quercus",
+                    "count": 927,
+                    "state": "displayed",
+                    "path": "Quercus"
+                },
+                {
+                    "name": "Malus",
+                    "count": 870,
+                    "state": "displayed",
+                    "path": "Malus"
+                },
+                {
+                    "name": "Pyrus",
+                    "count": 841,
+                    "state": "displayed",
+                    "path": "Pyrus"
+                },
+                {
+                    "name": "Carpinus",
+                    "count": 757,
+                    "state": "displayed",
+                    "path": "Carpinus"
+                },
+                {
+                    "name": "Celtis",
+                    "count": 663,
+                    "state": "displayed",
+                    "path": "Celtis"
+                },
+                {
+                    "name": "Pinus",
+                    "count": 543,
+                    "state": "displayed",
+                    "path": "Pinus"
+                },
+                {
+                    "name": "Robinia",
+                    "count": 496,
+                    "state": "displayed",
+                    "path": "Robinia"
+                },
+                {
+                    "name": "Ulmus",
+                    "count": 458,
+                    "state": "displayed",
+                    "path": "Ulmus"
+                },
+                {
+                    "name": "Corylus",
+                    "count": 412,
+                    "state": "displayed",
+                    "path": "Corylus"
+                },
+                {
+                    "name": "Ostrya",
+                    "count": 380,
+                    "state": "displayed",
+                    "path": "Ostrya"
+                },
+                {
+                    "name": "Gleditsia",
+                    "count": 352,
+                    "state": "displayed",
+                    "path": "Gleditsia"
+                },
+                {
+                    "name": "Taxus",
+                    "count": 330,
+                    "state": "displayed",
+                    "path": "Taxus"
+                },
+                {
+                    "name": "Cercis",
+                    "count": 251,
+                    "state": "displayed",
+                    "path": "Cercis"
+                },
+                {
+                    "name": "Koelreuteria",
+                    "count": 248,
+                    "state": "displayed",
+                    "path": "Koelreuteria"
+                },
+                {
+                    "name": "Cedrus",
+                    "count": 235,
+                    "state": "displayed",
+                    "path": "Cedrus"
+                },
+                {
+                    "name": "Lagerstroemia",
+                    "count": 235,
+                    "state": "displayed",
+                    "path": "Lagerstroemia"
+                },
+                {
+                    "name": "Zelkova",
+                    "count": 234,
+                    "state": "displayed",
+                    "path": "Zelkova"
+                },
+                {
+                    "name": "Betula",
+                    "count": 225,
+                    "state": "displayed",
+                    "path": "Betula"
+                },
+                {
+                    "name": "Magnolia",
+                    "count": 222,
+                    "state": "displayed",
+                    "path": "Magnolia"
+                },
+                {
+                    "name": "Thuja",
+                    "count": 214,
+                    "state": "displayed",
+                    "path": "Thuja"
+                },
+                {
+                    "name": "Sorbus",
+                    "count": 212,
+                    "state": "displayed",
+                    "path": "Sorbus"
+                },
+                {
+                    "name": "Paulownia",
+                    "count": 207,
+                    "state": "displayed",
+                    "path": "Paulownia"
+                },
+                {
+                    "name": "Liquidambar",
+                    "count": 205,
+                    "state": "displayed",
+                    "path": "Liquidambar"
+                },
+                {
+                    "name": "Ginkgo",
+                    "count": 195,
+                    "state": "displayed",
+                    "path": "Ginkgo"
+                },
+                {
+                    "name": "Ilex",
+                    "count": 194,
+                    "state": "displayed",
+                    "path": "Ilex"
+                },
+                {
+                    "name": "Non spécifié",
+                    "count": 194,
+                    "state": "displayed",
+                    "path": "Non spécifié"
+                },
+                {
+                    "name": "Chamaecyparis",
+                    "count": 192,
+                    "state": "displayed",
+                    "path": "Chamaecyparis"
+                },
+                {
+                    "name": "Alnus",
+                    "count": 183,
+                    "state": "displayed",
+                    "path": "Alnus"
+                },
+                {
+                    "name": "Juglans",
+                    "count": 183,
+                    "state": "displayed",
+                    "path": "Juglans"
+                },
+                {
+                    "name": "Fagus",
+                    "count": 178,
+                    "state": "displayed",
+                    "path": "Fagus"
+                },
+                {
+                    "name": "Amelanchier",
+                    "count": 163,
+                    "state": "displayed",
+                    "path": "Amelanchier"
+                },
+                {
+                    "name": "Parrotia",
+                    "count": 161,
+                    "state": "displayed",
+                    "path": "Parrotia"
+                },
+                {
+                    "name": "Crataegus",
+                    "count": 158,
+                    "state": "displayed",
+                    "path": "Crataegus"
+                },
+                {
+                    "name": "Catalpa",
+                    "count": 141,
+                    "state": "displayed",
+                    "path": "Catalpa"
+                },
+                {
+                    "name": "Cornus",
+                    "count": 127,
+                    "state": "displayed",
+                    "path": "Cornus"
+                },
+                {
+                    "name": "Ailanthus",
+                    "count": 120,
+                    "state": "displayed",
+                    "path": "Ailanthus"
+                },
+                {
+                    "name": "Albizia",
+                    "count": 113,
+                    "state": "displayed",
+                    "path": "Albizia"
+                },
+                {
+                    "name": "Gymnocladus",
+                    "count": 111,
+                    "state": "displayed",
+                    "path": "Gymnocladus"
+                },
+                {
+                    "name": "Pterocarya",
+                    "count": 101,
+                    "state": "displayed",
+                    "path": "Pterocarya"
+                },
+                {
+                    "name": "Cupressus",
+                    "count": 99,
+                    "state": "displayed",
+                    "path": "Cupressus"
+                },
+                {
+                    "name": "Ligustrum",
+                    "count": 99,
+                    "state": "displayed",
+                    "path": "Ligustrum"
+                },
+                {
+                    "name": "Morus",
+                    "count": 93,
+                    "state": "displayed",
+                    "path": "Morus"
+                },
+                {
+                    "name": "Liriodendron",
+                    "count": 77,
+                    "state": "displayed",
+                    "path": "Liriodendron"
+                },
+                {
+                    "name": "Salix",
+                    "count": 75,
+                    "state": "displayed",
+                    "path": "Salix"
+                },
+                {
+                    "name": "Toona",
+                    "count": 72,
+                    "state": "displayed",
+                    "path": "Toona"
+                },
+                {
+                    "name": "Elaeagnus",
+                    "count": 63,
+                    "state": "displayed",
+                    "path": "Elaeagnus"
+                },
+                {
+                    "name": "Trachycarpus",
+                    "count": 44,
+                    "state": "displayed",
+                    "path": "Trachycarpus"
+                },
+                {
+                    "name": "Olea",
+                    "count": 42,
+                    "state": "displayed",
+                    "path": "Olea"
+                },
+                {
+                    "name": "Diospyros",
+                    "count": 36,
+                    "state": "displayed",
+                    "path": "Diospyros"
+                },
+                {
+                    "name": "Picea",
+                    "count": 36,
+                    "state": "displayed",
+                    "path": "Picea"
+                },
+                {
+                    "name": "Melia",
+                    "count": 29,
+                    "state": "displayed",
+                    "path": "Melia"
+                },
+                {
+                    "name": "Photinia",
+                    "count": 28,
+                    "state": "displayed",
+                    "path": "Photinia"
+                },
+                {
+                    "name": "Broussonetia",
+                    "count": 27,
+                    "state": "displayed",
+                    "path": "Broussonetia"
+                },
+                {
+                    "name": "Sambucus",
+                    "count": 27,
+                    "state": "displayed",
+                    "path": "Sambucus"
+                },
+                {
+                    "name": "Castanea",
+                    "count": 26,
+                    "state": "displayed",
+                    "path": "Castanea"
+                },
+                {
+                    "name": "Cercidiphyllum",
+                    "count": 26,
+                    "state": "displayed",
+                    "path": "Cercidiphyllum"
+                },
+                {
+                    "name": "Platycladus",
+                    "count": 25,
+                    "state": "displayed",
+                    "path": "Platycladus"
+                },
+                {
+                    "name": "Buxus",
+                    "count": 24,
+                    "state": "displayed",
+                    "path": "Buxus"
+                },
+                {
+                    "name": "Ficus",
+                    "count": 23,
+                    "state": "displayed",
+                    "path": "Ficus"
+                },
+                {
+                    "name": "x Cupressocyparis",
+                    "count": 23,
+                    "state": "displayed",
+                    "path": "x Cupressocyparis"
+                },
+                {
+                    "name": "x Chitalpa",
+                    "count": 22,
+                    "state": "displayed",
+                    "path": "x Chitalpa"
+                },
+                {
+                    "name": "Cydonia",
+                    "count": 21,
+                    "state": "displayed",
+                    "path": "Cydonia"
+                },
+                {
+                    "name": "Laburnum",
+                    "count": 20,
+                    "state": "displayed",
+                    "path": "Laburnum"
+                },
+                {
+                    "name": "Clerodendrum",
+                    "count": 18,
+                    "state": "displayed",
+                    "path": "Clerodendrum"
+                },
+                {
+                    "name": "Tetradium",
+                    "count": 18,
+                    "state": "displayed",
+                    "path": "Tetradium"
+                },
+                {
+                    "name": "Abies",
+                    "count": 17,
+                    "state": "displayed",
+                    "path": "Abies"
+                },
+                {
+                    "name": "Halesia",
+                    "count": 17,
+                    "state": "displayed",
+                    "path": "Halesia"
+                },
+                {
+                    "name": "Eucalyptus",
+                    "count": 16,
+                    "state": "displayed",
+                    "path": "Eucalyptus"
+                },
+                {
+                    "name": "Metasequoia",
+                    "count": 16,
+                    "state": "displayed",
+                    "path": "Metasequoia"
+                },
+                {
+                    "name": "Tamarix",
+                    "count": 16,
+                    "state": "displayed",
+                    "path": "Tamarix"
+                },
+                {
+                    "name": "Sequoia",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "Sequoia"
+                },
+                {
+                    "name": "Larix",
+                    "count": 12,
+                    "state": "displayed",
+                    "path": "Larix"
+                },
+                {
+                    "name": "Euonymus",
+                    "count": 10,
+                    "state": "displayed",
+                    "path": "Euonymus"
+                },
+                {
+                    "name": "Hibiscus",
+                    "count": 10,
+                    "state": "displayed",
+                    "path": "Hibiscus"
+                },
+                {
+                    "name": "Mespilus",
+                    "count": 10,
+                    "state": "displayed",
+                    "path": "Mespilus"
+                },
+                {
+                    "name": "Acacia",
+                    "count": 9,
+                    "state": "displayed",
+                    "path": "Acacia"
+                },
+                {
+                    "name": "Nyssa",
+                    "count": 9,
+                    "state": "displayed",
+                    "path": "Nyssa"
+                },
+                {
+                    "name": "Cotoneaster",
+                    "count": 8,
+                    "state": "displayed",
+                    "path": "Cotoneaster"
+                },
+                {
+                    "name": "Juniperus",
+                    "count": 8,
+                    "state": "displayed",
+                    "path": "Juniperus"
+                },
+                {
+                    "name": "Laurus",
+                    "count": 8,
+                    "state": "displayed",
+                    "path": "Laurus"
+                },
+                {
+                    "name": "Maclura",
+                    "count": 8,
+                    "state": "displayed",
+                    "path": "Maclura"
+                },
+                {
+                    "name": "Calocedrus",
+                    "count": 7,
+                    "state": "displayed",
+                    "path": "Calocedrus"
+                },
+                {
+                    "name": "Cladrastis",
+                    "count": 7,
+                    "state": "displayed",
+                    "path": "Cladrastis"
+                },
+                {
+                    "name": "Eriobotrya",
+                    "count": 7,
+                    "state": "displayed",
+                    "path": "Eriobotrya"
+                },
+                {
+                    "name": "Sequoiadendron",
+                    "count": 6,
+                    "state": "displayed",
+                    "path": "Sequoiadendron"
+                },
+                {
+                    "name": "Alangium",
+                    "count": 5,
+                    "state": "displayed",
+                    "path": "Alangium"
+                },
+                {
+                    "name": "Araucaria",
+                    "count": 5,
+                    "state": "displayed",
+                    "path": "Araucaria"
+                },
+                {
+                    "name": "Cotinus",
+                    "count": 5,
+                    "state": "displayed",
+                    "path": "Cotinus"
+                },
+                {
+                    "name": "Davidia",
+                    "count": 5,
+                    "state": "displayed",
+                    "path": "Davidia"
+                },
+                {
+                    "name": "Nothofagus",
+                    "count": 4,
+                    "state": "displayed",
+                    "path": "Nothofagus"
+                },
+                {
+                    "name": "Phellodendron",
+                    "count": 4,
+                    "state": "displayed",
+                    "path": "Phellodendron"
+                },
+                {
+                    "name": "Ptelea",
+                    "count": 4,
+                    "state": "displayed",
+                    "path": "Ptelea"
+                }
+            ]
+        },
+        {
+            "name": "espece",
+            "facets": [
+                {
+                    "name": "x hispanica",
+                    "count": 6786,
+                    "state": "displayed",
+                    "path": "x hispanica"
+                },
+                {
+                    "name": "hippocastanum",
+                    "count": 3046,
+                    "state": "displayed",
+                    "path": "hippocastanum"
+                },
+                {
+                    "name": "japonica",
+                    "count": 1961,
+                    "state": "displayed",
+                    "path": "japonica"
+                },
+                {
+                    "name": "n. sp.",
+                    "count": 1723,
+                    "state": "displayed",
+                    "path": "n. sp."
+                },
+                {
+                    "name": "tomentosa",
+                    "count": 1497,
+                    "state": "displayed",
+                    "path": "tomentosa"
+                },
+                {
+                    "name": "pseudoplatanus",
+                    "count": 1379,
+                    "state": "displayed",
+                    "path": "pseudoplatanus"
+                },
+                {
+                    "name": "platanoides",
+                    "count": 1220,
+                    "state": "displayed",
+                    "path": "platanoides"
+                },
+                {
+                    "name": "cordata",
+                    "count": 937,
+                    "state": "displayed",
+                    "path": "cordata"
+                },
+                {
+                    "name": "nigra",
+                    "count": 879,
+                    "state": "displayed",
+                    "path": "nigra"
+                },
+                {
+                    "name": "betulus",
+                    "count": 748,
+                    "state": "displayed",
+                    "path": "betulus"
+                },
+                {
+                    "name": "australis",
+                    "count": 650,
+                    "state": "displayed",
+                    "path": "australis"
+                },
+                {
+                    "name": "campestre",
+                    "count": 637,
+                    "state": "displayed",
+                    "path": "campestre"
+                },
+                {
+                    "name": "excelsior",
+                    "count": 598,
+                    "state": "displayed",
+                    "path": "excelsior"
+                },
+                {
+                    "name": "calleryana",
+                    "count": 581,
+                    "state": "displayed",
+                    "path": "calleryana"
+                },
+                {
+                    "name": "x carnea",
+                    "count": 567,
+                    "state": "displayed",
+                    "path": "x carnea"
+                },
+                {
+                    "name": "occidentalis",
+                    "count": 489,
+                    "state": "displayed",
+                    "path": "occidentalis"
+                },
+                {
+                    "name": "pseudoacacia",
+                    "count": 486,
+                    "state": "displayed",
+                    "path": "pseudoacacia"
+                },
+                {
+                    "name": "angustifolia",
+                    "count": 465,
+                    "state": "displayed",
+                    "path": "angustifolia"
+                },
+                {
+                    "name": "domestica",
+                    "count": 432,
+                    "state": "displayed",
+                    "path": "domestica"
+                },
+                {
+                    "name": "serrulata",
+                    "count": 425,
+                    "state": "displayed",
+                    "path": "serrulata"
+                },
+                {
+                    "name": "carpinifolia",
+                    "count": 413,
+                    "state": "displayed",
+                    "path": "carpinifolia"
+                },
+                {
+                    "name": "orientalis",
+                    "count": 403,
+                    "state": "displayed",
+                    "path": "orientalis"
+                },
+                {
+                    "name": "colurna",
+                    "count": 381,
+                    "state": "displayed",
+                    "path": "colurna"
+                },
+                {
+                    "name": "x europaea",
+                    "count": 376,
+                    "state": "displayed",
+                    "path": "x europaea"
+                },
+                {
+                    "name": "avium",
+                    "count": 331,
+                    "state": "displayed",
+                    "path": "avium"
+                },
+                {
+                    "name": "baccata",
+                    "count": 330,
+                    "state": "displayed",
+                    "path": "baccata"
+                },
+                {
+                    "name": "x canadensis",
+                    "count": 328,
+                    "state": "displayed",
+                    "path": "x canadensis"
+                },
+                {
+                    "name": "alba",
+                    "count": 282,
+                    "state": "displayed",
+                    "path": "alba"
+                },
+                {
+                    "name": "ornus",
+                    "count": 273,
+                    "state": "displayed",
+                    "path": "ornus"
+                },
+                {
+                    "name": "robur",
+                    "count": 262,
+                    "state": "displayed",
+                    "path": "robur"
+                },
+                {
+                    "name": "platyphyllos",
+                    "count": 258,
+                    "state": "displayed",
+                    "path": "platyphyllos"
+                },
+                {
+                    "name": "paniculata",
+                    "count": 244,
+                    "state": "displayed",
+                    "path": "paniculata"
+                },
+                {
+                    "name": "triacanthos",
+                    "count": 242,
+                    "state": "displayed",
+                    "path": "triacanthos"
+                },
+                {
+                    "name": "siliquastrum",
+                    "count": 237,
+                    "state": "displayed",
+                    "path": "siliquastrum"
+                },
+                {
+                    "name": "indica",
+                    "count": 232,
+                    "state": "displayed",
+                    "path": "indica"
+                },
+                {
+                    "name": "padus",
+                    "count": 225,
+                    "state": "displayed",
+                    "path": "padus"
+                },
+                {
+                    "name": "communis",
+                    "count": 224,
+                    "state": "displayed",
+                    "path": "communis"
+                },
+                {
+                    "name": "styraciflua",
+                    "count": 202,
+                    "state": "displayed",
+                    "path": "styraciflua"
+                },
+                {
+                    "name": "serrata",
+                    "count": 198,
+                    "state": "displayed",
+                    "path": "serrata"
+                },
+                {
+                    "name": "aquifolium",
+                    "count": 194,
+                    "state": "displayed",
+                    "path": "aquifolium"
+                },
+                {
+                    "name": "biloba",
+                    "count": 194,
+                    "state": "displayed",
+                    "path": "biloba"
+                },
+                {
+                    "name": "persica",
+                    "count": 193,
+                    "state": "displayed",
+                    "path": "persica"
+                },
+                {
+                    "name": "sylvatica",
+                    "count": 187,
+                    "state": "displayed",
+                    "path": "sylvatica"
+                },
+                {
+                    "name": "monspessulanum",
+                    "count": 186,
+                    "state": "displayed",
+                    "path": "monspessulanum"
+                },
+                {
+                    "name": "cerasifera",
+                    "count": 170,
+                    "state": "displayed",
+                    "path": "cerasifera"
+                },
+                {
+                    "name": "trilobata",
+                    "count": 158,
+                    "state": "displayed",
+                    "path": "trilobata"
+                },
+                {
+                    "name": "negundo",
+                    "count": 150,
+                    "state": "displayed",
+                    "path": "negundo"
+                },
+                {
+                    "name": "pendula",
+                    "count": 147,
+                    "state": "displayed",
+                    "path": "pendula"
+                },
+                {
+                    "name": "ilex",
+                    "count": 143,
+                    "state": "displayed",
+                    "path": "ilex"
+                },
+                {
+                    "name": "bignonioides",
+                    "count": 137,
+                    "state": "displayed",
+                    "path": "bignonioides"
+                },
+                {
+                    "name": "nigra subsp. nigra",
+                    "count": 124,
+                    "state": "displayed",
+                    "path": "nigra subsp. nigra"
+                },
+                {
+                    "name": "grandiflora",
+                    "count": 123,
+                    "state": "displayed",
+                    "path": "grandiflora"
+                },
+                {
+                    "name": "cerris",
+                    "count": 118,
+                    "state": "displayed",
+                    "path": "cerris"
+                },
+                {
+                    "name": "libani",
+                    "count": 118,
+                    "state": "displayed",
+                    "path": "libani"
+                },
+                {
+                    "name": "altissima",
+                    "count": 117,
+                    "state": "displayed",
+                    "path": "altissima"
+                },
+                {
+                    "name": "dioica",
+                    "count": 110,
+                    "state": "displayed",
+                    "path": "dioica"
+                },
+                {
+                    "name": "julibrissin",
+                    "count": 110,
+                    "state": "displayed",
+                    "path": "julibrissin"
+                },
+                {
+                    "name": "mas",
+                    "count": 107,
+                    "state": "displayed",
+                    "path": "mas"
+                },
+                {
+                    "name": "triacanthos f. Inermis",
+                    "count": 105,
+                    "state": "displayed",
+                    "path": "triacanthos f. Inermis"
+                },
+                {
+                    "name": "lamarckii",
+                    "count": 102,
+                    "state": "displayed",
+                    "path": "lamarckii"
+                },
+                {
+                    "name": "sylvestris",
+                    "count": 102,
+                    "state": "displayed",
+                    "path": "sylvestris"
+                },
+                {
+                    "name": "fraxinifolia",
+                    "count": 101,
+                    "state": "displayed",
+                    "path": "fraxinifolia"
+                },
+                {
+                    "name": "lawsoniana",
+                    "count": 101,
+                    "state": "displayed",
+                    "path": "lawsoniana"
+                },
+                {
+                    "name": "saccharinum",
+                    "count": 90,
+                    "state": "displayed",
+                    "path": "saccharinum"
+                },
+                {
+                    "name": "sempervirens",
+                    "count": 90,
+                    "state": "displayed",
+                    "path": "sempervirens"
+                },
+                {
+                    "name": "minor",
+                    "count": 87,
+                    "state": "displayed",
+                    "path": "minor"
+                },
+                {
+                    "name": "rubra",
+                    "count": 87,
+                    "state": "displayed",
+                    "path": "rubra"
+                },
+                {
+                    "name": "tschonoskii",
+                    "count": 87,
+                    "state": "displayed",
+                    "path": "tschonoskii"
+                },
+                {
+                    "name": "japonicum",
+                    "count": 85,
+                    "state": "displayed",
+                    "path": "japonicum"
+                },
+                {
+                    "name": "freemanii",
+                    "count": 83,
+                    "state": "displayed",
+                    "path": "freemanii"
+                },
+                {
+                    "name": "aucuparia",
+                    "count": 79,
+                    "state": "displayed",
+                    "path": "aucuparia"
+                },
+                {
+                    "name": "sinensis",
+                    "count": 78,
+                    "state": "displayed",
+                    "path": "sinensis"
+                },
+                {
+                    "name": "tulipifera",
+                    "count": 77,
+                    "state": "displayed",
+                    "path": "tulipifera"
+                },
+                {
+                    "name": "deodara",
+                    "count": 72,
+                    "state": "displayed",
+                    "path": "deodara"
+                },
+                {
+                    "name": "aria",
+                    "count": 70,
+                    "state": "displayed",
+                    "path": "aria"
+                },
+                {
+                    "name": "x subhirtella",
+                    "count": 66,
+                    "state": "displayed",
+                    "path": "x subhirtella"
+                },
+                {
+                    "name": "tataricum subsp. ginnala",
+                    "count": 57,
+                    "state": "displayed",
+                    "path": "tataricum subsp. ginnala"
+                },
+                {
+                    "name": "laevigata",
+                    "count": 51,
+                    "state": "displayed",
+                    "path": "laevigata"
+                },
+                {
+                    "name": "monogyna",
+                    "count": 51,
+                    "state": "displayed",
+                    "path": "monogyna"
+                },
+                {
+                    "name": "x schmittii",
+                    "count": 51,
+                    "state": "displayed",
+                    "path": "x schmittii"
+                },
+                {
+                    "name": "maackii",
+                    "count": 49,
+                    "state": "displayed",
+                    "path": "maackii"
+                },
+                {
+                    "name": "x spaethii",
+                    "count": 46,
+                    "state": "displayed",
+                    "path": "x spaethii"
+                },
+                {
+                    "name": "fortunei",
+                    "count": 44,
+                    "state": "displayed",
+                    "path": "fortunei"
+                },
+                {
+                    "name": "kobus",
+                    "count": 44,
+                    "state": "displayed",
+                    "path": "kobus"
+                },
+                {
+                    "name": "opalus",
+                    "count": 43,
+                    "state": "displayed",
+                    "path": "opalus"
+                },
+                {
+                    "name": "papyrifera",
+                    "count": 42,
+                    "state": "displayed",
+                    "path": "papyrifera"
+                },
+                {
+                    "name": "cappadocicum",
+                    "count": 40,
+                    "state": "displayed",
+                    "path": "cappadocicum"
+                },
+                {
+                    "name": "petraea",
+                    "count": 38,
+                    "state": "displayed",
+                    "path": "petraea"
+                },
+                {
+                    "name": "davidii",
+                    "count": 35,
+                    "state": "displayed",
+                    "path": "davidii"
+                },
+                {
+                    "name": "plicata",
+                    "count": 35,
+                    "state": "displayed",
+                    "path": "plicata"
+                },
+                {
+                    "name": "americana",
+                    "count": 34,
+                    "state": "displayed",
+                    "path": "americana"
+                },
+                {
+                    "name": "frainetto",
+                    "count": 34,
+                    "state": "displayed",
+                    "path": "frainetto"
+                },
+                {
+                    "name": "buergerianum",
+                    "count": 33,
+                    "state": "displayed",
+                    "path": "buergerianum"
+                },
+                {
+                    "name": "arizonica",
+                    "count": 32,
+                    "state": "displayed",
+                    "path": "arizonica"
+                },
+                {
+                    "name": "europaea",
+                    "count": 32,
+                    "state": "displayed",
+                    "path": "europaea"
+                },
+                {
+                    "name": "mongolica",
+                    "count": 32,
+                    "state": "displayed",
+                    "path": "mongolica"
+                },
+                {
+                    "name": "sargentii",
+                    "count": 31,
+                    "state": "displayed",
+                    "path": "sargentii"
+                },
+                {
+                    "name": "x soulangeana",
+                    "count": 31,
+                    "state": "displayed",
+                    "path": "x soulangeana"
+                },
+                {
+                    "name": "rubrum",
+                    "count": 30,
+                    "state": "displayed",
+                    "path": "rubrum"
+                },
+                {
+                    "name": "azedarach",
+                    "count": 29,
+                    "state": "displayed",
+                    "path": "azedarach"
+                }
+            ]
+        },
+        {
+            "name": "circonferenceencm",
+            "facets": [
+                {
+                    "name": "20",
+                    "count": 15229,
+                    "state": "displayed",
+                    "path": "20"
+                },
+                {
+                    "name": "0",
+                    "count": 788,
+                    "state": "displayed",
+                    "path": "0"
+                },
+                {
+                    "name": "25",
+                    "count": 653,
+                    "state": "displayed",
+                    "path": "25"
+                },
+                {
+                    "name": "60",
+                    "count": 647,
+                    "state": "displayed",
+                    "path": "60"
+                },
+                {
+                    "name": "130",
+                    "count": 627,
+                    "state": "displayed",
+                    "path": "130"
+                },
+                {
+                    "name": "70",
+                    "count": 625,
+                    "state": "displayed",
+                    "path": "70"
+                },
+                {
+                    "name": "110",
+                    "count": 624,
+                    "state": "displayed",
+                    "path": "110"
+                },
+                {
+                    "name": "120",
+                    "count": 614,
+                    "state": "displayed",
+                    "path": "120"
+                },
+                {
+                    "name": "30",
+                    "count": 612,
+                    "state": "displayed",
+                    "path": "30"
+                },
+                {
+                    "name": "90",
+                    "count": 610,
+                    "state": "displayed",
+                    "path": "90"
+                },
+                {
+                    "name": "40",
+                    "count": 608,
+                    "state": "displayed",
+                    "path": "40"
+                },
+                {
+                    "name": "50",
+                    "count": 607,
+                    "state": "displayed",
+                    "path": "50"
+                },
+                {
+                    "name": "100",
+                    "count": 602,
+                    "state": "displayed",
+                    "path": "100"
+                },
+                {
+                    "name": "80",
+                    "count": 594,
+                    "state": "displayed",
+                    "path": "80"
+                },
+                {
+                    "name": "140",
+                    "count": 576,
+                    "state": "displayed",
+                    "path": "140"
+                },
+                {
+                    "name": "150",
+                    "count": 567,
+                    "state": "displayed",
+                    "path": "150"
+                },
+                {
+                    "name": "160",
+                    "count": 563,
+                    "state": "displayed",
+                    "path": "160"
+                },
+                {
+                    "name": "35",
+                    "count": 561,
+                    "state": "displayed",
+                    "path": "35"
+                },
+                {
+                    "name": "170",
+                    "count": 522,
+                    "state": "displayed",
+                    "path": "170"
+                },
+                {
+                    "name": "55",
+                    "count": 481,
+                    "state": "displayed",
+                    "path": "55"
+                },
+                {
+                    "name": "45",
+                    "count": 475,
+                    "state": "displayed",
+                    "path": "45"
+                },
+                {
+                    "name": "180",
+                    "count": 456,
+                    "state": "displayed",
+                    "path": "180"
+                },
+                {
+                    "name": "75",
+                    "count": 444,
+                    "state": "displayed",
+                    "path": "75"
+                },
+                {
+                    "name": "65",
+                    "count": 419,
+                    "state": "displayed",
+                    "path": "65"
+                },
+                {
+                    "name": "190",
+                    "count": 418,
+                    "state": "displayed",
+                    "path": "190"
+                },
+                {
+                    "name": "125",
+                    "count": 412,
+                    "state": "displayed",
+                    "path": "125"
+                },
+                {
+                    "name": "95",
+                    "count": 410,
+                    "state": "displayed",
+                    "path": "95"
+                },
+                {
+                    "name": "105",
+                    "count": 407,
+                    "state": "displayed",
+                    "path": "105"
+                },
+                {
+                    "name": "145",
+                    "count": 405,
+                    "state": "displayed",
+                    "path": "145"
+                },
+                {
+                    "name": "135",
+                    "count": 391,
+                    "state": "displayed",
+                    "path": "135"
+                },
+                {
+                    "name": "200",
+                    "count": 384,
+                    "state": "displayed",
+                    "path": "200"
+                },
+                {
+                    "name": "85",
+                    "count": 382,
+                    "state": "displayed",
+                    "path": "85"
+                },
+                {
+                    "name": "115",
+                    "count": 381,
+                    "state": "displayed",
+                    "path": "115"
+                },
+                {
+                    "name": "175",
+                    "count": 365,
+                    "state": "displayed",
+                    "path": "175"
+                },
+                {
+                    "name": "155",
+                    "count": 358,
+                    "state": "displayed",
+                    "path": "155"
+                },
+                {
+                    "name": "210",
+                    "count": 311,
+                    "state": "displayed",
+                    "path": "210"
+                },
+                {
+                    "name": "165",
+                    "count": 307,
+                    "state": "displayed",
+                    "path": "165"
+                },
+                {
+                    "name": "185",
+                    "count": 294,
+                    "state": "displayed",
+                    "path": "185"
+                },
+                {
+                    "name": "195",
+                    "count": 280,
+                    "state": "displayed",
+                    "path": "195"
+                },
+                {
+                    "name": "220",
+                    "count": 242,
+                    "state": "displayed",
+                    "path": "220"
+                },
+                {
+                    "name": "205",
+                    "count": 222,
+                    "state": "displayed",
+                    "path": "205"
+                },
+                {
+                    "name": "15",
+                    "count": 189,
+                    "state": "displayed",
+                    "path": "15"
+                },
+                {
+                    "name": "215",
+                    "count": 189,
+                    "state": "displayed",
+                    "path": "215"
+                },
+                {
+                    "name": "230",
+                    "count": 186,
+                    "state": "displayed",
+                    "path": "230"
+                },
+                {
+                    "name": "240",
+                    "count": 138,
+                    "state": "displayed",
+                    "path": "240"
+                },
+                {
+                    "name": "250",
+                    "count": 134,
+                    "state": "displayed",
+                    "path": "250"
+                },
+                {
+                    "name": "10",
+                    "count": 132,
+                    "state": "displayed",
+                    "path": "10"
+                },
+                {
+                    "name": "225",
+                    "count": 123,
+                    "state": "displayed",
+                    "path": "225"
+                },
+                {
+                    "name": "235",
+                    "count": 107,
+                    "state": "displayed",
+                    "path": "235"
+                },
+                {
+                    "name": "245",
+                    "count": 96,
+                    "state": "displayed",
+                    "path": "245"
+                },
+                {
+                    "name": "5",
+                    "count": 93,
+                    "state": "displayed",
+                    "path": "5"
+                },
+                {
+                    "name": "260",
+                    "count": 89,
+                    "state": "displayed",
+                    "path": "260"
+                },
+                {
+                    "name": "270",
+                    "count": 78,
+                    "state": "displayed",
+                    "path": "270"
+                },
+                {
+                    "name": "280",
+                    "count": 65,
+                    "state": "displayed",
+                    "path": "280"
+                },
+                {
+                    "name": "255",
+                    "count": 61,
+                    "state": "displayed",
+                    "path": "255"
+                },
+                {
+                    "name": "275",
+                    "count": 42,
+                    "state": "displayed",
+                    "path": "275"
+                },
+                {
+                    "name": "265",
+                    "count": 40,
+                    "state": "displayed",
+                    "path": "265"
+                },
+                {
+                    "name": "300",
+                    "count": 37,
+                    "state": "displayed",
+                    "path": "300"
+                },
+                {
+                    "name": "18",
+                    "count": 35,
+                    "state": "displayed",
+                    "path": "18"
+                },
+                {
+                    "name": "290",
+                    "count": 31,
+                    "state": "displayed",
+                    "path": "290"
+                },
+                {
+                    "name": "285",
+                    "count": 28,
+                    "state": "displayed",
+                    "path": "285"
+                },
+                {
+                    "name": "295",
+                    "count": 24,
+                    "state": "displayed",
+                    "path": "295"
+                },
+                {
+                    "name": "310",
+                    "count": 23,
+                    "state": "displayed",
+                    "path": "310"
+                },
+                {
+                    "name": "320",
+                    "count": 22,
+                    "state": "displayed",
+                    "path": "320"
+                },
+                {
+                    "name": "44",
+                    "count": 21,
+                    "state": "displayed",
+                    "path": "44"
+                },
+                {
+                    "name": "177",
+                    "count": 20,
+                    "state": "displayed",
+                    "path": "177"
+                },
+                {
+                    "name": "305",
+                    "count": 18,
+                    "state": "displayed",
+                    "path": "305"
+                },
+                {
+                    "name": "36",
+                    "count": 17,
+                    "state": "displayed",
+                    "path": "36"
+                },
+                {
+                    "name": "42",
+                    "count": 17,
+                    "state": "displayed",
+                    "path": "42"
+                },
+                {
+                    "name": "123",
+                    "count": 17,
+                    "state": "displayed",
+                    "path": "123"
+                },
+                {
+                    "name": "26",
+                    "count": 16,
+                    "state": "displayed",
+                    "path": "26"
+                },
+                {
+                    "name": "122",
+                    "count": 16,
+                    "state": "displayed",
+                    "path": "122"
+                },
+                {
+                    "name": "126",
+                    "count": 16,
+                    "state": "displayed",
+                    "path": "126"
+                },
+                {
+                    "name": "142",
+                    "count": 16,
+                    "state": "displayed",
+                    "path": "142"
+                },
+                {
+                    "name": "156",
+                    "count": 16,
+                    "state": "displayed",
+                    "path": "156"
+                },
+                {
+                    "name": "24",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "24"
+                },
+                {
+                    "name": "37",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "37"
+                },
+                {
+                    "name": "117",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "117"
+                },
+                {
+                    "name": "133",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "133"
+                },
+                {
+                    "name": "144",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "144"
+                },
+                {
+                    "name": "152",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "152"
+                },
+                {
+                    "name": "154",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "154"
+                },
+                {
+                    "name": "162",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "162"
+                },
+                {
+                    "name": "163",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "163"
+                },
+                {
+                    "name": "164",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "164"
+                },
+                {
+                    "name": "168",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "168"
+                },
+                {
+                    "name": "172",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "172"
+                },
+                {
+                    "name": "173",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "173"
+                },
+                {
+                    "name": "183",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "183"
+                },
+                {
+                    "name": "19",
+                    "count": 14,
+                    "state": "displayed",
+                    "path": "19"
+                },
+                {
+                    "name": "28",
+                    "count": 14,
+                    "state": "displayed",
+                    "path": "28"
+                },
+                {
+                    "name": "41",
+                    "count": 14,
+                    "state": "displayed",
+                    "path": "41"
+                },
+                {
+                    "name": "138",
+                    "count": 14,
+                    "state": "displayed",
+                    "path": "138"
+                },
+                {
+                    "name": "178",
+                    "count": 14,
+                    "state": "displayed",
+                    "path": "178"
+                },
+                {
+                    "name": "325",
+                    "count": 14,
+                    "state": "displayed",
+                    "path": "325"
+                },
+                {
+                    "name": "27",
+                    "count": 13,
+                    "state": "displayed",
+                    "path": "27"
+                },
+                {
+                    "name": "38",
+                    "count": 13,
+                    "state": "displayed",
+                    "path": "38"
+                },
+                {
+                    "name": "48",
+                    "count": 13,
+                    "state": "displayed",
+                    "path": "48"
+                },
+                {
+                    "name": "136",
+                    "count": 13,
+                    "state": "displayed",
+                    "path": "136"
+                },
+                {
+                    "name": "137",
+                    "count": 13,
+                    "state": "displayed",
+                    "path": "137"
+                }
+            ]
+        },
+        {
+            "name": "hauteurenm",
+            "facets": [
+                {
+                    "name": "5",
+                    "count": 13756,
+                    "state": "displayed",
+                    "path": "5"
+                },
+                {
+                    "name": "20",
+                    "count": 7367,
+                    "state": "displayed",
+                    "path": "20"
+                },
+                {
+                    "name": "10",
+                    "count": 2336,
+                    "state": "displayed",
+                    "path": "10"
+                },
+                {
+                    "name": "0",
+                    "count": 2159,
+                    "state": "displayed",
+                    "path": "0"
+                },
+                {
+                    "name": "4",
+                    "count": 1818,
+                    "state": "displayed",
+                    "path": "4"
+                },
+                {
+                    "name": "15",
+                    "count": 1799,
+                    "state": "displayed",
+                    "path": "15"
+                },
+                {
+                    "name": "6",
+                    "count": 1423,
+                    "state": "displayed",
+                    "path": "6"
+                },
+                {
+                    "name": "12",
+                    "count": 1345,
+                    "state": "displayed",
+                    "path": "12"
+                },
+                {
+                    "name": "3",
+                    "count": 1306,
+                    "state": "displayed",
+                    "path": "3"
+                },
+                {
+                    "name": "8",
+                    "count": 1303,
+                    "state": "displayed",
+                    "path": "8"
+                },
+                {
+                    "name": "2",
+                    "count": 893,
+                    "state": "displayed",
+                    "path": "2"
+                },
+                {
+                    "name": "18",
+                    "count": 567,
+                    "state": "displayed",
+                    "path": "18"
+                },
+                {
+                    "name": "7",
+                    "count": 466,
+                    "state": "displayed",
+                    "path": "7"
+                },
+                {
+                    "name": "16",
+                    "count": 377,
+                    "state": "displayed",
+                    "path": "16"
+                },
+                {
+                    "name": "14",
+                    "count": 362,
+                    "state": "displayed",
+                    "path": "14"
+                },
+                {
+                    "name": "1",
+                    "count": 261,
+                    "state": "displayed",
+                    "path": "1"
+                },
+                {
+                    "name": "9",
+                    "count": 254,
+                    "state": "displayed",
+                    "path": "9"
+                },
+                {
+                    "name": "13",
+                    "count": 125,
+                    "state": "displayed",
+                    "path": "13"
+                },
+                {
+                    "name": "17",
+                    "count": 107,
+                    "state": "displayed",
+                    "path": "17"
+                },
+                {
+                    "name": "11",
+                    "count": 90,
+                    "state": "displayed",
+                    "path": "11"
+                },
+                {
+                    "name": "25",
+                    "count": 78,
+                    "state": "displayed",
+                    "path": "25"
+                },
+                {
+                    "name": "22",
+                    "count": 45,
+                    "state": "displayed",
+                    "path": "22"
+                },
+                {
+                    "name": "19",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "19"
+                },
+                {
+                    "name": "30",
+                    "count": 9,
+                    "state": "displayed",
+                    "path": "30"
+                },
+                {
+                    "name": "28",
+                    "count": 8,
+                    "state": "displayed",
+                    "path": "28"
+                },
+                {
+                    "name": "23",
+                    "count": 6,
+                    "state": "displayed",
+                    "path": "23"
+                },
+                {
+                    "name": "24",
+                    "count": 6,
+                    "state": "displayed",
+                    "path": "24"
+                },
+                {
+                    "name": "26",
+                    "count": 3,
+                    "state": "displayed",
+                    "path": "26"
+                },
+                {
+                    "name": "27",
+                    "count": 3,
+                    "state": "displayed",
+                    "path": "27"
+                },
+                {
+                    "name": "29",
+                    "count": 3,
+                    "state": "displayed",
+                    "path": "29"
+                },
+                {
+                    "name": "21",
+                    "count": 1,
+                    "state": "displayed",
+                    "path": "21"
+                },
+                {
+                    "name": "35",
+                    "count": 1,
+                    "state": "displayed",
+                    "path": "35"
+                },
+                {
+                    "name": "42",
+                    "count": 1,
+                    "state": "displayed",
+                    "path": "42"
+                },
+                {
+                    "name": "45",
+                    "count": 1,
+                    "state": "displayed",
+                    "path": "45"
+                },
+                {
+                    "name": "56",
+                    "count": 1,
+                    "state": "displayed",
+                    "path": "56"
+                }
+            ]
+        }
+    ]
+}
