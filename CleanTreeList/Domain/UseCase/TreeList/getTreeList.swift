@@ -9,6 +9,7 @@ import Foundation
 import CoreData
 
 protocol getTreeList {
+    func loadLocalTrees() async -> Result<[GeolocatedTree], UseCaseError>
     func execute(startIndex: Int) async -> Result<[GeolocatedTree], UseCaseError>
 }
 
@@ -16,24 +17,41 @@ struct GetTreeListUseCase: getTreeList {
     
     var treeListRepository: TreeListRepository
     
+    func loadLocalTrees() -> Result<[GeolocatedTree], UseCaseError> {
+        
+        let fetchRequest: NSFetchRequest<CDGeolocatedTree>
+        fetchRequest = CDGeolocatedTree.fetchRequest()
+
+        let context = CoreDataStack.sharedInstance.viewContext
+        
+        do {
+            let cdGeolocatedTrees: [CDGeolocatedTree] = try context.fetch(fetchRequest)
+            let treeList: [GeolocatedTree] = cdGeolocatedTrees.map({ item in
+                GeolocatedTree(
+                    tree: item.tree.ToDomain(),
+                    lng: item.lng,
+                    lat: item.lat
+                )
+            })
+            
+            return .success(treeList)
+        }catch {
+            return .failure(.databaseError)
+        }
+    }
+    
     func execute(startIndex: Int) async -> Result<[GeolocatedTree], UseCaseError> {
         do {
             let treeList: [GeolocatedTree]
             
-//            switch EnvironmentVariable.loadingDataMethod {
-//            case .Default:
-//                treeList = try await treeListRepository.getTreeList(startIndex: startIndex)
-//            case .WithApiManager:
-//                treeList = try await treeListRepository.getTreeListWithApiManager(startIndex: startIndex)
-//            case .FromLocalJson:
-//                treeList = try await treeListRepository.getTreeListFromLocal()
-//            }
-            
-            treeList =  try getTreeFromDB()
-//            clearData()
-//            saveGeolocatedTreeListInCoreDataWith(geolocatedTreeList: treeList)
-            
-            
+            switch EnvironmentVariable.loadingDataMethod {
+            case .Default:
+                treeList = try await treeListRepository.getTreeList(startIndex: startIndex)
+            case .WithApiManager:
+                treeList = try await treeListRepository.getTreeListWithApiManager(startIndex: startIndex)
+            case .FromLocalJson:
+                treeList = try await treeListRepository.getTreeListFromLocal()
+            }
             
             return .success(treeList)
             
@@ -75,7 +93,7 @@ struct GetTreeListUseCase: getTreeList {
         cdTreeEntity.address2 = tree.address2
         cdTreeEntity.height = tree.height
         cdTreeEntity.circumference = tree.circumference
-            
+        
         
         // Create and insert C
         if let geolocatedTreeEntity = NSEntityDescription.insertNewObject(forEntityName: "CDGeolocatedTree", into: context) as? CDGeolocatedTree {
@@ -90,34 +108,5 @@ struct GetTreeListUseCase: getTreeList {
             self.createGeolocatedTreeEntityFrom(geolocatedTree: geolocatedTree)
         }
         CoreDataStack.sharedInstance.saveContext()
-    }
-    
-    func getTreeFromDB() throws -> [GeolocatedTree] {
-        // Create a fetch request with a string filter
-        // for an entity’s name
-        let fetchRequest: NSFetchRequest<CDGeolocatedTree>
-        fetchRequest = CDGeolocatedTree.fetchRequest()
-        
-        //        fetchRequest.predicate = NSPredicate(
-        //            format: "name LIKE %@", "Robert"
-        //        )
-        
-        // Get a reference to a NSManagedObjectContext
-        let context = CoreDataStack.sharedInstance.viewContext
-        
-        // Perform the fetch request to get the objects
-        // matching the predicate
-        do {
-            let objects: [CDGeolocatedTree] = try context.fetch(fetchRequest)
-            return objects.map({ item in
-                GeolocatedTree(
-                    tree: item.tree.ToDomain(),
-                    lng: item.lng,
-                    lat: item.lat
-                )
-            })
-        } catch {
-            return []
-        }
     }
 }

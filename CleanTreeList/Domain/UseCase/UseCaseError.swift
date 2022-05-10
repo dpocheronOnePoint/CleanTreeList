@@ -8,5 +8,5 @@
 import Foundation
 
 enum UseCaseError: Error {
-    case networkError, decodingError
+    case networkError, decodingError, databaseError
 }

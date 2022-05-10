@@ -111,14 +111,14 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
-		D32CD60C282A50EB00C7FC80 /* CoreData */ = {
+		D32CD60C282A50EB00C7FC80 /* CoreDataStorage */ = {
 			isa = PBXGroup;
 			children = (
 				D32CD615282A5A6B00C7FC80 /* CoreDataModels */,
 				D32CD612282A55E400C7FC80 /* CleanTreeList.xcdatamodeld */,
 				D32CD610282A517800C7FC80 /* CoreDataStack.swift */,
 			);
-			path = CoreData;
+			path = CoreDataStorage;
 			sourceTree = "<group>";
 		};
 		D32CD615282A5A6B00C7FC80 /* CoreDataModels */ = {
@@ -130,6 +130,14 @@
 				D32CD61B282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataProperties.swift */,
 			);
 			path = CoreDataModels;
+			sourceTree = "<group>";
+		};
+		D32CD626282A925900C7FC80 /* PersistentStorages */ = {
+			isa = PBXGroup;
+			children = (
+				D32CD60C282A50EB00C7FC80 /* CoreDataStorage */,
+			);
+			path = PersistentStorages;
 			sourceTree = "<group>";
 		};
 		D34199E62829094000DB45B0 /* Component */ = {
@@ -193,6 +201,7 @@
 			children = (
 				D3AA66C42823921E00862D43 /* Repository */,
 				D3AA66C52823923000862D43 /* DataSource */,
+				D32CD626282A925900C7FC80 /* PersistentStorages */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -220,7 +229,6 @@
 		D37F7A192821683800E73EB4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D32CD60C282A50EB00C7FC80 /* CoreData */,
 				D3C57B3E282396630028E4EB /* Tree.swift */,
 				D3C57B40282396E50028E4EB /* GeolocatedTree.swift */,
 				D3C57B4428239D2F0028E4EB /* DataToDomain.swift */,
@@ -310,8 +318,8 @@
 		D3E40B44282502D400025D14 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				D3E40B46282502FC00025D14 /* CodableBundleExtension.swift */,
 				D3E40B48282506B800025D14 /* JSONDecodeError.swift */,
+				D3E40B46282502FC00025D14 /* CodableBundleExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
