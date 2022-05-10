@@ -36,9 +36,8 @@ class TreeListViewModel: ObservableObject {
             return
         }
         
-        print("New call ==> \(startIndex)")
         isLoadingPage = true
-        let result = await getTreeListUseCase.execute() 
+        let result = await getTreeListUseCase.execute(startIndex: startIndex)
         switch result {
         case .success(let geolocatedTrees):
             DispatchQueue.main.async {

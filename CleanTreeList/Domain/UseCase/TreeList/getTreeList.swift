@@ -15,7 +15,7 @@ struct GetTreeListUseCase: getTreeList {
     
     var treeListRepository: TreeListRepository
     
-    func execute(startIndex: Int = 0) async -> Result<[GeolocatedTree], UseCaseError> {
+    func execute(startIndex: Int) async -> Result<[GeolocatedTree], UseCaseError> {
         do {
             switch EnvironmentVariable.loadingDataMethod {
             case .Default:
