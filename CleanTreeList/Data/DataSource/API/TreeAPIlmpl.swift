@@ -8,7 +8,7 @@
 import Foundation
 
 struct TreeAPIlmpl: TreeDataSource {
-    func getTreeList(startRow: Int) async throws -> [GeolocatedTree] {
+    func getTreeList(startIndex: Int) async throws -> [GeolocatedTree] {
         
         // Define URL and check if it's a good url
         guard var urlComponents = URLComponents(string: "\(OpenDataAPI.baseURL)\(OpenDataAPI.searchPath)") else {
@@ -17,6 +17,7 @@ struct TreeAPIlmpl: TreeDataSource {
         
         urlComponents.queryItems = [
             URLQueryItem(name: "dataset", value: "les-arbres"),
+            URLQueryItem(name: "start", value: "\(startIndex)"),
             URLQueryItem(name: "rows", value: OpenDataAPI.nbrRowPerRequest)
         ]
         
@@ -48,11 +49,12 @@ struct TreeAPIlmpl: TreeDataSource {
     }
     
     
-    func getTreeListWithApiManager(startRow: Int) async throws -> [GeolocatedTree] {
+    func getTreeListWithApiManager(startIndex: Int) async throws -> [GeolocatedTree] {
         
         // Define request parameters
         let parameters = [
             URLQueryItem(name: "dataset", value: "les-arbres"),
+            URLQueryItem(name: "start", value: "\(startIndex)"),
             URLQueryItem(name: "rows", value: OpenDataAPI.nbrRowPerRequest)
         ]
         

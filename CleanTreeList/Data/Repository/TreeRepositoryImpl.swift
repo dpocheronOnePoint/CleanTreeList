@@ -11,13 +11,13 @@ struct TreeRepositoryImpl: TreeListRepository {
 
     var dataSource: TreeDataSource
     
-    func getTreeList(startRow: Int) async throws -> [GeolocatedTree] {
-        let trees = try await dataSource.getTreeList(startRow: startRow)
+    func getTreeList(startIndex: Int) async throws -> [GeolocatedTree] {
+        let trees = try await dataSource.getTreeList(startIndex: startIndex)
         return trees
     }
     
-    func getTreeListWithApiManager(startRow: Int) async throws -> [GeolocatedTree] {
-        let trees = try await dataSource.getTreeListWithApiManager(startRow: startRow)
+    func getTreeListWithApiManager(startIndex: Int) async throws -> [GeolocatedTree] {
+        let trees = try await dataSource.getTreeListWithApiManager(startIndex: startIndex)
         return trees
     }
     
