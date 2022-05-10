@@ -20,6 +20,8 @@
 		D32CD614282A55E400C7FC80 /* CleanTreeList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D32CD612282A55E400C7FC80 /* CleanTreeList.xcdatamodeld */; };
 		D32CD61C282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD61A282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataClass.swift */; };
 		D32CD61D282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD61B282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataProperties.swift */; };
+		D32CD624282A6C1900C7FC80 /* CDTree+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD622282A6C1900C7FC80 /* CDTree+CoreDataClass.swift */; };
+		D32CD625282A6C1900C7FC80 /* CDTree+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD623282A6C1900C7FC80 /* CDTree+CoreDataProperties.swift */; };
 		D34199E82829096400DB45B0 /* TreeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34199E72829096400DB45B0 /* TreeItemView.swift */; };
 		D34199EA2829103400DB45B0 /* TreeListComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34199E92829103400DB45B0 /* TreeListComponentView.swift */; };
 		D37F7A08282167E200E73EB4 /* CleanTreeListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37F7A07282167E200E73EB4 /* CleanTreeListApp.swift */; };
@@ -52,6 +54,8 @@
 		D32CD613282A55E400C7FC80 /* CleanTreeList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CleanTreeList.xcdatamodel; sourceTree = "<group>"; };
 		D32CD61A282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDGeolocatedTree+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D32CD61B282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDGeolocatedTree+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D32CD622282A6C1900C7FC80 /* CDTree+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDTree+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D32CD623282A6C1900C7FC80 /* CDTree+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDTree+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D34199E72829096400DB45B0 /* TreeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeItemView.swift; sourceTree = "<group>"; };
 		D34199E92829103400DB45B0 /* TreeListComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListComponentView.swift; sourceTree = "<group>"; };
 		D37F7A04282167E200E73EB4 /* CleanTreeList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanTreeList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +124,8 @@
 		D32CD615282A5A6B00C7FC80 /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
+				D32CD622282A6C1900C7FC80 /* CDTree+CoreDataClass.swift */,
+				D32CD623282A6C1900C7FC80 /* CDTree+CoreDataProperties.swift */,
 				D32CD61A282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataClass.swift */,
 				D32CD61B282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataProperties.swift */,
 			);
@@ -398,6 +404,7 @@
 				D37F7A08282167E200E73EB4 /* CleanTreeListApp.swift in Sources */,
 				D3C57B43282398960028E4EB /* APIServiceError.swift in Sources */,
 				D31103EC2823CFB60021299B /* getTreeList.swift in Sources */,
+				D32CD624282A6C1900C7FC80 /* CDTree+CoreDataClass.swift in Sources */,
 				D31103E72823AE8D0021299B /* UseCaseError.swift in Sources */,
 				D3AA66C82823928E00862D43 /* Record.swift in Sources */,
 				D3C57B3B282395A20028E4EB /* TreeAPIlmpl.swift in Sources */,
@@ -412,6 +419,7 @@
 				D31103F02823D3E60021299B /* TreeRepositoryImpl.swift in Sources */,
 				D34199EA2829103400DB45B0 /* TreeListComponentView.swift in Sources */,
 				D31103EA2823B3E60021299B /* Constants.swift in Sources */,
+				D32CD625282A6C1900C7FC80 /* CDTree+CoreDataProperties.swift in Sources */,
 				D3C57B4528239D2F0028E4EB /* DataToDomain.swift in Sources */,
 				D31103EE2823D00A0021299B /* TreeListRepository.swift in Sources */,
 				D32CD61D282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataProperties.swift in Sources */,

@@ -17,7 +17,8 @@ extension CDGeolocatedTree {
     }
 
     @NSManaged public var id: UUID?
-    @NSManaged public var lng: Double
+    @NSManaged public var tree: CDTree
+    @NSManaged public var lat, lng: Double
 
 }
 

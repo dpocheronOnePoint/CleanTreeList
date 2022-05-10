@@ -20,17 +20,16 @@ struct GetTreeListUseCase: getTreeList {
         do {
             let treeList: [GeolocatedTree]
             
-            switch EnvironmentVariable.loadingDataMethod {
-            case .Default:
-                treeList = try await treeListRepository.getTreeList(startIndex: startIndex)
-            case .WithApiManager:
-                treeList = try await treeListRepository.getTreeListWithApiManager(startIndex: startIndex)
-            case .FromLocalJson:
-                treeList = try await treeListRepository.getTreeListFromLocal()
-                
-            }
+//            switch EnvironmentVariable.loadingDataMethod {
+//            case .Default:
+//                treeList = try await treeListRepository.getTreeList(startIndex: startIndex)
+//            case .WithApiManager:
+//                treeList = try await treeListRepository.getTreeListWithApiManager(startIndex: startIndex)
+//            case .FromLocalJson:
+//                treeList = try await treeListRepository.getTreeListFromLocal()
+//            }
             
-            displayTreeFromDB()
+            treeList =  try getTreeFromDB()
 //            clearData()
 //            saveGeolocatedTreeListInCoreDataWith(geolocatedTreeList: treeList)
             
@@ -65,9 +64,24 @@ struct GetTreeListUseCase: getTreeList {
     
     func createGeolocatedTreeEntityFrom(geolocatedTree: GeolocatedTree) {
         let context = CoreDataStack.sharedInstance.viewContext
+        
+        let tree: Tree = geolocatedTree.tree
+        
+        // Create CDTreeEntity
+        let cdTreeEntity = CDTree(context: context)
+        cdTreeEntity.name = tree.name
+        cdTreeEntity.species = tree.species
+        cdTreeEntity.address = tree.address
+        cdTreeEntity.address2 = tree.address2
+        cdTreeEntity.height = tree.height
+        cdTreeEntity.circumference = tree.circumference
+            
+        
+        // Create and insert C
         if let geolocatedTreeEntity = NSEntityDescription.insertNewObject(forEntityName: "CDGeolocatedTree", into: context) as? CDGeolocatedTree {
-            print("###### \(geolocatedTree.lng)")
+            geolocatedTreeEntity.tree = cdTreeEntity
             geolocatedTreeEntity.lng = geolocatedTree.lng
+            geolocatedTreeEntity.lat = geolocatedTree.lat
         }
     }
     
@@ -78,7 +92,7 @@ struct GetTreeListUseCase: getTreeList {
         CoreDataStack.sharedInstance.saveContext()
     }
     
-    func displayTreeFromDB() {
+    func getTreeFromDB() throws -> [GeolocatedTree] {
         // Create a fetch request with a string filter
         // for an entity’s name
         let fetchRequest: NSFetchRequest<CDGeolocatedTree>
@@ -95,12 +109,15 @@ struct GetTreeListUseCase: getTreeList {
         // matching the predicate
         do {
             let objects: [CDGeolocatedTree] = try context.fetch(fetchRequest)
-            for test in objects {
-                print("###### \(test.lng)")
-            }
-            print(objects)
+            return objects.map({ item in
+                GeolocatedTree(
+                    tree: item.tree.ToDomain(),
+                    lng: item.lng,
+                    lat: item.lat
+                )
+            })
         } catch {
-            print("Error")
+            return []
         }
     }
 }

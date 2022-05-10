@@ -25,8 +25,8 @@ struct RecordData:  Codable {
 struct Record: Codable {
     let name, species, address2: String?
     let address: String
-    let height, circumference, id: Int
-    
+    let height, circumference: Int16
+
     enum CodingKeys: String, CodingKey {
         case name = "libellefrancais"
         case species = "espece"
@@ -34,7 +34,6 @@ struct Record: Codable {
         case address = "adresse"
         case height = "hauteurenm"
         case circumference = "circonferenceencm"
-        case id = "idbase"
     }
 }
 

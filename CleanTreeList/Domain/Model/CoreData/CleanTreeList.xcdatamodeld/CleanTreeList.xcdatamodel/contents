@@ -2,9 +2,22 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CDGeolocatedTree" representedClassName="CDGeolocatedTree" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="lng" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="lat" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="lng" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="tree" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDTree" inverseName="fromGeolocatedTree" inverseEntity="CDTree"/>
+    </entity>
+    <entity name="CDTree" representedClassName="CDTree" syncable="YES">
+        <attribute name="address" attributeType="String"/>
+        <attribute name="address2" optional="YES" attributeType="String"/>
+        <attribute name="circumference" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="height" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="species" optional="YES" attributeType="String"/>
+        <relationship name="fromGeolocatedTree" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDGeolocatedTree" inverseName="tree" inverseEntity="CDGeolocatedTree"/>
     </entity>
     <elements>
-        <element name="CDGeolocatedTree" positionX="-54" positionY="-9" width="128" height="59"/>
+        <element name="CDGeolocatedTree" positionX="-54" positionY="-9" width="128" height="89"/>
+        <element name="CDTree" positionX="-36" positionY="27" width="128" height="149"/>
     </elements>
 </model>

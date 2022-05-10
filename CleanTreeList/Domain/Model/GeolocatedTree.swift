@@ -12,9 +12,6 @@ struct GeolocatedTree: Codable, Identifiable {
     var id = UUID()
     let tree: Tree
     let lng, lat: Double
-    var treeId: Int {
-        tree.id
-    }
     
     // Computed Property
     var location: CLLocationCoordinate2D {
@@ -22,6 +19,15 @@ struct GeolocatedTree: Codable, Identifiable {
     }
 }
 
+extension CDGeolocatedTree: DataToDomain {
+    func ToDomain() -> GeolocatedTree {
+        GeolocatedTree(
+            tree: tree.ToDomain(),
+            lng: lng,
+            lat: lat
+        )
+    }
+}
 extension GeolocatedTree {
     static let geolocatedTreeSampleData = GeolocatedTree(tree: Tree.treeSampleData, lng: 10.0, lat: 20.0)
 }
