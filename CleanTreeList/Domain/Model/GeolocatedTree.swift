@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MapKit
 
 struct GeolocatedTree: Codable, Identifiable {
     var id = UUID()
@@ -13,6 +14,11 @@ struct GeolocatedTree: Codable, Identifiable {
     let lng, lat: Double
     var treeId: Int {
         tree.id
+    }
+    
+    // Computed Property
+    var location: CLLocationCoordinate2D {
+      CLLocationCoordinate2D(latitude: lat, longitude: lng)
     }
 }
 

@@ -11,7 +11,7 @@ import SwiftUI
 struct CleanTreeListApp: App {
     var body: some Scene {
         WindowGroup {
-            TreeListView()
+            MainTabView()
         }
     }
 }

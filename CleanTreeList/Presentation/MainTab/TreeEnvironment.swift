@@ -1,19 +1,17 @@
 //
-//  TreeListViewMode.swift
+//  TreeEnvironment.swift
 //  CleanTreeList
 //
-//  Created by Dimitri POCHERON on 05/05/2022.
+//  Created by Dimitri POCHERON on 10/05/2022.
 //
 
 import Foundation
 
-class TreeListViewModel: ObservableObject {
-    
+class TreeEnvironment: ObservableObject {
     var getTreeListUseCase = GetTreeListUseCase(treeListRepository: TreeRepositoryImpl(dataSource: TreeAPIlmpl()))
     @Published var geolocatedTrees: [GeolocatedTree] = []
     @Published var isLoadingPage = false
     private var startIndex = 0
-    private var canLoadMorePages = true
     
     func getMoreTreesIfNeeded(currentTree tree: GeolocatedTree?) async {
         guard let tree = tree else {
@@ -32,7 +30,7 @@ class TreeListViewModel: ObservableObject {
     
     func getTrees() async {
         
-        guard !isLoadingPage && canLoadMorePages else {
+        guard !isLoadingPage else {
             return
         }
         

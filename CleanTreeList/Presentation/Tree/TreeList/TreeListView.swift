@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct TreeListView: View {
-    @StateObject var treeListViewModel = TreeListViewModel()
     
     var body: some View {
-        TreeListComponentView(treeListViewModel: treeListViewModel)
+        TreeListComponentView()
     }
 }
 

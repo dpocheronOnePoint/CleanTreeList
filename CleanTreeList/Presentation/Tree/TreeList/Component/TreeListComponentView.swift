@@ -8,28 +8,25 @@
 import SwiftUI
 
 struct TreeListComponentView: View {
-    @StateObject var treeListViewModel: TreeListViewModel
+    @EnvironmentObject var treeEnvironment: TreeEnvironment
     
     var body: some View {
-        ScrollView {
-            LazyVStack {
-                ForEach(treeListViewModel.geolocatedTrees) { geolocatedTree in
-                    TreeItemView(geolocatedTree: geolocatedTree)
-                        .task {
-                           await treeListViewModel.getMoreTreesIfNeeded(currentTree: geolocatedTree)
-                        }
-                } //: LOOP
-            } //: LAZYVSTACK
-        } //: SCROLL
-        .navigationTitle("Tree List")
-        .task {
-            await treeListViewModel.getTrees()
-        }
+        NavigationView{
+                List {
+                    ForEach(treeEnvironment.geolocatedTrees) { geolocatedTree in
+                        TreeItemView(geolocatedTree: geolocatedTree)
+                            .task {
+                                await treeEnvironment.getMoreTreesIfNeeded(currentTree: geolocatedTree)
+                            }
+                    } //: LOOP
+                } //: LIST
+            .navigationTitle("Tree List")
+        } //: NAVIGATION
     }
 }
 
 struct TreeListComponentView_Previews: PreviewProvider {
     static var previews: some View {
-        TreeListComponentView(treeListViewModel: TreeListViewModel())
+        TreeListComponentView()
     }
 }

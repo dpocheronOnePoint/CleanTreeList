@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		D31103E32823ADE60021299B /* TreeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103E22823ADE60021299B /* TreeListView.swift */; };
-		D31103E52823ADF60021299B /* TreeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103E42823ADF60021299B /* TreeListViewModel.swift */; };
 		D31103E72823AE8D0021299B /* UseCaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103E62823AE8D0021299B /* UseCaseError.swift */; };
 		D31103EA2823B3E60021299B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103E92823B3E60021299B /* Constants.swift */; };
 		D31103EC2823CFB60021299B /* getTreeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103EB2823CFB60021299B /* getTreeList.swift */; };
 		D31103EE2823D00A0021299B /* TreeListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103ED2823D00A0021299B /* TreeListRepository.swift */; };
 		D31103F02823D3E60021299B /* TreeRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103EF2823D3E60021299B /* TreeRepositoryImpl.swift */; };
+		D32CD606282A349D00C7FC80 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD605282A349D00C7FC80 /* MainTabView.swift */; };
+		D32CD609282A34D400C7FC80 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD608282A34D400C7FC80 /* MapView.swift */; };
+		D32CD60B282A4BAF00C7FC80 /* TreeEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD60A282A4BAF00C7FC80 /* TreeEnvironment.swift */; };
 		D34199E82829096400DB45B0 /* TreeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34199E72829096400DB45B0 /* TreeItemView.swift */; };
 		D34199EA2829103400DB45B0 /* TreeListComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34199E92829103400DB45B0 /* TreeListComponentView.swift */; };
 		D37F7A08282167E200E73EB4 /* CleanTreeListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37F7A07282167E200E73EB4 /* CleanTreeListApp.swift */; };
@@ -34,12 +36,14 @@
 
 /* Begin PBXFileReference section */
 		D31103E22823ADE60021299B /* TreeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListView.swift; sourceTree = "<group>"; };
-		D31103E42823ADF60021299B /* TreeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListViewModel.swift; sourceTree = "<group>"; };
 		D31103E62823AE8D0021299B /* UseCaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseError.swift; sourceTree = "<group>"; };
 		D31103E92823B3E60021299B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D31103EB2823CFB60021299B /* getTreeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getTreeList.swift; sourceTree = "<group>"; };
 		D31103ED2823D00A0021299B /* TreeListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListRepository.swift; sourceTree = "<group>"; };
 		D31103EF2823D3E60021299B /* TreeRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeRepositoryImpl.swift; sourceTree = "<group>"; };
+		D32CD605282A349D00C7FC80 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		D32CD608282A34D400C7FC80 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		D32CD60A282A4BAF00C7FC80 /* TreeEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeEnvironment.swift; sourceTree = "<group>"; };
 		D34199E72829096400DB45B0 /* TreeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeItemView.swift; sourceTree = "<group>"; };
 		D34199E92829103400DB45B0 /* TreeListComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListComponentView.swift; sourceTree = "<group>"; };
 		D37F7A04282167E200E73EB4 /* CleanTreeList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanTreeList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +80,23 @@
 				D31103EB2823CFB60021299B /* getTreeList.swift */,
 			);
 			path = TreeList;
+			sourceTree = "<group>";
+		};
+		D32CD604282A348300C7FC80 /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+				D32CD605282A349D00C7FC80 /* MainTabView.swift */,
+				D32CD60A282A4BAF00C7FC80 /* TreeEnvironment.swift */,
+			);
+			path = MainTab;
+			sourceTree = "<group>";
+		};
+		D32CD607282A34C200C7FC80 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				D32CD608282A34D400C7FC80 /* MapView.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		D34199E62829094000DB45B0 /* Component */ = {
@@ -156,7 +177,9 @@
 		D37F7A182821681200E73EB4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D32CD604282A348300C7FC80 /* MainTab */,
 				D3C57B4628239DE10028E4EB /* Tree */,
+				D32CD607282A34C200C7FC80 /* Map */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -245,7 +268,6 @@
 			isa = PBXGroup;
 			children = (
 				D31103E22823ADE60021299B /* TreeListView.swift */,
-				D31103E42823ADF60021299B /* TreeListViewModel.swift */,
 				D34199E62829094000DB45B0 /* Component */,
 			);
 			path = TreeList;
@@ -342,6 +364,8 @@
 				D3C57B3F282396630028E4EB /* Tree.swift in Sources */,
 				D3C57B3D282395BF0028E4EB /* TreeDataSource.swift in Sources */,
 				D34199E82829096400DB45B0 /* TreeItemView.swift in Sources */,
+				D32CD60B282A4BAF00C7FC80 /* TreeEnvironment.swift in Sources */,
+				D32CD609282A34D400C7FC80 /* MapView.swift in Sources */,
 				D37F7A08282167E200E73EB4 /* CleanTreeListApp.swift in Sources */,
 				D3C57B43282398960028E4EB /* APIServiceError.swift in Sources */,
 				D31103EC2823CFB60021299B /* getTreeList.swift in Sources */,
@@ -350,10 +374,10 @@
 				D3C57B3B282395A20028E4EB /* TreeAPIlmpl.swift in Sources */,
 				D3E40B49282506B800025D14 /* JSONDecodeError.swift in Sources */,
 				D3E40B47282502FD00025D14 /* CodableBundleExtension.swift in Sources */,
+				D32CD606282A349D00C7FC80 /* MainTabView.swift in Sources */,
 				D3E40B4C2825224500025D14 /* ApiManager.swift in Sources */,
 				D31103E32823ADE60021299B /* TreeListView.swift in Sources */,
 				D3C57B41282396E50028E4EB /* GeolocatedTree.swift in Sources */,
-				D31103E52823ADF60021299B /* TreeListViewModel.swift in Sources */,
 				D31103F02823D3E60021299B /* TreeRepositoryImpl.swift in Sources */,
 				D34199EA2829103400DB45B0 /* TreeListComponentView.swift in Sources */,
 				D31103EA2823B3E60021299B /* Constants.swift in Sources */,
