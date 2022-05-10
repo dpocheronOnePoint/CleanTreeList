@@ -10,7 +10,7 @@ import CoreData
 
 final class CoreDataStack {
     // MARK: - Properties
-    private let persistentContainerName = "CleanTreeLisy"
+    private let persistentContainerName = "CleanTreeList"
     
     // MARK: - Singleton
     static let sharedInstance = CoreDataStack()
