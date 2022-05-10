@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 protocol getTreeList {
     func execute(startIndex: Int) async -> Result<[GeolocatedTree], UseCaseError>
@@ -39,6 +40,18 @@ struct GetTreeListUseCase: getTreeList {
                 return .failure(.networkError)
             }
             
+        }
+    }
+    
+    func clearData() {
+        let context = CoreDataStack.sharedInstance.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: CDGeolocatedTree.self))
+        do {
+            let objects  = try context.fetch(fetchRequest) as? [NSManagedObject]
+            _ = objects.map{$0.map{context.delete($0)}}
+            CoreDataStack.sharedInstance.saveContext()
+        } catch let error {
+            print("ERROR DELETING : \(error)")
         }
     }
 }

@@ -16,6 +16,10 @@
 		D32CD606282A349D00C7FC80 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD605282A349D00C7FC80 /* MainTabView.swift */; };
 		D32CD609282A34D400C7FC80 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD608282A34D400C7FC80 /* MapView.swift */; };
 		D32CD60B282A4BAF00C7FC80 /* TreeEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD60A282A4BAF00C7FC80 /* TreeEnvironment.swift */; };
+		D32CD611282A517800C7FC80 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD610282A517800C7FC80 /* CoreDataStack.swift */; };
+		D32CD614282A55E400C7FC80 /* CleanTreeList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D32CD612282A55E400C7FC80 /* CleanTreeList.xcdatamodeld */; };
+		D32CD61C282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD61A282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataClass.swift */; };
+		D32CD61D282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD61B282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataProperties.swift */; };
 		D34199E82829096400DB45B0 /* TreeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34199E72829096400DB45B0 /* TreeItemView.swift */; };
 		D34199EA2829103400DB45B0 /* TreeListComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34199E92829103400DB45B0 /* TreeListComponentView.swift */; };
 		D37F7A08282167E200E73EB4 /* CleanTreeListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37F7A07282167E200E73EB4 /* CleanTreeListApp.swift */; };
@@ -44,6 +48,10 @@
 		D32CD605282A349D00C7FC80 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		D32CD608282A34D400C7FC80 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D32CD60A282A4BAF00C7FC80 /* TreeEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeEnvironment.swift; sourceTree = "<group>"; };
+		D32CD610282A517800C7FC80 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		D32CD613282A55E400C7FC80 /* CleanTreeList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CleanTreeList.xcdatamodel; sourceTree = "<group>"; };
+		D32CD61A282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDGeolocatedTree+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D32CD61B282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDGeolocatedTree+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D34199E72829096400DB45B0 /* TreeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeItemView.swift; sourceTree = "<group>"; };
 		D34199E92829103400DB45B0 /* TreeListComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListComponentView.swift; sourceTree = "<group>"; };
 		D37F7A04282167E200E73EB4 /* CleanTreeList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanTreeList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +105,25 @@
 				D32CD608282A34D400C7FC80 /* MapView.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		D32CD60C282A50EB00C7FC80 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D32CD615282A5A6B00C7FC80 /* CoreDataModels */,
+				D32CD612282A55E400C7FC80 /* CleanTreeList.xcdatamodeld */,
+				D32CD610282A517800C7FC80 /* CoreDataStack.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		D32CD615282A5A6B00C7FC80 /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				D32CD61A282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataClass.swift */,
+				D32CD61B282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataProperties.swift */,
+			);
+			path = CoreDataModels;
 			sourceTree = "<group>";
 		};
 		D34199E62829094000DB45B0 /* Component */ = {
@@ -187,6 +214,7 @@
 		D37F7A192821683800E73EB4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D32CD60C282A50EB00C7FC80 /* CoreData */,
 				D3C57B3E282396630028E4EB /* Tree.swift */,
 				D3C57B40282396E50028E4EB /* GeolocatedTree.swift */,
 				D3C57B4428239D2F0028E4EB /* DataToDomain.swift */,
@@ -362,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3C57B3F282396630028E4EB /* Tree.swift in Sources */,
+				D32CD614282A55E400C7FC80 /* CleanTreeList.xcdatamodeld in Sources */,
 				D3C57B3D282395BF0028E4EB /* TreeDataSource.swift in Sources */,
 				D34199E82829096400DB45B0 /* TreeItemView.swift in Sources */,
 				D32CD60B282A4BAF00C7FC80 /* TreeEnvironment.swift in Sources */,
@@ -373,8 +402,10 @@
 				D3AA66C82823928E00862D43 /* Record.swift in Sources */,
 				D3C57B3B282395A20028E4EB /* TreeAPIlmpl.swift in Sources */,
 				D3E40B49282506B800025D14 /* JSONDecodeError.swift in Sources */,
+				D32CD61C282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataClass.swift in Sources */,
 				D3E40B47282502FD00025D14 /* CodableBundleExtension.swift in Sources */,
 				D32CD606282A349D00C7FC80 /* MainTabView.swift in Sources */,
+				D32CD611282A517800C7FC80 /* CoreDataStack.swift in Sources */,
 				D3E40B4C2825224500025D14 /* ApiManager.swift in Sources */,
 				D31103E32823ADE60021299B /* TreeListView.swift in Sources */,
 				D3C57B41282396E50028E4EB /* GeolocatedTree.swift in Sources */,
@@ -383,6 +414,7 @@
 				D31103EA2823B3E60021299B /* Constants.swift in Sources */,
 				D3C57B4528239D2F0028E4EB /* DataToDomain.swift in Sources */,
 				D31103EE2823D00A0021299B /* TreeListRepository.swift in Sources */,
+				D32CD61D282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +613,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D32CD612282A55E400C7FC80 /* CleanTreeList.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D32CD613282A55E400C7FC80 /* CleanTreeList.xcdatamodel */,
+			);
+			currentVersion = D32CD613282A55E400C7FC80 /* CleanTreeList.xcdatamodel */;
+			path = CleanTreeList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D37F79FC282167E200E73EB4 /* Project object */;
 }
