@@ -8,5 +8,5 @@
 import Foundation
 
 protocol TreeListRepository {
-    func getTreeList(startIndex: Int) async throws -> [GeolocatedTree]
+    func getTreeList(startIndex: Int) async throws -> [RecordData]
 }

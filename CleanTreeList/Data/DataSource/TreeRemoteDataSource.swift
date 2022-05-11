@@ -8,6 +8,6 @@
 import Foundation
 
 protocol TreeRemoteDataSource {
-    func getTreeList(startIndex: Int) async throws -> [GeolocatedTree]
-    func getTreeListWithApiManager(startIndex: Int) async throws -> [GeolocatedTree]
+    func getTreeList(startIndex: Int) async throws -> [RecordData]
+    func getTreeListWithApiManager(startIndex: Int) async throws -> [RecordData]
 }

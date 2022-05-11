@@ -43,8 +43,16 @@ struct GetTreeListUseCase: getTreeList {
     func getTreeList(startIndex: Int) async -> Result<[GeolocatedTree], UseCaseError> {
         do {
 
-            let treeList = try await treeListRepository.getTreeList(startIndex: startIndex)
-            return .success(treeList)
+            let records = try await treeListRepository.getTreeList(startIndex: startIndex)
+            return .success(
+                records.map({ item in
+                    GeolocatedTree(
+                        tree: item.fields.ToDomain(),
+                        lng: item.geometry.coordinates[0],
+                        lat: item.geometry.coordinates[1]
+                    )
+                })
+            )
             
         } catch (let error) {
             

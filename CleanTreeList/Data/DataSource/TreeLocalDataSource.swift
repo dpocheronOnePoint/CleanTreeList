@@ -8,5 +8,5 @@
 import Foundation
 
 protocol TreeLocalDataSource {
-    func getTreeListFromLocal() async throws -> [GeolocatedTree]
+    func getTreeListFromLocal() async throws -> [RecordData]
 }

@@ -9,7 +9,7 @@ import Foundation
 
 struct TreeAPIlmpl: TreeRemoteDataSource {
     
-    func getTreeList(startIndex: Int) async throws -> [GeolocatedTree] {
+    func getTreeList(startIndex: Int) async throws -> [RecordData] {
         
         // Define URL and check if it's a good url
         guard var urlComponents = URLComponents(string: "\(OpenDataAPI.baseURL)\(OpenDataAPI.searchPath)") else {
@@ -34,23 +34,16 @@ struct TreeAPIlmpl: TreeRemoteDataSource {
             throw APIServiceError.statusNotOK
         }
         
-        // Map result to Records Object
+        // Map result to Records Object and return it
         guard let result = try? JSONDecoder().decode(Records.self, from: data) else {
             throw APIServiceError.decodingError
         }
         
-        // Convert Records Object to GeolocatedAPI Array and return it
-        return result.records.map({ item in
-            GeolocatedTree(
-                tree: item.fields.ToDomain(),
-                lng: item.geometry.coordinates[0],
-                lat: item.geometry.coordinates[1]
-            )
-        })
+        return result.records
     }
     
     
-    func getTreeListWithApiManager(startIndex: Int) async throws -> [GeolocatedTree] {
+    func getTreeListWithApiManager(startIndex: Int) async throws -> [RecordData] {
         
         // Define request parameters
         let parameters = [
@@ -71,14 +64,7 @@ struct TreeAPIlmpl: TreeRemoteDataSource {
         
         switch result {
         case .success(let response):
-            // Convert Records Object to GeolocatedAPI Array and return it
-            return response.records.map({ item in
-                GeolocatedTree(
-                    tree: item.fields.ToDomain(),
-                    lng: item.geometry.coordinates[0],
-                    lat: item.geometry.coordinates[1]
-                )
-            })
+            return response.records
         case .failure:
             return []
         }

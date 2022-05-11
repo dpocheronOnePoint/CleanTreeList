@@ -19,21 +19,21 @@ struct TreeRepositoryImpl: TreeListRepository {
     var remoteDataSource: TreeRemoteDataSource
     var localDataSource: TreeLocalDataSource
     
-    func getTreeList(startIndex: Int) async throws -> [GeolocatedTree] {
-        let trees: [GeolocatedTree]
+    func getTreeList(startIndex: Int) async throws -> [RecordData] {
+        let records: [RecordData]
         
         switch loadingMethod {
         
         case .Default:
-            trees = try await remoteDataSource.getTreeList(startIndex: startIndex)
+            records = try await remoteDataSource.getTreeList(startIndex: startIndex)
         
         case .WithApiManager:
-            trees = try await remoteDataSource.getTreeListWithApiManager(startIndex: startIndex)
+            records = try await remoteDataSource.getTreeListWithApiManager(startIndex: startIndex)
         
         case .FromLocalJson:
-            trees = try await localDataSource.getTreeListFromLocal()
+            records = try await localDataSource.getTreeListFromLocal()
         }
         
-        return trees
+        return records
     }
 }

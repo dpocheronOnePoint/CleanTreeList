@@ -9,18 +9,10 @@ import Foundation
 
 struct TreeLocalImpl: TreeLocalDataSource {
     
-    func getTreeListFromLocal() async throws -> [GeolocatedTree] {
+    func getTreeListFromLocal() async throws -> [RecordData] {
         
-        // Map result to Records Object
+        // Map result to Records Object and return it
         let result: Records = try Bundle.main.decode(Records.self, from: "trees.json")
-        
-        // Convert Records Object to GeolocatedAPI Array and return it
-        return result.records.map({ item in
-            GeolocatedTree(
-                tree: item.fields.ToDomain(),
-                lng: item.geometry.coordinates[0],
-                lat: item.geometry.coordinates[1]
-            )
-        })
+        return result.records
     }
 }
