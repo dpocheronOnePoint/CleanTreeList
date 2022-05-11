@@ -25,6 +25,8 @@
 		D32CD62D282B8ADC00C7FC80 /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD62C282B8ADC00C7FC80 /* Urls.swift */; };
 		D32CD62F282B8F2900C7FC80 /* TreeLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD62E282B8F2900C7FC80 /* TreeLocalDataSource.swift */; };
 		D32CD632282B906E00C7FC80 /* TreeLocalImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD631282B906E00C7FC80 /* TreeLocalImpl.swift */; };
+		D32CD634282B982800C7FC80 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD633282B982800C7FC80 /* NetworkMonitor.swift */; };
+		D32CD637282BAAC500C7FC80 /* ConnectionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD636282BAAC500C7FC80 /* ConnectionStatusView.swift */; };
 		D34199E82829096400DB45B0 /* TreeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34199E72829096400DB45B0 /* TreeItemView.swift */; };
 		D34199EA2829103400DB45B0 /* TreeListComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34199E92829103400DB45B0 /* TreeListComponentView.swift */; };
 		D37F7A08282167E200E73EB4 /* CleanTreeListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37F7A07282167E200E73EB4 /* CleanTreeListApp.swift */; };
@@ -62,6 +64,8 @@
 		D32CD62C282B8ADC00C7FC80 /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
 		D32CD62E282B8F2900C7FC80 /* TreeLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeLocalDataSource.swift; sourceTree = "<group>"; };
 		D32CD631282B906E00C7FC80 /* TreeLocalImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeLocalImpl.swift; sourceTree = "<group>"; };
+		D32CD633282B982800C7FC80 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		D32CD636282BAAC500C7FC80 /* ConnectionStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatusView.swift; sourceTree = "<group>"; };
 		D34199E72829096400DB45B0 /* TreeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeItemView.swift; sourceTree = "<group>"; };
 		D34199E92829103400DB45B0 /* TreeListComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListComponentView.swift; sourceTree = "<group>"; };
 		D37F7A04282167E200E73EB4 /* CleanTreeList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanTreeList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,11 +168,20 @@
 			path = Local;
 			sourceTree = "<group>";
 		};
+		D32CD635282B9DDF00C7FC80 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D32CD633282B982800C7FC80 /* NetworkMonitor.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		D34199E62829094000DB45B0 /* Component */ = {
 			isa = PBXGroup;
 			children = (
 				D34199E92829103400DB45B0 /* TreeListComponentView.swift */,
 				D34199E72829096400DB45B0 /* TreeItemView.swift */,
+				D32CD636282BAAC500C7FC80 /* ConnectionStatusView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -196,6 +209,7 @@
 				D37F7A182821681200E73EB4 /* Presentation */,
 				D37F7A172821680C00E73EB4 /* Domain */,
 				D37F7A162821680400E73EB4 /* Data */,
+				D32CD635282B9DDF00C7FC80 /* Utils */,
 				D3AA66BC282390F400862D43 /* Ressources */,
 				D37F7A0B282167E200E73EB4 /* Assets.xcassets */,
 				D37F7A0D282167E200E73EB4 /* Preview Content */,
@@ -429,6 +443,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3C57B3F282396630028E4EB /* Tree.swift in Sources */,
+				D32CD637282BAAC500C7FC80 /* ConnectionStatusView.swift in Sources */,
+				D32CD634282B982800C7FC80 /* NetworkMonitor.swift in Sources */,
 				D32CD614282A55E400C7FC80 /* CleanTreeList.xcdatamodeld in Sources */,
 				D3C57B3D282395BF0028E4EB /* TreeRemoteDataSource.swift in Sources */,
 				D34199E82829096400DB45B0 /* TreeItemView.swift in Sources */,
@@ -587,6 +603,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CleanTreeList/Preview Content\"";
+				DEVELOPMENT_TEAM = T2C24KCSV2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -615,6 +632,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CleanTreeList/Preview Content\"";
+				DEVELOPMENT_TEAM = T2C24KCSV2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

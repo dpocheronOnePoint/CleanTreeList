@@ -12,6 +12,7 @@ struct TreeListComponentView: View {
     
     var body: some View {
         NavigationView{
+            VStack (alignment: .center, spacing: 10) {
                 List {
                     ForEach(treeEnvironment.geolocatedTrees) { geolocatedTree in
                         TreeItemView(geolocatedTree: geolocatedTree)
@@ -20,13 +21,20 @@ struct TreeListComponentView: View {
                             }
                     } //: LOOP
                 } //: LIST
+            } // VSTACK
             .navigationTitle("Tree List")
         } //: NAVIGATION
+        .overlay {
+            if treeEnvironment.networkStatus != .satisfied {
+                ConnectionStatusView()
+            }
+        }
     }
 }
 
 struct TreeListComponentView_Previews: PreviewProvider {
     static var previews: some View {
         TreeListComponentView()
+            .environmentObject(TreeEnvironment())
     }
 }

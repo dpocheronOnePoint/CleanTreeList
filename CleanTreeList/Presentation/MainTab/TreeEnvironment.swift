@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import Combine
+import Network
+import SwiftUI
 
 class TreeEnvironment: ObservableObject {
     var getTreeListUseCase = GetTreeListUseCase(
@@ -20,9 +23,25 @@ class TreeEnvironment: ObservableObject {
     @Published var wsError = false
     private var startIndex = 0
     
-    //    init() {
-    //        loadLocalTrees()
-    //    }
+    // Network Check
+    private var cancellables = Set<AnyCancellable>()
+    private let monitorQueue = DispatchQueue(label: "monitor")
+    @Published var networkStatus: NWPath.Status = .satisfied
+    
+    
+    init() {
+        NWPathMonitor()
+            .publisher(queue: monitorQueue)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] status in
+                DispatchQueue.main.async {
+                    withAnimation() {
+                        self?.networkStatus = status
+                    }
+                }
+            }
+            .store(in: &cancellables)
+    }
     
     //    func loadLocalTrees() {
     //        let result = getTreeListUseCase.loadLocalTrees()
