@@ -8,28 +8,34 @@
 import Foundation
 
 class TreeEnvironment: ObservableObject {
-    var getTreeListUseCase = GetTreeListUseCase(treeListRepository: TreeRepositoryImpl(dataSource: TreeAPIlmpl()))
+    var getTreeListUseCase = GetTreeListUseCase(
+        treeListRepository: TreeRepositoryImpl(
+            remoteDataSource: TreeAPIlmpl(),
+            localDataSource: TreeLocalImpl()
+        )
+    )
+    
     @Published var geolocatedTrees: [GeolocatedTree] = []
     @Published var isLoadingPage = false
     @Published var wsError = false
     private var startIndex = 0
     
-//    init() {
-//        loadLocalTrees()
-//    }
+    //    init() {
+    //        loadLocalTrees()
+    //    }
     
-    func loadLocalTrees() {
-        let result = getTreeListUseCase.loadLocalTrees()
-        switch result {
-        case .success(let geolocatedTrees):
-            DispatchQueue.main.async {
-                self.geolocatedTrees = geolocatedTrees
-            }
-        case .failure:
-            // Error from DB
-            break
-        }
-    }
+    //    func loadLocalTrees() {
+    //        let result = getTreeListUseCase.loadLocalTrees()
+    //        switch result {
+    //        case .success(let geolocatedTrees):
+    //            DispatchQueue.main.async {
+    //                self.geolocatedTrees = geolocatedTrees
+    //            }
+    //        case .failure:
+    //            // Error from DB
+    //            break
+    //        }
+    //    }
     
     func getTrees() async {
         
@@ -38,7 +44,7 @@ class TreeEnvironment: ObservableObject {
         }
         
         isLoadingPage = true
-        let result = await getTreeListUseCase.execute(startIndex: startIndex)
+        let result = await getTreeListUseCase.getTreeList(startIndex: startIndex)
         switch result {
         case .success(let geolocatedTrees):
             DispatchQueue.main.async {

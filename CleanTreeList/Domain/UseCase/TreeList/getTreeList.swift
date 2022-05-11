@@ -10,7 +10,7 @@ import CoreData
 
 protocol getTreeList {
     func loadLocalTrees() async -> Result<[GeolocatedTree], UseCaseError>
-    func execute(startIndex: Int) async -> Result<[GeolocatedTree], UseCaseError>
+    func getTreeList(startIndex: Int) async -> Result<[GeolocatedTree], UseCaseError>
 }
 
 struct GetTreeListUseCase: getTreeList {
@@ -40,19 +40,10 @@ struct GetTreeListUseCase: getTreeList {
         }
     }
     
-    func execute(startIndex: Int) async -> Result<[GeolocatedTree], UseCaseError> {
+    func getTreeList(startIndex: Int) async -> Result<[GeolocatedTree], UseCaseError> {
         do {
-            let treeList: [GeolocatedTree]
-            
-            switch EnvironmentVariable.loadingDataMethod {
-            case .Default:
-                treeList = try await treeListRepository.getTreeList(startIndex: startIndex)
-            case .WithApiManager:
-                treeList = try await treeListRepository.getTreeListWithApiManager(startIndex: startIndex)
-            case .FromLocalJson:
-                treeList = try await treeListRepository.getTreeListFromLocal()
-            }
-            
+
+            let treeList = try await treeListRepository.getTreeList(startIndex: startIndex)
             return .success(treeList)
             
         } catch (let error) {
