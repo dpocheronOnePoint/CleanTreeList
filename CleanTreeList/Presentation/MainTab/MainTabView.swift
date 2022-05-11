@@ -12,6 +12,7 @@ struct MainTabView: View {
     
     var body: some View {
         if treeEnvironment.geolocatedTrees.count > 0 {
+            
             TabView {
                 TreeListView()
                     .tabItem {
@@ -26,11 +27,18 @@ struct MainTabView: View {
                     }
             }
             .environmentObject(treeEnvironment)
-        }else{
+            
+        }else if(treeEnvironment.wsError){
+            
+            Text("Une erreur est survenue")
+            
+        } else {
+            
             ProgressView()
                 .task {
                     await treeEnvironment.getTrees()
                 }
+            
         }
         
     }

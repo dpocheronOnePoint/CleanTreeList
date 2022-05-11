@@ -8,6 +8,7 @@
 import Foundation
 
 struct TreeAPIlmpl: TreeDataSource {
+    
     func getTreeList(startIndex: Int) async throws -> [GeolocatedTree] {
         
         // Define URL and check if it's a good url

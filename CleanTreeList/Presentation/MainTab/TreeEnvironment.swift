@@ -11,6 +11,7 @@ class TreeEnvironment: ObservableObject {
     var getTreeListUseCase = GetTreeListUseCase(treeListRepository: TreeRepositoryImpl(dataSource: TreeAPIlmpl()))
     @Published var geolocatedTrees: [GeolocatedTree] = []
     @Published var isLoadingPage = false
+    @Published var wsError = false
     private var startIndex = 0
     
 //    init() {
@@ -48,11 +49,12 @@ class TreeEnvironment: ObservableObject {
                 }
                 self.startIndex += Int(OpenDataAPI.nbrRowPerRequest) ?? 0
                 self.isLoadingPage = false
+                self.wsError = false
             }
         case .failure:
             DispatchQueue.main.async {
-                self.geolocatedTrees = []
                 self.isLoadingPage = false
+                self.wsError = true
             }
         }
     }
