@@ -8,9 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D31103E32823ADE60021299B /* TreeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103E22823ADE60021299B /* TreeListView.swift */; };
-		D31103E72823AE8D0021299B /* UseCaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103E62823AE8D0021299B /* UseCaseError.swift */; };
-		D31103EC2823CFB60021299B /* getTreeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103EB2823CFB60021299B /* getTreeList.swift */; };
-		D31103EE2823D00A0021299B /* TreeListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103ED2823D00A0021299B /* TreeListRepository.swift */; };
+		D31103EC2823CFB60021299B /* TreeListApiUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103EB2823CFB60021299B /* TreeListApiUseCase.swift */; };
+		D31103EE2823D00A0021299B /* TreeListRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103ED2823D00A0021299B /* TreeListRemoteRepository.swift */; };
 		D31103F02823D3E60021299B /* TreeRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103EF2823D3E60021299B /* TreeRepositoryImpl.swift */; };
 		D32CD606282A349D00C7FC80 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD605282A349D00C7FC80 /* MainTabView.swift */; };
 		D32CD609282A34D400C7FC80 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD608282A34D400C7FC80 /* MapView.swift */; };
@@ -40,6 +39,11 @@
 		D3C57B41282396E50028E4EB /* GeolocatedTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57B40282396E50028E4EB /* GeolocatedTree.swift */; };
 		D3C57B43282398960028E4EB /* APIServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57B42282398960028E4EB /* APIServiceError.swift */; };
 		D3C57B4528239D2F0028E4EB /* DataToDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57B4428239D2F0028E4EB /* DataToDomain.swift */; };
+		D3D7E27E282BDD2200284215 /* TreeCDDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E27D282BDD2200284215 /* TreeCDDataSource.swift */; };
+		D3D7E280282BEA6C00284215 /* TreeCDImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E27F282BEA6C00284215 /* TreeCDImpl.swift */; };
+		D3D7E282282BEC1500284215 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E281282BEC1500284215 /* CoreDataError.swift */; };
+		D3D7E284282BF6ED00284215 /* TreeCDRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E283282BF6ED00284215 /* TreeCDRepositoryImpl.swift */; };
+		D3D7E286282BF8EC00284215 /* TreeListCDUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E285282BF8EC00284215 /* TreeListCDUseCase.swift */; };
 		D3E40B47282502FD00025D14 /* CodableBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E40B46282502FC00025D14 /* CodableBundleExtension.swift */; };
 		D3E40B49282506B800025D14 /* JSONDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E40B48282506B800025D14 /* JSONDecodeError.swift */; };
 		D3E40B4C2825224500025D14 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E40B4B2825224500025D14 /* ApiManager.swift */; };
@@ -47,9 +51,8 @@
 
 /* Begin PBXFileReference section */
 		D31103E22823ADE60021299B /* TreeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListView.swift; sourceTree = "<group>"; };
-		D31103E62823AE8D0021299B /* UseCaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseError.swift; sourceTree = "<group>"; };
-		D31103EB2823CFB60021299B /* getTreeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getTreeList.swift; sourceTree = "<group>"; };
-		D31103ED2823D00A0021299B /* TreeListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListRepository.swift; sourceTree = "<group>"; };
+		D31103EB2823CFB60021299B /* TreeListApiUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListApiUseCase.swift; sourceTree = "<group>"; };
+		D31103ED2823D00A0021299B /* TreeListRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListRemoteRepository.swift; sourceTree = "<group>"; };
 		D31103EF2823D3E60021299B /* TreeRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeRepositoryImpl.swift; sourceTree = "<group>"; };
 		D32CD605282A349D00C7FC80 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		D32CD608282A34D400C7FC80 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -80,6 +83,11 @@
 		D3C57B40282396E50028E4EB /* GeolocatedTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocatedTree.swift; sourceTree = "<group>"; };
 		D3C57B42282398960028E4EB /* APIServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceError.swift; sourceTree = "<group>"; };
 		D3C57B4428239D2F0028E4EB /* DataToDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataToDomain.swift; sourceTree = "<group>"; };
+		D3D7E27D282BDD2200284215 /* TreeCDDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeCDDataSource.swift; sourceTree = "<group>"; };
+		D3D7E27F282BEA6C00284215 /* TreeCDImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeCDImpl.swift; sourceTree = "<group>"; };
+		D3D7E281282BEC1500284215 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
+		D3D7E283282BF6ED00284215 /* TreeCDRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeCDRepositoryImpl.swift; sourceTree = "<group>"; };
+		D3D7E285282BF8EC00284215 /* TreeListCDUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListCDUseCase.swift; sourceTree = "<group>"; };
 		D3E40B46282502FC00025D14 /* CodableBundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableBundleExtension.swift; sourceTree = "<group>"; };
 		D3E40B48282506B800025D14 /* JSONDecodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodeError.swift; sourceTree = "<group>"; };
 		D3E40B4B2825224500025D14 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
@@ -99,7 +107,8 @@
 		D31103E82823AE9D0021299B /* TreeList */ = {
 			isa = PBXGroup;
 			children = (
-				D31103EB2823CFB60021299B /* getTreeList.swift */,
+				D31103EB2823CFB60021299B /* TreeListApiUseCase.swift */,
+				D3D7E285282BF8EC00284215 /* TreeListCDUseCase.swift */,
 			);
 			path = TreeList;
 			sourceTree = "<group>";
@@ -125,9 +134,11 @@
 		D32CD60C282A50EB00C7FC80 /* CoreDataStorage */ = {
 			isa = PBXGroup;
 			children = (
+				D3D7E281282BEC1500284215 /* CoreDataError.swift */,
+				D3D7E27F282BEA6C00284215 /* TreeCDImpl.swift */,
+				D32CD610282A517800C7FC80 /* CoreDataStack.swift */,
 				D32CD615282A5A6B00C7FC80 /* CoreDataModels */,
 				D32CD612282A55E400C7FC80 /* CleanTreeList.xcdatamodeld */,
-				D32CD610282A517800C7FC80 /* CoreDataStack.swift */,
 			);
 			path = CoreDataStorage;
 			sourceTree = "<group>";
@@ -211,8 +222,6 @@
 				D37F7A162821680400E73EB4 /* Data */,
 				D32CD635282B9DDF00C7FC80 /* Utils */,
 				D3AA66BC282390F400862D43 /* Ressources */,
-				D37F7A0B282167E200E73EB4 /* Assets.xcassets */,
-				D37F7A0D282167E200E73EB4 /* Preview Content */,
 			);
 			path = CleanTreeList;
 			sourceTree = "<group>";
@@ -238,7 +247,10 @@
 			children = (
 				D3AA66C42823921E00862D43 /* Repository */,
 				D3AA66C52823923000862D43 /* DataSource */,
+				D3C57B39282395890028E4EB /* API */,
+				D32CD630282B903400C7FC80 /* Local */,
 				D32CD626282A925900C7FC80 /* PersistentStorages */,
+				D3AA66C62823927F00862D43 /* Models */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -276,7 +288,7 @@
 		D37F7A1A2821683E00E73EB4 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				D31103ED2823D00A0021299B /* TreeListRepository.swift */,
+				D31103ED2823D00A0021299B /* TreeListRemoteRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -284,7 +296,6 @@
 		D37F7A1D2821686400E73EB4 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				D31103E62823AE8D0021299B /* UseCaseError.swift */,
 				D31103E82823AE9D0021299B /* TreeList */,
 			);
 			path = UseCase;
@@ -293,6 +304,8 @@
 		D3AA66BC282390F400862D43 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				D37F7A0B282167E200E73EB4 /* Assets.xcassets */,
+				D37F7A0D282167E200E73EB4 /* Preview Content */,
 				D3AA66BF2823917800862D43 /* trees.json */,
 			);
 			path = Ressources;
@@ -302,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				D31103EF2823D3E60021299B /* TreeRepositoryImpl.swift */,
+				D3D7E283282BF6ED00284215 /* TreeCDRepositoryImpl.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -311,9 +325,7 @@
 			children = (
 				D3C57B3C282395BF0028E4EB /* TreeRemoteDataSource.swift */,
 				D32CD62E282B8F2900C7FC80 /* TreeLocalDataSource.swift */,
-				D3C57B39282395890028E4EB /* API */,
-				D32CD630282B903400C7FC80 /* Local */,
-				D3AA66C62823927F00862D43 /* Models */,
+				D3D7E27D282BDD2200284215 /* TreeCDDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -442,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D7E284282BF6ED00284215 /* TreeCDRepositoryImpl.swift in Sources */,
 				D3C57B3F282396630028E4EB /* Tree.swift in Sources */,
 				D32CD637282BAAC500C7FC80 /* ConnectionStatusView.swift in Sources */,
 				D32CD634282B982800C7FC80 /* NetworkMonitor.swift in Sources */,
@@ -455,9 +468,8 @@
 				D32CD62F282B8F2900C7FC80 /* TreeLocalDataSource.swift in Sources */,
 				D3C57B43282398960028E4EB /* APIServiceError.swift in Sources */,
 				D32CD62D282B8ADC00C7FC80 /* Urls.swift in Sources */,
-				D31103EC2823CFB60021299B /* getTreeList.swift in Sources */,
+				D31103EC2823CFB60021299B /* TreeListApiUseCase.swift in Sources */,
 				D32CD624282A6C1900C7FC80 /* CDTree+CoreDataClass.swift in Sources */,
-				D31103E72823AE8D0021299B /* UseCaseError.swift in Sources */,
 				D3AA66C82823928E00862D43 /* Record.swift in Sources */,
 				D3C57B3B282395A20028E4EB /* TreeAPIlmpl.swift in Sources */,
 				D3E40B49282506B800025D14 /* JSONDecodeError.swift in Sources */,
@@ -465,15 +477,19 @@
 				D3E40B47282502FD00025D14 /* CodableBundleExtension.swift in Sources */,
 				D32CD606282A349D00C7FC80 /* MainTabView.swift in Sources */,
 				D32CD611282A517800C7FC80 /* CoreDataStack.swift in Sources */,
+				D3D7E282282BEC1500284215 /* CoreDataError.swift in Sources */,
 				D3E40B4C2825224500025D14 /* ApiManager.swift in Sources */,
 				D31103E32823ADE60021299B /* TreeListView.swift in Sources */,
 				D3C57B41282396E50028E4EB /* GeolocatedTree.swift in Sources */,
+				D3D7E286282BF8EC00284215 /* TreeListCDUseCase.swift in Sources */,
+				D3D7E280282BEA6C00284215 /* TreeCDImpl.swift in Sources */,
 				D32CD632282B906E00C7FC80 /* TreeLocalImpl.swift in Sources */,
 				D31103F02823D3E60021299B /* TreeRepositoryImpl.swift in Sources */,
 				D34199EA2829103400DB45B0 /* TreeListComponentView.swift in Sources */,
+				D3D7E27E282BDD2200284215 /* TreeCDDataSource.swift in Sources */,
 				D32CD625282A6C1900C7FC80 /* CDTree+CoreDataProperties.swift in Sources */,
 				D3C57B4528239D2F0028E4EB /* DataToDomain.swift in Sources */,
-				D31103EE2823D00A0021299B /* TreeListRepository.swift in Sources */,
+				D31103EE2823D00A0021299B /* TreeListRemoteRepository.swift in Sources */,
 				D32CD61D282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -602,7 +618,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CleanTreeList/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CleanTreeList/Ressources/Preview Content\"";
 				DEVELOPMENT_TEAM = T2C24KCSV2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -631,7 +647,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CleanTreeList/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CleanTreeList/Ressources/Preview Content\"";
 				DEVELOPMENT_TEAM = T2C24KCSV2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

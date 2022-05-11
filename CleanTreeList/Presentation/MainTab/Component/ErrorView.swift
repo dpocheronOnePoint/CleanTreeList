@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ErrorView: View {
+    @EnvironmentObject var treeEnvironment: TreeEnvironment
+    
     var body: some View {
         VStack(spacing: 20){
             
@@ -27,7 +29,9 @@ struct ErrorView: View {
             Spacer()
             
             Button(action:{
-                
+                Task {
+                    await treeEnvironment.getTrees()
+                }
             }) {
                 Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
                     .imageScale(.large)
@@ -35,7 +39,7 @@ struct ErrorView: View {
                     .font(.system(.title3, design: .rounded))
                     .fontWeight(.bold)
             }
-            .buttonStyle(.borderedProminent)
+            .buttonStyle(.bordered)
             .buttonBorderShape(.capsule)
             .controlSize(.large)
         } //: VStack

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol TreeListRepository {
+protocol TreeListRemoteRepository {
     func getTreeList(startIndex: Int) async throws -> [RecordData]
 }

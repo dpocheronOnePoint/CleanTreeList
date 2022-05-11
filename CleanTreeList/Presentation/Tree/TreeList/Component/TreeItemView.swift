@@ -19,13 +19,9 @@ struct TreeItemView: View {
                 Text(geolocatedTree.tree.address)
                     .font(.caption)
                     .foregroundColor(.secondary)
-                
-                if (geolocatedTree.tree.address2 != nil && geolocatedTree.tree.address2!.count > 0) {
-                    Text(geolocatedTree.tree.address2!)
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                }
+                    .lineLimit(2)
             } // VSTACK
+            .frame(width: 130)
             
             Spacer()
             
@@ -48,6 +44,7 @@ struct TreeItemView: View {
                             .foregroundColor(.secondary)
                     } //: HSTACK
             } //: VSTACK
+            .frame(width: 180)
         } //: HSTACK
         .padding()
     }

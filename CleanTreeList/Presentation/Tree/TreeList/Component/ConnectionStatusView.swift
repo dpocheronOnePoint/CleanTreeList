@@ -40,5 +40,6 @@ struct ConnectionStatusView_Previews: PreviewProvider {
     static var previews: some View {
         ConnectionStatusView()
             .environmentObject(TreeEnvironment())
+            .previewLayout(.sizeThatFits)
     }
 }

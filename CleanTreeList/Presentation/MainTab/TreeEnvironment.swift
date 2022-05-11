@@ -11,7 +11,7 @@ import Network
 import SwiftUI
 
 class TreeEnvironment: ObservableObject {
-    var getTreeListUseCase = GetTreeListUseCase(
+    var treeListApiUseCase = TreeListApiUseCase(
         treeListRepository: TreeRepositoryImpl(
             remoteDataSource: TreeAPIlmpl(),
             localDataSource: TreeLocalImpl()
@@ -19,6 +19,7 @@ class TreeEnvironment: ObservableObject {
     )
     
     @Published var geolocatedTrees: [GeolocatedTree] = []
+    @Published var geolocatedTreesFromCD: [GeolocatedTree] = []
     @Published var isLoadingPage = false
     @Published var wsError = false
     private var startIndex = 0
@@ -26,35 +27,48 @@ class TreeEnvironment: ObservableObject {
     // Network Check
     private var cancellables = Set<AnyCancellable>()
     private let monitorQueue = DispatchQueue(label: "monitor")
-    @Published var networkStatus: NWPath.Status = .satisfied
+    @Published var networkStatusIsOK: Bool = true
     
     
     init() {
+        initializeNewtorwMonitor()
+//        loadCDGeolocatedTrees()
+    }
+    
+    // MARK: - Initializers
+    
+    func initializeNewtorwMonitor() {
         NWPathMonitor()
             .publisher(queue: monitorQueue)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] status in
                 DispatchQueue.main.async {
-                    withAnimation() {
-                        self?.networkStatus = status
+                    if status == .satisfied {
+                        withAnimation() {
+                            self?.networkStatusIsOK = true
+                        }
+                    }else{
+                        withAnimation() {
+                            self?.networkStatusIsOK = false
+                        }
                     }
                 }
             }
             .store(in: &cancellables)
     }
     
-    //    func loadLocalTrees() {
-    //        let result = getTreeListUseCase.loadLocalTrees()
-    //        switch result {
-    //        case .success(let geolocatedTrees):
-    //            DispatchQueue.main.async {
-    //                self.geolocatedTrees = geolocatedTrees
-    //            }
-    //        case .failure:
-    //            // Error from DB
-    //            break
-    //        }
-    //    }
+//    func loadCDGeolocatedTrees() {
+//        let result = getTreeListUseCase.loadLocalTrees()
+//        switch result {
+//        case .success(let geolocatedTrees):
+//            DispatchQueue.main.async {
+//                self.geolocatedTreesFromCD = geolocatedTrees
+//            }
+//        case .failure:
+//            // Error from DB
+//            break
+//        }
+//    }
     
     func getTrees() async {
         
@@ -63,7 +77,8 @@ class TreeEnvironment: ObservableObject {
         }
         
         isLoadingPage = true
-        let result = await getTreeListUseCase.getTreeList(startIndex: startIndex)
+        wsError = false
+        let result = await treeListApiUseCase.getTreeList(startIndex: startIndex)
         switch result {
         case .success(let geolocatedTrees):
             DispatchQueue.main.async {

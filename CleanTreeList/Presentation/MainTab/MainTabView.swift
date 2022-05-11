@@ -30,7 +30,8 @@ struct MainTabView: View {
             
         }else if(treeEnvironment.wsError){
             
-            Text("Une erreur est survenue")
+            ErrorView()
+                .environmentObject(treeEnvironment)
             
         } else {
             

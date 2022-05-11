@@ -14,10 +14,12 @@ struct TreeListComponentView: View {
         NavigationView{
             VStack (alignment: .center, spacing: 10) {
                 List {
-                    ForEach(treeEnvironment.geolocatedTrees) { geolocatedTree in
+                    ForEach(treeEnvironment.networkStatusIsOK ? treeEnvironment.geolocatedTrees : treeEnvironment.geolocatedTreesFromCD) { geolocatedTree in
                         TreeItemView(geolocatedTree: geolocatedTree)
                             .task {
-                                await treeEnvironment.getMoreTreesIfNeeded(currentTree: geolocatedTree)
+                                if(treeEnvironment.networkStatusIsOK){
+                                    await treeEnvironment.getMoreTreesIfNeeded(currentTree: geolocatedTree)
+                                }
                             }
                     } //: LOOP
                 } //: LIST
@@ -25,8 +27,9 @@ struct TreeListComponentView: View {
             .navigationTitle("Tree List")
         } //: NAVIGATION
         .overlay {
-            if treeEnvironment.networkStatus != .satisfied {
+            if !treeEnvironment.networkStatusIsOK {
                 ConnectionStatusView()
+                    .transition(.move(edge: .bottom))
             }
         }
     }

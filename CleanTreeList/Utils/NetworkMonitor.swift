@@ -8,6 +8,9 @@
 import Network
 import Combine
 
+// !!! WARNING !!!
+// For no reason, interactive connection update only work's on real device (Not on simulator)
+
 // MARK: - NWPathMonitor Subscription
 extension NWPathMonitor {
     class NetworkStatusSubscription<S: Subscriber>: Subscription where S.Input == NWPath.Status {

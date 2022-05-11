@@ -11,7 +11,7 @@ enum LoadingDataMethod {
     case Default, WithApiManager, FromLocalJson
 }
 
-struct TreeRepositoryImpl: TreeListRepository {
+struct TreeRepositoryImpl: TreeListRemoteRepository {
     
     // Constant to select the loading method
     let loadingMethod: LoadingDataMethod = .Default
