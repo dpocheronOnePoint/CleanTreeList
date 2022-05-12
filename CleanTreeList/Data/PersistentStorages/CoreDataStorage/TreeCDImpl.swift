@@ -8,9 +8,9 @@
 import Foundation
 import CoreData
 
-struct TreeCDImpl: TreeDBDataSource {
+struct TreeCDImpl: TreeCDDataSource {
     
-    func loadLocalTrees() throws -> [CDGeolocatedTree] {
+    func loadLocalTrees() async throws -> [CDGeolocatedTree] {
         
         let fetchRequest: NSFetchRequest<CDGeolocatedTree>
         fetchRequest = CDGeolocatedTree.fetchRequest()
@@ -20,15 +20,6 @@ struct TreeCDImpl: TreeDBDataSource {
         guard let cdGeolocatedTrees: [CDGeolocatedTree] = try? context.fetch(fetchRequest) else {
             throw CoreDataError.fetchingError
         }
-        
-//        let treeList: [GeolocatedTree] = cdGeolocatedTrees.map({ item in
-//            GeolocatedTree(
-//                tree: item.tree.ToDomain(),
-//                lng: item.lng,
-//                lat: item.lat
-//            )
-//        })
-        
         return cdGeolocatedTrees
     }
     

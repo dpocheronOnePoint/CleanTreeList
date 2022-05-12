@@ -17,8 +17,25 @@ protocol TreeListCDUseCaseProtocol {
 }
 
 struct TreeListCDUseCase: TreeListCDUseCaseProtocol {
+    
+    var treeListCDRepository: TreeListCDRepository
+    
     func loadLocalTrees() async -> Result<[GeolocatedTree], UseCaseCDError> {
-        return .success([])
+        do {
+            let cdGeolocatedTrees = try await treeListCDRepository.loadLocalTrees()
+            
+            let geolocatedTrees: [GeolocatedTree] = cdGeolocatedTrees.map({ item in
+                GeolocatedTree(
+                    tree: item.tree.ToDomain(),
+                    lng: item.lng,
+                    lat: item.lat
+                )
+            })
+            
+            return .success(geolocatedTrees)
+        } catch {
+            return .failure(.fetchingError)
+        }
     }
     
     

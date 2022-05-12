@@ -19,7 +19,7 @@ protocol TreeListApiUseCaseProtocol {
 
 struct TreeListApiUseCase: TreeListApiUseCaseProtocol {
     
-    var treeListRepository: TreeListRemoteRepository
+    var treeListRemoteRepository: TreeListRemoteRepository
     
 //    func loadLocalTrees() -> Result<[GeolocatedTree], UseCaseError> {
 //
@@ -47,7 +47,7 @@ struct TreeListApiUseCase: TreeListApiUseCaseProtocol {
     func getTreeList(startIndex: Int) async -> Result<[GeolocatedTree], UseCaseApiError> {
         do {
 
-            let records = try await treeListRepository.getTreeList(startIndex: startIndex)
+            let records = try await treeListRemoteRepository.getTreeList(startIndex: startIndex)
             return .success(
                 records.map({ item in
                     GeolocatedTree(

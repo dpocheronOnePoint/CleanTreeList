@@ -12,9 +12,15 @@ import SwiftUI
 
 class TreeEnvironment: ObservableObject {
     var treeListApiUseCase = TreeListApiUseCase(
-        treeListRepository: TreeRepositoryImpl(
+        treeListRemoteRepository: TreesRemoteRepositoryImpl(
             remoteDataSource: TreeAPIlmpl(),
             localDataSource: TreeLocalImpl()
+        )
+    )
+    
+    var treeListCDUseCase = TreeListCDUseCase(
+        treeListCDRepository: TreesCDRepositoryImpl(
+            treeCDDataSource: TreeCDImpl()
         )
     )
     
@@ -32,7 +38,7 @@ class TreeEnvironment: ObservableObject {
     
     init() {
         initializeNewtorwMonitor()
-//        loadCDGeolocatedTrees()
+        //        loadCDGeolocatedTrees()
     }
     
     // MARK: - Initializers
@@ -57,18 +63,18 @@ class TreeEnvironment: ObservableObject {
             .store(in: &cancellables)
     }
     
-//    func loadCDGeolocatedTrees() {
-//        let result = getTreeListUseCase.loadLocalTrees()
-//        switch result {
-//        case .success(let geolocatedTrees):
-//            DispatchQueue.main.async {
-//                self.geolocatedTreesFromCD = geolocatedTrees
-//            }
-//        case .failure:
-//            // Error from DB
-//            break
-//        }
-//    }
+    func loadCDGeolocatedTrees() async {
+        let result = await treeListCDUseCase.loadLocalTrees()
+        
+        switch result {
+        case .success(let geolocatedTrees):
+            DispatchQueue.main.async {
+                self.geolocatedTreesFromCD = geolocatedTrees
+            }
+        case .failure:
+            break
+        }
+    }
     
     func getTrees() async {
         
