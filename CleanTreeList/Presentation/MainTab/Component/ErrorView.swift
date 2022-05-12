@@ -43,11 +43,13 @@ struct ErrorView: View {
             .buttonBorderShape(.capsule)
             .controlSize(.large)
         } //: VStack
+        .padding()
     }
 }
 
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
         ErrorView()
+            .environmentObject(TreeEnvironment())
     }
 }

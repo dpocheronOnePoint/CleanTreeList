@@ -82,8 +82,12 @@ class TreeEnvironment: ObservableObject {
         switch result {
         case .success(let geolocatedTrees):
             DispatchQueue.main.async {
-                self.geolocatedTrees = geolocatedTrees
-                self.networkStatus = .dataLoadedFromCD
+                if(geolocatedTrees.isEmpty){
+                    self.networkStatus = .networkFail
+                }else{
+                    self.geolocatedTrees = geolocatedTrees
+                    self.networkStatus = .dataLoadedFromCD
+                }
             }
         case .failure:
             self.networkStatus = .networkFail
@@ -103,7 +107,7 @@ class TreeEnvironment: ObservableObject {
         case .success(let geolocatedTrees):
             DispatchQueue.main.async {
                 if self.startIndex == 0 {
-                    self.geolocatedTrees = geolocatedTrees
+                    self.geolocatedTrees = geolocatedTrees.sorted { $0.tree.name! < $1.tree.name! }
                 } else {
                     self.geolocatedTrees.append(contentsOf: geolocatedTrees)
                 }
@@ -112,7 +116,10 @@ class TreeEnvironment: ObservableObject {
                 self.isLoadingPage = false
             }
             
-            await self.updateDataBase(geolocatedTrees: geolocatedTrees)
+            // Store in CoreData only the 20 first 
+            if self.startIndex == 0 {
+                await self.updateDataBase(geolocatedTrees: geolocatedTrees)
+            }
             
         case .failure:
             DispatchQueue.main.async {

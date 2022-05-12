@@ -19,6 +19,9 @@ struct TreeCDImpl: TreeCDDataSource {
         let fetchRequest: NSFetchRequest<CDGeolocatedTree>
         fetchRequest = CDGeolocatedTree.fetchRequest()
         
+        let sortDescriptor = NSSortDescriptor(key: "tree.name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
         let context = CoreDataStack.sharedInstance.viewContext
         
         guard let cdGeolocatedTrees: [CDGeolocatedTree] = try? context.fetch(fetchRequest) else {
