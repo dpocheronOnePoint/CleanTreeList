@@ -25,3 +25,13 @@ extension CDGeolocatedTree {
 extension CDGeolocatedTree : Identifiable {
 
 }
+
+extension GeolocatedTree: DomainToCoreData {
+    func ToCoreData() -> CDGeolocatedTree {
+        let cdGeolocatedTree = CDGeolocatedTree(context: CoreDataStack.sharedInstance.viewContext)
+        cdGeolocatedTree.tree = tree.ToCoreData()
+        cdGeolocatedTree.lat = lat
+        cdGeolocatedTree.lng = lng
+        return cdGeolocatedTree
+    }
+}

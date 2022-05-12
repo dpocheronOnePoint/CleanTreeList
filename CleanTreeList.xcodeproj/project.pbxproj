@@ -44,6 +44,7 @@
 		D3D7E284282BF6ED00284215 /* TreesCDRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E283282BF6ED00284215 /* TreesCDRepositoryImpl.swift */; };
 		D3D7E286282BF8EC00284215 /* TreeListCDUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E285282BF8EC00284215 /* TreeListCDUseCase.swift */; };
 		D3D7E288282CDCBB00284215 /* TreeListCDRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E287282CDCBB00284215 /* TreeListCDRepository.swift */; };
+		D3D7E28A282D25E300284215 /* DomainToCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E289282D25E300284215 /* DomainToCoreData.swift */; };
 		D3E40B47282502FD00025D14 /* CodableBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E40B46282502FC00025D14 /* CodableBundleExtension.swift */; };
 		D3E40B49282506B800025D14 /* JSONDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E40B48282506B800025D14 /* JSONDecodeError.swift */; };
 		D3E40B4C2825224500025D14 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E40B4B2825224500025D14 /* ApiManager.swift */; };
@@ -88,6 +89,7 @@
 		D3D7E283282BF6ED00284215 /* TreesCDRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreesCDRepositoryImpl.swift; sourceTree = "<group>"; };
 		D3D7E285282BF8EC00284215 /* TreeListCDUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListCDUseCase.swift; sourceTree = "<group>"; };
 		D3D7E287282CDCBB00284215 /* TreeListCDRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListCDRepository.swift; sourceTree = "<group>"; };
+		D3D7E289282D25E300284215 /* DomainToCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainToCoreData.swift; sourceTree = "<group>"; };
 		D3E40B46282502FC00025D14 /* CodableBundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableBundleExtension.swift; sourceTree = "<group>"; };
 		D3E40B48282506B800025D14 /* JSONDecodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodeError.swift; sourceTree = "<group>"; };
 		D3E40B4B2825224500025D14 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				D32CD623282A6C1900C7FC80 /* CDTree+CoreDataProperties.swift */,
 				D32CD61A282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataClass.swift */,
 				D32CD61B282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataProperties.swift */,
+				D3D7E289282D25E300284215 /* DomainToCoreData.swift */,
 			);
 			path = CoreDataModels;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				D3C57B3D282395BF0028E4EB /* TreeRemoteDataSource.swift in Sources */,
 				D34199E82829096400DB45B0 /* TreeItemView.swift in Sources */,
 				D32CD60B282A4BAF00C7FC80 /* TreeEnvironment.swift in Sources */,
+				D3D7E28A282D25E300284215 /* DomainToCoreData.swift in Sources */,
 				D3D7E288282CDCBB00284215 /* TreeListCDRepository.swift in Sources */,
 				D32CD62B282AA8F600C7FC80 /* ErrorView.swift in Sources */,
 				D32CD609282A34D400C7FC80 /* MapView.swift in Sources */,

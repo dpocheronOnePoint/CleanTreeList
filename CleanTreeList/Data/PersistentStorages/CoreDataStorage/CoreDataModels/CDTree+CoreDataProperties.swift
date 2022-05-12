@@ -30,3 +30,16 @@ extension CDTree {
 extension CDTree : Identifiable {
 
 }
+
+extension Tree: DomainToCoreData {
+    func ToCoreData() -> CDTree {
+        let cdTree = CDTree(context: CoreDataStack.sharedInstance.viewContext)
+        cdTree.name = name
+        cdTree.species = species
+        cdTree.address2 = address2
+        cdTree.address = address
+        cdTree.height = height
+        cdTree.circumference = circumference
+        return cdTree
+    }
+}
