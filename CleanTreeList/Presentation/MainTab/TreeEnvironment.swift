@@ -14,6 +14,9 @@ enum NetworkStatus {
     case requstInProgress, dataLoadedFromWS, dataLoadedFromCD, networkFail
 }
 
+// FeedbackNotification to improve UX experience --> Only work on RealDevice
+let feedback = UINotificationFeedbackGenerator()
+
 class TreeEnvironment: ObservableObject {
     var treeListApiUseCase = TreeListApiUseCase(
         treeListRemoteRepository: TreesRemoteRepositoryImpl(
@@ -29,6 +32,7 @@ class TreeEnvironment: ObservableObject {
     )
     
     @Published var geolocatedTrees: [GeolocatedTree] = []
+    @Published var connexionAlreadyGoBack = false
     @Published var isLoadingPage = false
     private var startIndex = 0
     
@@ -40,8 +44,13 @@ class TreeEnvironment: ObservableObject {
         didSet {
             Task{
                 if(internetConnexionIsOk) {
-                    await getTrees()
+                    // To prevent connexion to 4G and after connexion to Wifi --> Double call
+                    if(!connexionAlreadyGoBack){
+                        connexionAlreadyGoBack = true
+                        await getTrees()
+                    }
                 }else{
+                    connexionAlreadyGoBack = false
                     await loadCDGeolocatedTrees()
                 }
             }
@@ -51,9 +60,6 @@ class TreeEnvironment: ObservableObject {
     
     init() {
         initializeNewtorwMonitor()
-        Task {
-            await loadCDGeolocatedTrees()
-        }
     }
     
     // MARK: - Initializers
@@ -89,13 +95,25 @@ class TreeEnvironment: ObservableObject {
                 if(geolocatedTrees.isEmpty){
                     self.networkStatus = .networkFail
                 }else{
-                    self.geolocatedTrees = geolocatedTrees
-                    self.networkStatus = .dataLoadedFromCD
+                    self.animateUpdatedList(geolocatedTrees: geolocatedTrees, networkStatus: .dataLoadedFromCD)
                 }
             }
         case .failure:
             self.networkStatus = .networkFail
             break
+        }
+    }
+    
+    private func animateUpdatedList(geolocatedTrees: [GeolocatedTree], networkStatus: NetworkStatus) {
+        withAnimation(.linear(duration: 0.2)){
+            self.geolocatedTrees = []
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            withAnimation(.linear(duration: 0.2)){
+                self.geolocatedTrees = geolocatedTrees
+            }
+            self.networkStatus = networkStatus
+            feedback.notificationOccurred(.success)
         }
     }
     
@@ -105,19 +123,20 @@ class TreeEnvironment: ObservableObject {
             return
         }
         
+        print("GetTrees")
+        
         isLoadingPage = true
         let result = await treeListApiUseCase.getTreeList(startIndex: startIndex)
         switch result {
         case .success(let geolocatedTrees):
             DispatchQueue.main.async {
                 if self.startIndex == 0 {
-                    self.geolocatedTrees = geolocatedTrees.sorted { $0.tree.name! < $1.tree.name! }
+                    self.animateUpdatedList(geolocatedTrees: geolocatedTrees.sorted { $0.tree.name! < $1.tree.name! }, networkStatus: .dataLoadedFromWS)
                 } else {
                     var unSortedGeolocatedTree = geolocatedTrees
                     unSortedGeolocatedTree.append(contentsOf: self.geolocatedTrees)
                     self.geolocatedTrees = unSortedGeolocatedTree.sorted { $0.tree.name! < $1.tree.name! }
                 }
-                self.networkStatus = .dataLoadedFromWS
                 self.startIndex += Int(OpenDataAPI.nbrRowPerRequest) ?? 0
                 self.isLoadingPage = false
             }
@@ -137,6 +156,7 @@ class TreeEnvironment: ObservableObject {
     
     func getMoreTreesIfNeeded(currentTree tree: GeolocatedTree?) async {
         guard let tree = tree else {
+            print("Get more First !!")
             await getTrees()
             return
         }
@@ -146,6 +166,7 @@ class TreeEnvironment: ObservableObject {
         
         // Search the currentTree Index and check if it's EndIndex less 5 (To anticipate the end of the list to load more trees)
         if geolocatedTrees.firstIndex(where: {$0.id == tree.id}) == thresholdIndex {
+            print("Get more Second !!")
             await getTrees()
         }
     }

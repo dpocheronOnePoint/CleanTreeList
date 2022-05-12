@@ -13,15 +13,13 @@ struct TreeListComponentView: View {
     var body: some View {
         NavigationView{
             VStack (alignment: .center, spacing: 10) {
-                List {
-                    ForEach(treeEnvironment.geolocatedTrees) { geolocatedTree in
-                        TreeItemView(geolocatedTree: geolocatedTree)
-                            .task {
-                                if(treeEnvironment.internetConnexionIsOk) {
-                                    await treeEnvironment.getMoreTreesIfNeeded(currentTree: geolocatedTree)
-                                }
+                List(treeEnvironment.geolocatedTrees) { geolocatedTree in
+                    TreeItemView(geolocatedTree: geolocatedTree)
+                        .task {
+                            if(treeEnvironment.internetConnexionIsOk) {
+                                await treeEnvironment.getMoreTreesIfNeeded(currentTree: geolocatedTree)
                             }
-                    } //: LOOP
+                        }
                 } //: LIST
             } // VSTACK
             .navigationTitle("Tree List")
