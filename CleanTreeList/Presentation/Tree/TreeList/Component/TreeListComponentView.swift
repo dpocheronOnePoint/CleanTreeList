@@ -14,21 +14,19 @@ struct TreeListComponentView: View {
         NavigationView{
             VStack (alignment: .center, spacing: 10) {
                 List {
-                    ForEach(treeEnvironment.networkStatusIsOK ? treeEnvironment.geolocatedTrees : treeEnvironment.geolocatedTreesFromCD) { geolocatedTree in
+                    ForEach(treeEnvironment.geolocatedTrees) { geolocatedTree in
                         TreeItemView(geolocatedTree: geolocatedTree)
-                            .task {
-                                if(treeEnvironment.networkStatusIsOK){
-                                    await treeEnvironment.getMoreTreesIfNeeded(currentTree: geolocatedTree)
-                                }
-                            }
                     } //: LOOP
                 } //: LIST
             } // VSTACK
             .navigationTitle("Tree List")
         } //: NAVIGATION
         .overlay {
-            if !treeEnvironment.networkStatusIsOK {
-                ConnectionStatusView()
+            if treeEnvironment.networkStatus == .dataLoadedFromCD {
+                ConnectionStatusView(text: "From DB")
+                    .transition(.move(edge: .bottom))
+            }else{
+                ConnectionStatusView(text: "From WS")
                     .transition(.move(edge: .bottom))
             }
         }

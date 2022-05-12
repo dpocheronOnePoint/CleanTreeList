@@ -9,11 +9,13 @@ import Foundation
 import CoreData
 
 enum UseCaseCDError: Error {
-    case fetchingError
+    case fetchingError, deletingError, insertingError
 }
 
 protocol TreeListCDUseCaseProtocol {
     func loadLocalTrees() async -> Result<[GeolocatedTree], UseCaseCDError>
+    func clearDataBase() async throws
+    func saveGeolocatedTreeListInCoreDataWith(geolocatedTreeList: [GeolocatedTree]) async throws
 }
 
 struct TreeListCDUseCase: TreeListCDUseCaseProtocol {
@@ -38,5 +40,20 @@ struct TreeListCDUseCase: TreeListCDUseCaseProtocol {
         }
     }
     
+    func clearDataBase() async throws {
+        do {
+            try await treeListCDRepository.clearDataBase()
+        } catch {
+            throw UseCaseCDError.deletingError
+        }
+    }
+    
+    func saveGeolocatedTreeListInCoreDataWith(geolocatedTreeList: [GeolocatedTree]) async throws {
+        do {
+            try await treeListCDRepository.saveGeolocatedTreeListInCoreDataWith(geolocatedTreeList: geolocatedTreeList)
+        } catch {
+            throw UseCaseCDError.insertingError
+        }
+    }
     
 }

@@ -8,6 +8,10 @@
 import Foundation
 import CoreData
 
+enum CoreDataError : Error {
+    case fetchingError, insertingError, deletingError
+}
+
 struct TreeCDImpl: TreeCDDataSource {
     
     func loadLocalTrees() async throws -> [CDGeolocatedTree] {

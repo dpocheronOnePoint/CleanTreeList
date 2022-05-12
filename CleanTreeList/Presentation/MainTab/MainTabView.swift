@@ -11,8 +11,12 @@ struct MainTabView: View {
     @StateObject var treeEnvironment = TreeEnvironment()
     
     var body: some View {
-        if treeEnvironment.geolocatedTrees.count > 0 {
-            
+        if(treeEnvironment.networkStatus == .requstInProgress){
+            ProgressView()
+        }else if (treeEnvironment.networkStatus == .networkFail){
+            ErrorView()
+                .environmentObject(treeEnvironment)
+        }else{
             TabView {
                 TreeListView()
                     .tabItem {
@@ -27,21 +31,7 @@ struct MainTabView: View {
                     }
             }
             .environmentObject(treeEnvironment)
-            
-        }else if(treeEnvironment.wsError){
-            
-            ErrorView()
-                .environmentObject(treeEnvironment)
-            
-        } else {
-            
-            ProgressView()
-                .task {
-                    await treeEnvironment.getTrees()
-                }
-            
         }
-        
     }
 }
 

@@ -10,6 +10,8 @@ import SwiftUI
 struct ConnectionStatusView: View {
     @EnvironmentObject var treeEnvironment: TreeEnvironment
     
+    let text: String
+    
     var body: some View {
         VStack {
             Spacer()
@@ -19,7 +21,7 @@ struct ConnectionStatusView: View {
                     .foregroundColor(.red)
                     .font(.system(size: 22, weight: .semibold, design: .rounded))
                 
-                Text("Vous n'êtes pas connecté")
+                Text(text)
                     .font(.title3)
                     .foregroundColor(.secondary)
             } //: VSTACK
@@ -38,7 +40,7 @@ struct ConnectionStatusView: View {
 
 struct ConnectionStatusView_Previews: PreviewProvider {
     static var previews: some View {
-        ConnectionStatusView()
+        ConnectionStatusView(text: "No connexion")
             .environmentObject(TreeEnvironment())
             .previewLayout(.sizeThatFits)
     }

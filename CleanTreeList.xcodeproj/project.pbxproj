@@ -41,7 +41,6 @@
 		D3C57B4528239D2F0028E4EB /* DataToDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57B4428239D2F0028E4EB /* DataToDomain.swift */; };
 		D3D7E27E282BDD2200284215 /* TreeCDDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E27D282BDD2200284215 /* TreeCDDataSource.swift */; };
 		D3D7E280282BEA6C00284215 /* TreeCDImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E27F282BEA6C00284215 /* TreeCDImpl.swift */; };
-		D3D7E282282BEC1500284215 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E281282BEC1500284215 /* CoreDataError.swift */; };
 		D3D7E284282BF6ED00284215 /* TreesCDRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E283282BF6ED00284215 /* TreesCDRepositoryImpl.swift */; };
 		D3D7E286282BF8EC00284215 /* TreeListCDUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E285282BF8EC00284215 /* TreeListCDUseCase.swift */; };
 		D3D7E288282CDCBB00284215 /* TreeListCDRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E287282CDCBB00284215 /* TreeListCDRepository.swift */; };
@@ -86,7 +85,6 @@
 		D3C57B4428239D2F0028E4EB /* DataToDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataToDomain.swift; sourceTree = "<group>"; };
 		D3D7E27D282BDD2200284215 /* TreeCDDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeCDDataSource.swift; sourceTree = "<group>"; };
 		D3D7E27F282BEA6C00284215 /* TreeCDImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeCDImpl.swift; sourceTree = "<group>"; };
-		D3D7E281282BEC1500284215 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
 		D3D7E283282BF6ED00284215 /* TreesCDRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreesCDRepositoryImpl.swift; sourceTree = "<group>"; };
 		D3D7E285282BF8EC00284215 /* TreeListCDUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListCDUseCase.swift; sourceTree = "<group>"; };
 		D3D7E287282CDCBB00284215 /* TreeListCDRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListCDRepository.swift; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 		D32CD60C282A50EB00C7FC80 /* CoreDataStorage */ = {
 			isa = PBXGroup;
 			children = (
-				D3D7E281282BEC1500284215 /* CoreDataError.swift */,
 				D3D7E27F282BEA6C00284215 /* TreeCDImpl.swift */,
 				D32CD610282A517800C7FC80 /* CoreDataStack.swift */,
 				D32CD615282A5A6B00C7FC80 /* CoreDataModels */,
@@ -481,7 +478,6 @@
 				D3E40B47282502FD00025D14 /* CodableBundleExtension.swift in Sources */,
 				D32CD606282A349D00C7FC80 /* MainTabView.swift in Sources */,
 				D32CD611282A517800C7FC80 /* CoreDataStack.swift in Sources */,
-				D3D7E282282BEC1500284215 /* CoreDataError.swift in Sources */,
 				D3E40B4C2825224500025D14 /* ApiManager.swift in Sources */,
 				D31103E32823ADE60021299B /* TreeListView.swift in Sources */,
 				D3C57B41282396E50028E4EB /* GeolocatedTree.swift in Sources */,

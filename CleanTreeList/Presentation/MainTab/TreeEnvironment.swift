@@ -10,6 +10,10 @@ import Combine
 import Network
 import SwiftUI
 
+enum NetworkStatus {
+    case requstInProgress, dataLoadedFromWS, dataLoadedFromCD, networkFail
+}
+
 class TreeEnvironment: ObservableObject {
     var treeListApiUseCase = TreeListApiUseCase(
         treeListRemoteRepository: TreesRemoteRepositoryImpl(
@@ -25,20 +29,31 @@ class TreeEnvironment: ObservableObject {
     )
     
     @Published var geolocatedTrees: [GeolocatedTree] = []
-    @Published var geolocatedTreesFromCD: [GeolocatedTree] = []
     @Published var isLoadingPage = false
-    @Published var wsError = false
     private var startIndex = 0
     
     // Network Check
     private var cancellables = Set<AnyCancellable>()
     private let monitorQueue = DispatchQueue(label: "monitor")
-    @Published var networkStatusIsOK: Bool = true
+    @Published var networkStatus: NetworkStatus = .requstInProgress
+    @Published var internetConnexionIsOk: Bool = true {
+        didSet {
+            Task{
+                if(internetConnexionIsOk) {
+                    await getTrees()
+                }else{
+                    await loadCDGeolocatedTrees()
+                }
+            }
+        }
+    }
     
     
     init() {
         initializeNewtorwMonitor()
-        //        loadCDGeolocatedTrees()
+        Task {
+            await loadCDGeolocatedTrees()
+        }
     }
     
     // MARK: - Initializers
@@ -50,13 +65,9 @@ class TreeEnvironment: ObservableObject {
             .sink { [weak self] status in
                 DispatchQueue.main.async {
                     if status == .satisfied {
-                        withAnimation() {
-                            self?.networkStatusIsOK = true
-                        }
+                        self?.internetConnexionIsOk = true
                     }else{
-                        withAnimation() {
-                            self?.networkStatusIsOK = false
-                        }
+                        self?.internetConnexionIsOk = false
                     }
                 }
             }
@@ -64,14 +75,18 @@ class TreeEnvironment: ObservableObject {
     }
     
     func loadCDGeolocatedTrees() async {
+        self.startIndex = 0
+        
         let result = await treeListCDUseCase.loadLocalTrees()
         
         switch result {
         case .success(let geolocatedTrees):
             DispatchQueue.main.async {
-                self.geolocatedTreesFromCD = geolocatedTrees
+                self.geolocatedTrees = geolocatedTrees
+                self.networkStatus = .dataLoadedFromCD
             }
         case .failure:
+            self.networkStatus = .networkFail
             break
         }
     }
@@ -83,7 +98,6 @@ class TreeEnvironment: ObservableObject {
         }
         
         isLoadingPage = true
-        wsError = false
         let result = await treeListApiUseCase.getTreeList(startIndex: startIndex)
         switch result {
         case .success(let geolocatedTrees):
@@ -93,14 +107,17 @@ class TreeEnvironment: ObservableObject {
                 } else {
                     self.geolocatedTrees.append(contentsOf: geolocatedTrees)
                 }
+                self.networkStatus = .dataLoadedFromWS
                 self.startIndex += Int(OpenDataAPI.nbrRowPerRequest) ?? 0
                 self.isLoadingPage = false
-                self.wsError = false
             }
+            
+            await self.updateDataBase(geolocatedTrees: geolocatedTrees)
+            
         case .failure:
             DispatchQueue.main.async {
                 self.isLoadingPage = false
-                self.wsError = true
+                self.networkStatus = .networkFail
             }
         }
     }
@@ -117,6 +134,20 @@ class TreeEnvironment: ObservableObject {
         // Search the currentTree Index and check if it's EndIndex less 5 (To anticipate the end of the list to load more trees)
         if geolocatedTrees.firstIndex(where: {$0.id == tree.id}) == thresholdIndex {
             await getTrees()
+        }
+    }
+    
+    func updateDataBase(geolocatedTrees: [GeolocatedTree]) async {
+        do {
+            try await treeListCDUseCase.clearDataBase()
+        } catch {
+            print("DataBase cannot be cleared")
+        }
+        
+        do {
+            try await treeListCDUseCase.saveGeolocatedTreeListInCoreDataWith(geolocatedTreeList: geolocatedTrees)
+        } catch {
+            print("Data connot be inserted in DataBase")
         }
     }
 }

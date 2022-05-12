@@ -10,5 +10,5 @@ import Foundation
 protocol TreeCDDataSource {
     func loadLocalTrees() async throws -> [CDGeolocatedTree]
     func clearDataBase() async throws
-    func saveGeolocatedTreeListInCoreDataWith(geolocatedTreeList: [GeolocatedTree]) throws
+    func saveGeolocatedTreeListInCoreDataWith(geolocatedTreeList: [GeolocatedTree]) async throws
 }
