@@ -65,9 +65,13 @@ class TreeEnvironment: ObservableObject {
             .sink { [weak self] status in
                 DispatchQueue.main.async {
                     if status == .satisfied {
-                        self?.internetConnexionIsOk = true
+                        withAnimation {
+                            self?.internetConnexionIsOk = true
+                        }
                     }else{
-                        self?.internetConnexionIsOk = false
+                        withAnimation {
+                            self?.internetConnexionIsOk = false
+                        }
                     }
                 }
             }
@@ -109,14 +113,16 @@ class TreeEnvironment: ObservableObject {
                 if self.startIndex == 0 {
                     self.geolocatedTrees = geolocatedTrees.sorted { $0.tree.name! < $1.tree.name! }
                 } else {
-                    self.geolocatedTrees.append(contentsOf: geolocatedTrees)
+                    var unSortedGeolocatedTree = geolocatedTrees
+                    unSortedGeolocatedTree.append(contentsOf: self.geolocatedTrees)
+                    self.geolocatedTrees = unSortedGeolocatedTree.sorted { $0.tree.name! < $1.tree.name! }
                 }
                 self.networkStatus = .dataLoadedFromWS
                 self.startIndex += Int(OpenDataAPI.nbrRowPerRequest) ?? 0
                 self.isLoadingPage = false
             }
             
-            // Store in CoreData only the 20 first 
+            // Store in CoreData only the 20 first
             if self.startIndex == 0 {
                 await self.updateDataBase(geolocatedTrees: geolocatedTrees)
             }
