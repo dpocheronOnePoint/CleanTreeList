@@ -123,8 +123,6 @@ class TreeEnvironment: ObservableObject {
             return
         }
         
-        print("GetTrees")
-        
         isLoadingPage = true
         let result = await treeListApiUseCase.getTreeList(startIndex: startIndex)
         switch result {
@@ -156,7 +154,6 @@ class TreeEnvironment: ObservableObject {
     
     func getMoreTreesIfNeeded(currentTree tree: GeolocatedTree?) async {
         guard let tree = tree else {
-            print("Get more First !!")
             await getTrees()
             return
         }
@@ -166,7 +163,6 @@ class TreeEnvironment: ObservableObject {
         
         // Search the currentTree Index and check if it's EndIndex less 5 (To anticipate the end of the list to load more trees)
         if geolocatedTrees.firstIndex(where: {$0.id == tree.id}) == thresholdIndex {
-            print("Get more Second !!")
             await getTrees()
         }
     }

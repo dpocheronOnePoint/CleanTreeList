@@ -10,20 +10,32 @@ import SwiftUI
 struct TreeListComponentView: View {
     @EnvironmentObject var treeEnvironment: TreeEnvironment
     
+    @StateObject var treeListViewModel = TreeListViewModel()
+    
+    @State private var searchText: String = ""
+    
     var body: some View {
-        NavigationView{
-            VStack (alignment: .center, spacing: 10) {
-                List(treeEnvironment.geolocatedTrees) { geolocatedTree in
-                    TreeItemView(geolocatedTree: geolocatedTree)
-                        .task {
-                            if(treeEnvironment.internetConnexionIsOk) {
-                                await treeEnvironment.getMoreTreesIfNeeded(currentTree: geolocatedTree)
-                            }
-                        }
-                } //: LIST
-            } // VSTACK
-            .navigationTitle("Tree List")
-        } //: NAVIGATION
+        
+        // If SearchProcess --> display filter list from TreeListViewModel
+        // Else --> Display all tree from TreeEnvironment
+        
+        List(treeListViewModel.isSearchingProcess ? treeListViewModel.geolocatedTrees : treeEnvironment.geolocatedTrees) { geolocatedTree in
+            TreeItemView(geolocatedTree: geolocatedTree)
+                .task {
+                    if(treeEnvironment.internetConnexionIsOk) {
+                        await treeEnvironment.getMoreTreesIfNeeded(currentTree: geolocatedTree)
+                    }
+                }
+        } //: LIST
+        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "searchPlaceholder")
+        
+        .onChange(of: searchText) { _ in
+            if(searchText.isEmpty) {
+                treeListViewModel.cancelSearchProcess()
+            }else{
+                treeListViewModel.filterTreeResult(searchText: searchText, allGeolocatedTrees: treeEnvironment.geolocatedTrees)
+            }
+        }
         .overlay {
             if !treeEnvironment.internetConnexionIsOk {
                 ConnectionStatusView()

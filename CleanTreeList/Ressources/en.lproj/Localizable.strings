@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  CleanTreeList
+
+  Created by Dimitri POCHERON on 12/05/2022.
+  
+*/
+
+/////////////////////////////////////////////
+/////////////// TreeList Text ///////////////
+/////////////////////////////////////////////
+
+"treeListTitle" = "TreeList";
+"searchPlaceholder" = "Search";
+"noConnexionMessage" = "You are'n connected";

@@ -9,8 +9,14 @@ import SwiftUI
 
 struct TreeListView: View {
     
+    @State private var searchText: String = ""
+    
     var body: some View {
-        TreeListComponentView()
+        NavigationView{
+            TreeListComponentView()
+                .navigationTitle("treeListTitle")
+        } //: NAVIGATION
+        
     }
 }
 

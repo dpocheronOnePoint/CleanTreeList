@@ -28,6 +28,7 @@
 		D32CD637282BAAC500C7FC80 /* ConnectionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD636282BAAC500C7FC80 /* ConnectionStatusView.swift */; };
 		D34199E82829096400DB45B0 /* TreeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34199E72829096400DB45B0 /* TreeItemView.swift */; };
 		D34199EA2829103400DB45B0 /* TreeListComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34199E92829103400DB45B0 /* TreeListComponentView.swift */; };
+		D347DD93282E478E004311FE /* TreeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347DD92282E478E004311FE /* TreeListViewModel.swift */; };
 		D37F7A08282167E200E73EB4 /* CleanTreeListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37F7A07282167E200E73EB4 /* CleanTreeListApp.swift */; };
 		D37F7A0C282167E200E73EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37F7A0B282167E200E73EB4 /* Assets.xcassets */; };
 		D37F7A0F282167E200E73EB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37F7A0E282167E200E73EB4 /* Preview Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		D3D7E286282BF8EC00284215 /* TreeListCDUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E285282BF8EC00284215 /* TreeListCDUseCase.swift */; };
 		D3D7E288282CDCBB00284215 /* TreeListCDRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E287282CDCBB00284215 /* TreeListCDRepository.swift */; };
 		D3D7E28A282D25E300284215 /* DomainToCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E289282D25E300284215 /* DomainToCoreData.swift */; };
+		D3D7E28D282D3CF300284215 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3D7E28F282D3CF300284215 /* Localizable.strings */; };
 		D3E40B47282502FD00025D14 /* CodableBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E40B46282502FC00025D14 /* CodableBundleExtension.swift */; };
 		D3E40B49282506B800025D14 /* JSONDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E40B48282506B800025D14 /* JSONDecodeError.swift */; };
 		D3E40B4C2825224500025D14 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E40B4B2825224500025D14 /* ApiManager.swift */; };
@@ -72,6 +74,7 @@
 		D32CD636282BAAC500C7FC80 /* ConnectionStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatusView.swift; sourceTree = "<group>"; };
 		D34199E72829096400DB45B0 /* TreeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeItemView.swift; sourceTree = "<group>"; };
 		D34199E92829103400DB45B0 /* TreeListComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListComponentView.swift; sourceTree = "<group>"; };
+		D347DD92282E478E004311FE /* TreeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListViewModel.swift; sourceTree = "<group>"; };
 		D37F7A04282167E200E73EB4 /* CleanTreeList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanTreeList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37F7A07282167E200E73EB4 /* CleanTreeListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTreeListApp.swift; sourceTree = "<group>"; };
 		D37F7A0B282167E200E73EB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +93,8 @@
 		D3D7E285282BF8EC00284215 /* TreeListCDUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListCDUseCase.swift; sourceTree = "<group>"; };
 		D3D7E287282CDCBB00284215 /* TreeListCDRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListCDRepository.swift; sourceTree = "<group>"; };
 		D3D7E289282D25E300284215 /* DomainToCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainToCoreData.swift; sourceTree = "<group>"; };
+		D3D7E28E282D3CF300284215 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D3D7E295282D3E4100284215 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D3E40B46282502FC00025D14 /* CodableBundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableBundleExtension.swift; sourceTree = "<group>"; };
 		D3E40B48282506B800025D14 /* JSONDecodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodeError.swift; sourceTree = "<group>"; };
 		D3E40B4B2825224500025D14 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
@@ -310,6 +315,7 @@
 				D37F7A0B282167E200E73EB4 /* Assets.xcassets */,
 				D37F7A0D282167E200E73EB4 /* Preview Content */,
 				D3AA66BF2823917800862D43 /* trees.json */,
+				D3D7E28F282D3CF300284215 /* Localizable.strings */,
 			);
 			path = Ressources;
 			sourceTree = "<group>";
@@ -363,6 +369,7 @@
 		D3C57B4728239DED0028E4EB /* TreeList */ = {
 			isa = PBXGroup;
 			children = (
+				D347DD92282E478E004311FE /* TreeListViewModel.swift */,
 				D31103E22823ADE60021299B /* TreeListView.swift */,
 				D34199E62829094000DB45B0 /* Component */,
 			);
@@ -428,6 +435,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = D37F79FB282167E200E73EB4;
 			productRefGroup = D37F7A05282167E200E73EB4 /* Products */;
@@ -445,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3AA66C02823917800862D43 /* trees.json in Resources */,
+				D3D7E28D282D3CF300284215 /* Localizable.strings in Resources */,
 				D37F7A0F282167E200E73EB4 /* Preview Assets.xcassets in Resources */,
 				D37F7A0C282167E200E73EB4 /* Assets.xcassets in Resources */,
 			);
@@ -457,6 +466,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D347DD93282E478E004311FE /* TreeListViewModel.swift in Sources */,
 				D3D7E284282BF6ED00284215 /* TreesCDRepositoryImpl.swift in Sources */,
 				D3C57B3F282396630028E4EB /* Tree.swift in Sources */,
 				D32CD637282BAAC500C7FC80 /* ConnectionStatusView.swift in Sources */,
@@ -500,11 +510,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		D3D7E28F282D3CF300284215 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3D7E28E282D3CF300284215 /* en */,
+				D3D7E295282D3E4100284215 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		D37F7A10282167E200E73EB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -565,6 +588,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

@@ -9,6 +9,7 @@ import Foundation
 import MapKit
 
 struct GeolocatedTree: Codable, Identifiable {
+    
     var id = UUID()
     let tree: Tree
     let lng, lat: Double

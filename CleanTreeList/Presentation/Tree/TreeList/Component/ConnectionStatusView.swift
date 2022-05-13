@@ -19,7 +19,7 @@ struct ConnectionStatusView: View {
                     .foregroundColor(.red)
                     .font(.system(size: 22, weight: .semibold, design: .rounded))
                 
-                Text("Vous n'êtes pas connecté")
+                Text("noConnexionMessage")
                     .font(.title3)
                     .foregroundColor(.secondary)
             } //: VSTACK
