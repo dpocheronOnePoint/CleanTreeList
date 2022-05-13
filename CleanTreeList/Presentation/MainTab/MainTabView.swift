@@ -18,6 +18,12 @@ struct MainTabView: View {
                 .environmentObject(treeEnvironment)
         }else{
             TabView {
+                UsersView()
+                    .tabItem {
+                        Image(systemName: "person.circle.fill")
+                        Text("Utilisateurs")
+                    }
+                
                 TreeListView()
                     .tabItem {
                         Image(systemName: "square.grid.2x2")

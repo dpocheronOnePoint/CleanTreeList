@@ -12,3 +12,7 @@ struct OpenDataAPI {
     static let searchPath = "/api/records/1.0/search/"
     static let nbrRowPerRequest = "20"
 }
+
+struct GorestAPI {
+    static let baseUrl = "https://gorest.co.in/public/v2/users"
+}

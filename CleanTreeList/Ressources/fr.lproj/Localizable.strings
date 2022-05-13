@@ -14,3 +14,9 @@
 "searchPlaceholder" = "Rechercher";
 "noConnexionMessage" = "Vous n'êtes pas connecté";
 "treeHeightDescription" = "%i de hauteur";
+
+/////////////////////////////////////////////
+///////////////// Users Text ////////////////
+/////////////////////////////////////////////
+
+"usersListTitle" = "Les utilisateurs";

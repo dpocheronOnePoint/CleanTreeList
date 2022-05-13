@@ -51,7 +51,9 @@ class TreeEnvironment: ObservableObject {
                     }
                 }else{
                     connexionAlreadyGoBack = false
-                    await loadCDGeolocatedTrees()
+                    if(geolocatedTrees.isEmpty){
+                        await loadCDGeolocatedTrees()
+                    }
                 }
             }
         }
