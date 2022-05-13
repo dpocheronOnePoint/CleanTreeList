@@ -33,6 +33,8 @@
 		D347DD98282E5C14004311FE /* BlankBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347DD97282E5C14004311FE /* BlankBlurView.swift */; };
 		D347DD9A282E5E30004311FE /* MapTreeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347DD99282E5E30004311FE /* MapTreeDetailsView.swift */; };
 		D347DD9C282E61D4004311FE /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347DD9B282E61D4004311FE /* MapViewModel.swift */; };
+		D347DD9F282E7E26004311FE /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = D347DDA1282E7E26004311FE /* Localizable.stringsdict */; };
+		D347DDA4282E859B004311FE /* MultipleStringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347DDA3282E859B004311FE /* MultipleStringFormatter.swift */; };
 		D37F7A08282167E200E73EB4 /* CleanTreeListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37F7A07282167E200E73EB4 /* CleanTreeListApp.swift */; };
 		D37F7A0C282167E200E73EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37F7A0B282167E200E73EB4 /* Assets.xcassets */; };
 		D37F7A0F282167E200E73EB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37F7A0E282167E200E73EB4 /* Preview Assets.xcassets */; };
@@ -83,6 +85,8 @@
 		D347DD97282E5C14004311FE /* BlankBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankBlurView.swift; sourceTree = "<group>"; };
 		D347DD99282E5E30004311FE /* MapTreeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTreeDetailsView.swift; sourceTree = "<group>"; };
 		D347DD9B282E61D4004311FE /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		D347DDA0282E7E26004311FE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = fr; path = fr.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		D347DDA3282E859B004311FE /* MultipleStringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleStringFormatter.swift; sourceTree = "<group>"; };
 		D37F7A04282167E200E73EB4 /* CleanTreeList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanTreeList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37F7A07282167E200E73EB4 /* CleanTreeListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTreeListApp.swift; sourceTree = "<group>"; };
 		D37F7A0B282167E200E73EB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				D32CD633282B982800C7FC80 /* NetworkMonitor.swift */,
+				D347DDA3282E859B004311FE /* MultipleStringFormatter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 				D37F7A0D282167E200E73EB4 /* Preview Content */,
 				D3AA66BF2823917800862D43 /* trees.json */,
 				D3D7E28F282D3CF300284215 /* Localizable.strings */,
+				D347DDA1282E7E26004311FE /* Localizable.stringsdict */,
 			);
 			path = Ressources;
 			sourceTree = "<group>";
@@ -475,6 +481,7 @@
 				D3AA66C02823917800862D43 /* trees.json in Resources */,
 				D3D7E28D282D3CF300284215 /* Localizable.strings in Resources */,
 				D37F7A0F282167E200E73EB4 /* Preview Assets.xcassets in Resources */,
+				D347DD9F282E7E26004311FE /* Localizable.stringsdict in Resources */,
 				D37F7A0C282167E200E73EB4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,6 +532,7 @@
 				D34199EA2829103400DB45B0 /* TreeListComponentView.swift in Sources */,
 				D347DD9A282E5E30004311FE /* MapTreeDetailsView.swift in Sources */,
 				D3D7E27E282BDD2200284215 /* TreeCDDataSource.swift in Sources */,
+				D347DDA4282E859B004311FE /* MultipleStringFormatter.swift in Sources */,
 				D32CD625282A6C1900C7FC80 /* CDTree+CoreDataProperties.swift in Sources */,
 				D3C57B4528239D2F0028E4EB /* DataToDomain.swift in Sources */,
 				D31103EE2823D00A0021299B /* TreeListRemoteRepository.swift in Sources */,
@@ -535,6 +543,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		D347DDA1282E7E26004311FE /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D347DDA0282E7E26004311FE /* fr */,
+			);
+			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
 		D3D7E28F282D3CF300284215 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

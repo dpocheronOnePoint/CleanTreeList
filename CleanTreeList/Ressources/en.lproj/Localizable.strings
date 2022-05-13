@@ -13,3 +13,4 @@
 "treeListTitle" = "TreeList";
 "searchPlaceholder" = "Search";
 "noConnexionMessage" = "You are'n connected";
+"treeHeightDescription" = "%i of height";

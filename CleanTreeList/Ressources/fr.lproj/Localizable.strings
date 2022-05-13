@@ -13,3 +13,4 @@
 "treeListTitle" = "Liste des arbres";
 "searchPlaceholder" = "Rechercher";
 "noConnexionMessage" = "Vous n'êtes pas connecté";
+"treeHeightDescription" = "%i de hauteur";

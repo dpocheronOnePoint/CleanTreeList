@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>tree heigh</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@tree_height@</string>
+		<key>tree_height</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>Hauteur non définit</string>
+			<key>other</key>
+			<string>%um de hauteur</string>
+		</dict>
+	</dict>
+	<key>tree circumference</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@tree_circumference@</string>
+		<key>tree_circumference</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>Circonférence non définit</string>
+			<key>other</key>
+			<string>%ucm de circonférence</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -26,23 +26,34 @@ struct TreeItemView: View {
             Spacer()
             
             VStack(alignment: .leading, spacing: 10) {
-                    HStack {
-                        Image(systemName: "info.circle.fill")
-                            .imageScale(.medium)
-                            .foregroundColor(.secondary)
-                        Text( "\(geolocatedTree.tree.height)m de hauteur")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                    } //: HSTACK
+                HStack {
+                    Image(systemName: "info.circle.fill")
+                        .imageScale(.medium)
+                        .foregroundColor(.secondary)
+                    
+                    Text(
+                        formattedMultipleStringWithInt(
+                            localizeString: "tree heigh",
+                            integer: geolocatedTree.tree.height
+                        )
+                    )
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                } //: HSTACK
                 
-                    HStack {
-                        Image(systemName: "info.circle.fill")
-                            .imageScale(.medium)
-                            .foregroundColor(.secondary)
-                        Text("\(geolocatedTree.tree.circumference)cm de circonférence")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                    } //: HSTACK
+                HStack {
+                    Image(systemName: "info.circle.fill")
+                        .imageScale(.medium)
+                        .foregroundColor(.secondary)
+                    Text(
+                        formattedMultipleStringWithInt(
+                            localizeString: "tree circumference",
+                            integer: geolocatedTree.tree.circumference
+                        )
+                    )
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                } //: HSTACK
             } //: VSTACK
             .frame(width: 180)
         } //: HSTACK
