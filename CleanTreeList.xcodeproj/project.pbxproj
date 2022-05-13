@@ -30,6 +30,9 @@
 		D34199EA2829103400DB45B0 /* TreeListComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34199E92829103400DB45B0 /* TreeListComponentView.swift */; };
 		D347DD93282E478E004311FE /* TreeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347DD92282E478E004311FE /* TreeListViewModel.swift */; };
 		D347DD96282E51C4004311FE /* MapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347DD95282E51C4004311FE /* MapAnnotationView.swift */; };
+		D347DD98282E5C14004311FE /* BlankBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347DD97282E5C14004311FE /* BlankBlurView.swift */; };
+		D347DD9A282E5E30004311FE /* MapTreeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347DD99282E5E30004311FE /* MapTreeDetailsView.swift */; };
+		D347DD9C282E61D4004311FE /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347DD9B282E61D4004311FE /* MapViewModel.swift */; };
 		D37F7A08282167E200E73EB4 /* CleanTreeListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37F7A07282167E200E73EB4 /* CleanTreeListApp.swift */; };
 		D37F7A0C282167E200E73EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37F7A0B282167E200E73EB4 /* Assets.xcassets */; };
 		D37F7A0F282167E200E73EB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37F7A0E282167E200E73EB4 /* Preview Assets.xcassets */; };
@@ -77,6 +80,9 @@
 		D34199E92829103400DB45B0 /* TreeListComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListComponentView.swift; sourceTree = "<group>"; };
 		D347DD92282E478E004311FE /* TreeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListViewModel.swift; sourceTree = "<group>"; };
 		D347DD95282E51C4004311FE /* MapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationView.swift; sourceTree = "<group>"; };
+		D347DD97282E5C14004311FE /* BlankBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankBlurView.swift; sourceTree = "<group>"; };
+		D347DD99282E5E30004311FE /* MapTreeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTreeDetailsView.swift; sourceTree = "<group>"; };
+		D347DD9B282E61D4004311FE /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		D37F7A04282167E200E73EB4 /* CleanTreeList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanTreeList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37F7A07282167E200E73EB4 /* CleanTreeListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTreeListApp.swift; sourceTree = "<group>"; };
 		D37F7A0B282167E200E73EB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -135,6 +141,7 @@
 		D32CD607282A34C200C7FC80 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				D347DD9B282E61D4004311FE /* MapViewModel.swift */,
 				D32CD608282A34D400C7FC80 /* MapView.swift */,
 				D347DD94282E51B2004311FE /* Component */,
 			);
@@ -211,6 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				D347DD95282E51C4004311FE /* MapAnnotationView.swift */,
+				D347DD97282E5C14004311FE /* BlankBlurView.swift */,
+				D347DD99282E5E30004311FE /* MapTreeDetailsView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -477,10 +486,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D347DD9C282E61D4004311FE /* MapViewModel.swift in Sources */,
 				D347DD93282E478E004311FE /* TreeListViewModel.swift in Sources */,
 				D3D7E284282BF6ED00284215 /* TreesCDRepositoryImpl.swift in Sources */,
 				D3C57B3F282396630028E4EB /* Tree.swift in Sources */,
 				D32CD637282BAAC500C7FC80 /* ConnectionStatusView.swift in Sources */,
+				D347DD98282E5C14004311FE /* BlankBlurView.swift in Sources */,
 				D32CD634282B982800C7FC80 /* NetworkMonitor.swift in Sources */,
 				D32CD614282A55E400C7FC80 /* CleanTreeList.xcdatamodeld in Sources */,
 				D3C57B3D282395BF0028E4EB /* TreeRemoteDataSource.swift in Sources */,
@@ -512,6 +523,7 @@
 				D32CD632282B906E00C7FC80 /* TreeLocalImpl.swift in Sources */,
 				D31103F02823D3E60021299B /* TreesRemoteRepositoryImpl.swift in Sources */,
 				D34199EA2829103400DB45B0 /* TreeListComponentView.swift in Sources */,
+				D347DD9A282E5E30004311FE /* MapTreeDetailsView.swift in Sources */,
 				D3D7E27E282BDD2200284215 /* TreeCDDataSource.swift in Sources */,
 				D32CD625282A6C1900C7FC80 /* CDTree+CoreDataProperties.swift in Sources */,
 				D3C57B4528239D2F0028E4EB /* DataToDomain.swift in Sources */,
