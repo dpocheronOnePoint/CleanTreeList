@@ -11,6 +11,7 @@
 		D31103EC2823CFB60021299B /* TreeListApiUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103EB2823CFB60021299B /* TreeListApiUseCase.swift */; };
 		D31103EE2823D00A0021299B /* TreeListRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103ED2823D00A0021299B /* TreeListRemoteRepository.swift */; };
 		D31103F02823D3E60021299B /* TreesRemoteRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103EF2823D3E60021299B /* TreesRemoteRepositoryImpl.swift */; };
+		D314834528322E3300C40198 /* SecondMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D314834428322E3300C40198 /* SecondMapView.swift */; };
 		D32CD606282A349D00C7FC80 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD605282A349D00C7FC80 /* MainTabView.swift */; };
 		D32CD609282A34D400C7FC80 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD608282A34D400C7FC80 /* MapView.swift */; };
 		D32CD60B282A4BAF00C7FC80 /* TreeEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD60A282A4BAF00C7FC80 /* TreeEnvironment.swift */; };
@@ -76,6 +77,7 @@
 		D31103EB2823CFB60021299B /* TreeListApiUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListApiUseCase.swift; sourceTree = "<group>"; };
 		D31103ED2823D00A0021299B /* TreeListRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListRemoteRepository.swift; sourceTree = "<group>"; };
 		D31103EF2823D3E60021299B /* TreesRemoteRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreesRemoteRepositoryImpl.swift; sourceTree = "<group>"; };
+		D314834428322E3300C40198 /* SecondMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondMapView.swift; sourceTree = "<group>"; };
 		D32CD605282A349D00C7FC80 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		D32CD608282A34D400C7FC80 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D32CD60A282A4BAF00C7FC80 /* TreeEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeEnvironment.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			children = (
 				D347DD9B282E61D4004311FE /* MapViewModel.swift */,
 				D32CD608282A34D400C7FC80 /* MapView.swift */,
+				D314834428322E3300C40198 /* SecondMapView.swift */,
 				D347DD94282E51B2004311FE /* Component */,
 			);
 			path = Map;
@@ -592,6 +595,7 @@
 				D3D7E284282BF6ED00284215 /* TreesCDRepositoryImpl.swift in Sources */,
 				D3C57B3F282396630028E4EB /* Tree.swift in Sources */,
 				D32CD637282BAAC500C7FC80 /* ConnectionStatusView.swift in Sources */,
+				D314834528322E3300C40198 /* SecondMapView.swift in Sources */,
 				D347DDAA282E8F81004311FE /* UsersAPIImpl.swift in Sources */,
 				D347DDB5282E9B52004311FE /* UnderlineTextField.swift in Sources */,
 				D347DDA7282E8EA7004311FE /* UsersView.swift in Sources */,

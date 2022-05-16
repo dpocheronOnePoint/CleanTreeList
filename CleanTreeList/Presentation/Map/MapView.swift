@@ -31,15 +31,15 @@ struct MapView: View {
                         }
                 }
             })
-
-                BlankBlurView(backgroundColor: Color.gray, backgroundOpacity: 0.5)
-                    .onTapGesture {
-                        mapViewModel.deselectTree()
-                    }
-                    .opacity(mapViewModel.showTreeDetail ? 1.0 : 0.0)
-                
+            
+            BlankBlurView(backgroundColor: Color.gray, backgroundOpacity: 0.5)
+                .onTapGesture {
+                    mapViewModel.deselectTree()
+                }
+                .opacity(mapViewModel.showTreeDetail ? 1.0 : 0.0)
+            
             MapTreeDetailsView(geolocatedTree: mapViewModel.selectedTree)
-                    .opacity(mapViewModel.showTreeDetail ? 1.0 : 0.0)
+                .opacity(mapViewModel.showTreeDetail ? 1.0 : 0.0)
         }
     }
 }

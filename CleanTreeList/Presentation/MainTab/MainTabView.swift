@@ -30,7 +30,7 @@ struct MainTabView: View {
                         Text("Liste")
                     }
                 
-                MapView()
+                SecondMapView()
                     .tabItem {
                         Image(systemName: "map.fill")
                         Text("Carte")
