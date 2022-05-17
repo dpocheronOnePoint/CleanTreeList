@@ -18,6 +18,12 @@ struct MainTabView: View {
                 .environmentObject(treeEnvironment)
         }else{
             TabView {
+                ForthMapView()
+                        .tabItem {
+                            Image(systemName: "map.fill")
+                            Text("Carte")
+                        }
+                
                 UsersView()
                     .tabItem {
                         Image(systemName: "person.circle.fill")
@@ -30,11 +36,6 @@ struct MainTabView: View {
                         Text("Liste")
                     }
                 
-                SecondMapView()
-                    .tabItem {
-                        Image(systemName: "map.fill")
-                        Text("Carte")
-                    }
             }
             .environmentObject(treeEnvironment)
         }
