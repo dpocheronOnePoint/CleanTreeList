@@ -8,23 +8,24 @@
 import SwiftUI
 import MapKit
 
-struct ForthMapView: View {
+struct ClusterMapView: View {
     @EnvironmentObject var treeEnvironment: TreeEnvironment
     
     var body: some View {
-        ThirdMapViewRepresentable(treeList: $treeEnvironment.geolocatedTrees)
+        ClusterMapViewRepresentable(treeList: $treeEnvironment.geolocatedTrees)
     }
 }
 
 struct ForthMapView_Previews: PreviewProvider {
     static var previews: some View {
-        ForthMapView()
+        ClusterMapView()
     }
 }
+
  // Interesting link
  // https://thomas-sivilay.github.io/morningswiftui.github.io/swiftui/2019/07/31/build-mapview-app-with-swiftui.html
 
-struct ThirdMapViewRepresentable: UIViewRepresentable {
+struct ClusterMapViewRepresentable: UIViewRepresentable {
     
     @Binding var treeList: [GeolocatedTree]
     

@@ -8,26 +8,21 @@
 import SwiftUI
 import MapKit
 
-struct SecondMapView: View {
+struct DirectionMapView: View {
     var body: some View {
         ZStack {
-            MapViewRepresentable()
-            
-//            Button(action: {}, label: {
-//                Text("Show directions")
-//            })
-//            .padding()
+            DirectionMapViewRepresentable()
         }
     }
 }
 
-struct SecondMapView_Previews: PreviewProvider {
+struct DirectionMapView_Previews: PreviewProvider {
     static var previews: some View {
-        SecondMapView()
+        DirectionMapView()
     }
 }
 
-struct MapViewRepresentable: UIViewRepresentable {
+struct DirectionMapViewRepresentable: UIViewRepresentable {
     typealias UIViewType = MKMapView
     
     func makeCoordinator() -> MapViewCoordinator {

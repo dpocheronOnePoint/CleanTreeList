@@ -18,7 +18,7 @@ struct MainTabView: View {
                 .environmentObject(treeEnvironment)
         }else{
             TabView {
-                ForthMapView()
+                ClusterMapView()
                         .tabItem {
                             Image(systemName: "map.fill")
                             Text("Carte")

@@ -12,13 +12,10 @@
 		D31103EE2823D00A0021299B /* TreeListRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103ED2823D00A0021299B /* TreeListRemoteRepository.swift */; };
 		D31103F02823D3E60021299B /* TreesRemoteRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103EF2823D3E60021299B /* TreesRemoteRepositoryImpl.swift */; };
 		D31353AA2833987D006485B7 /* TreeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31353A92833987D006485B7 /* TreeItem.swift */; };
-		D31353AC28339954006485B7 /* ForthMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31353AB28339954006485B7 /* ForthMapView.swift */; };
+		D31353AC28339954006485B7 /* ClusterMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31353AB28339954006485B7 /* ClusterMapView.swift */; };
 		D31353B22833A0D5006485B7 /* ClusterTreeAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31353B12833A0D5006485B7 /* ClusterTreeAnnotationView.swift */; };
 		D31353B42833A3D6006485B7 /* MapTreeItemAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31353B32833A3D6006485B7 /* MapTreeItemAnnotationView.swift */; };
-		D314834528322E3300C40198 /* SecondMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D314834428322E3300C40198 /* SecondMapView.swift */; };
-		D31483472832479E00C40198 /* ClusterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31483462832479E00C40198 /* ClusterAnnotationView.swift */; };
-		D31483492832483C00C40198 /* MapItemAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31483482832483C00C40198 /* MapItemAnnotationView.swift */; };
-		D314834D283248B300C40198 /* ThridMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D314834C283248B300C40198 /* ThridMapView.swift */; };
+		D314834528322E3300C40198 /* DirectionMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D314834428322E3300C40198 /* DirectionMapView.swift */; };
 		D314834F2832497A00C40198 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D314834E2832497A00C40198 /* Helpers.swift */; };
 		D32CD606282A349D00C7FC80 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD605282A349D00C7FC80 /* MainTabView.swift */; };
 		D32CD609282A34D400C7FC80 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD608282A34D400C7FC80 /* MapView.swift */; };
@@ -86,13 +83,10 @@
 		D31103ED2823D00A0021299B /* TreeListRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListRemoteRepository.swift; sourceTree = "<group>"; };
 		D31103EF2823D3E60021299B /* TreesRemoteRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreesRemoteRepositoryImpl.swift; sourceTree = "<group>"; };
 		D31353A92833987D006485B7 /* TreeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeItem.swift; sourceTree = "<group>"; };
-		D31353AB28339954006485B7 /* ForthMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForthMapView.swift; sourceTree = "<group>"; };
+		D31353AB28339954006485B7 /* ClusterMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterMapView.swift; sourceTree = "<group>"; };
 		D31353B12833A0D5006485B7 /* ClusterTreeAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterTreeAnnotationView.swift; sourceTree = "<group>"; };
 		D31353B32833A3D6006485B7 /* MapTreeItemAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTreeItemAnnotationView.swift; sourceTree = "<group>"; };
-		D314834428322E3300C40198 /* SecondMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondMapView.swift; sourceTree = "<group>"; };
-		D31483462832479E00C40198 /* ClusterAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterAnnotationView.swift; sourceTree = "<group>"; };
-		D31483482832483C00C40198 /* MapItemAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapItemAnnotationView.swift; sourceTree = "<group>"; };
-		D314834C283248B300C40198 /* ThridMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThridMapView.swift; sourceTree = "<group>"; };
+		D314834428322E3300C40198 /* DirectionMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionMapView.swift; sourceTree = "<group>"; };
 		D314834E2832497A00C40198 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		D32CD605282A349D00C7FC80 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		D32CD608282A34D400C7FC80 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -175,24 +169,15 @@
 			path = TreeList;
 			sourceTree = "<group>";
 		};
-		D31353AD28339979006485B7 /* Third */ = {
-			isa = PBXGroup;
-			children = (
-				D31483462832479E00C40198 /* ClusterAnnotationView.swift */,
-				D31483482832483C00C40198 /* MapItemAnnotationView.swift */,
-				D314834E2832497A00C40198 /* Helpers.swift */,
-			);
-			path = Third;
-			sourceTree = "<group>";
-		};
-		D31353AE28339989006485B7 /* Forth */ = {
+		D31353AE28339989006485B7 /* Cluster */ = {
 			isa = PBXGroup;
 			children = (
 				D31353A92833987D006485B7 /* TreeItem.swift */,
 				D31353B12833A0D5006485B7 /* ClusterTreeAnnotationView.swift */,
 				D31353B32833A3D6006485B7 /* MapTreeItemAnnotationView.swift */,
+				D314834E2832497A00C40198 /* Helpers.swift */,
 			);
-			path = Forth;
+			path = Cluster;
 			sourceTree = "<group>";
 		};
 		D32CD604282A348300C7FC80 /* MainTab */ = {
@@ -210,9 +195,8 @@
 			children = (
 				D347DD9B282E61D4004311FE /* MapViewModel.swift */,
 				D32CD608282A34D400C7FC80 /* MapView.swift */,
-				D314834428322E3300C40198 /* SecondMapView.swift */,
-				D314834C283248B300C40198 /* ThridMapView.swift */,
-				D31353AB28339954006485B7 /* ForthMapView.swift */,
+				D314834428322E3300C40198 /* DirectionMapView.swift */,
+				D31353AB28339954006485B7 /* ClusterMapView.swift */,
 				D347DD94282E51B2004311FE /* Component */,
 			);
 			path = Map;
@@ -290,8 +274,7 @@
 		D347DD94282E51B2004311FE /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				D31353AE28339989006485B7 /* Forth */,
-				D31353AD28339979006485B7 /* Third */,
+				D31353AE28339989006485B7 /* Cluster */,
 				D347DD95282E51C4004311FE /* MapAnnotationView.swift */,
 				D347DD97282E5C14004311FE /* BlankBlurView.swift */,
 				D347DD99282E5E30004311FE /* MapTreeDetailsView.swift */,
@@ -635,8 +618,7 @@
 				D3D7E284282BF6ED00284215 /* TreesCDRepositoryImpl.swift in Sources */,
 				D3C57B3F282396630028E4EB /* Tree.swift in Sources */,
 				D32CD637282BAAC500C7FC80 /* ConnectionStatusView.swift in Sources */,
-				D314834528322E3300C40198 /* SecondMapView.swift in Sources */,
-				D31483472832479E00C40198 /* ClusterAnnotationView.swift in Sources */,
+				D314834528322E3300C40198 /* DirectionMapView.swift in Sources */,
 				D347DDAA282E8F81004311FE /* UsersAPIImpl.swift in Sources */,
 				D31353AA2833987D006485B7 /* TreeItem.swift in Sources */,
 				D347DDB5282E9B52004311FE /* UnderlineTextField.swift in Sources */,
@@ -658,7 +640,6 @@
 				D37F7A08282167E200E73EB4 /* CleanTreeListApp.swift in Sources */,
 				D347DDC0282EA619004311FE /* FormTextField.swift in Sources */,
 				D32CD62F282B8F2900C7FC80 /* TreeLocalDataSource.swift in Sources */,
-				D314834D283248B300C40198 /* ThridMapView.swift in Sources */,
 				D3C57B43282398960028E4EB /* APIServiceError.swift in Sources */,
 				D32CD62D282B8ADC00C7FC80 /* Urls.swift in Sources */,
 				D31103EC2823CFB60021299B /* TreeListApiUseCase.swift in Sources */,
@@ -681,11 +662,10 @@
 				D347DD96282E51C4004311FE /* MapAnnotationView.swift in Sources */,
 				D3D7E280282BEA6C00284215 /* TreeCDImpl.swift in Sources */,
 				D347DDBE282EA4E4004311FE /* BindingInverter.swift in Sources */,
-				D31353AC28339954006485B7 /* ForthMapView.swift in Sources */,
+				D31353AC28339954006485B7 /* ClusterMapView.swift in Sources */,
 				D32CD632282B906E00C7FC80 /* TreeLocalImpl.swift in Sources */,
 				D31103F02823D3E60021299B /* TreesRemoteRepositoryImpl.swift in Sources */,
 				D34199EA2829103400DB45B0 /* TreeListComponentView.swift in Sources */,
-				D31483492832483C00C40198 /* MapItemAnnotationView.swift in Sources */,
 				D347DD9A282E5E30004311FE /* MapTreeDetailsView.swift in Sources */,
 				D347DDB1282E988A004311FE /* AddPersonView.swift in Sources */,
 				D3D7E27E282BDD2200284215 /* TreeCDDataSource.swift in Sources */,
