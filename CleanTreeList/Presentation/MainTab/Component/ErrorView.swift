@@ -28,20 +28,12 @@ struct ErrorView: View {
             
             Spacer()
             
-            Button(action:{
+            AppButton(systemImage: "arrow.triangle.2.circlepath.circle.fill", buttonTitle: "Réessayer") {
                 Task {
                     await treeEnvironment.getTrees()
                 }
-            }) {
-                Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
-                    .imageScale(.large)
-                Text("Rééssayer")
-                    .font(.system(.title3, design: .rounded))
-                    .fontWeight(.bold)
             }
-            .buttonStyle(.bordered)
-            .buttonBorderShape(.capsule)
-            .controlSize(.large)
+            
         } //: VStack
         .padding()
     }

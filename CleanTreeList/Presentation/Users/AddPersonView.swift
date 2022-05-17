@@ -30,6 +30,11 @@ struct AddPersonView: View {
             } //: HSTACK
             CheckBox(isActivated: $usersViewModel.userIsActive, checkoboxTitle: "Utilisateur actif")
             
+            AppButton(systemImage: "person.crop.circle.fill.badge.plus", buttonTitle: "Ajouter") {
+                Task {
+                    
+                }
+            }
         } // VSTACK
     }
 }

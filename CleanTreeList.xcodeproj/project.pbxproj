@@ -20,6 +20,8 @@
 		D31353C02833DD7E006485B7 /* UserRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31353BF2833DD7E006485B7 /* UserRemoteRepository.swift */; };
 		D31353C32833DDF0006485B7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31353C22833DDF0006485B7 /* User.swift */; };
 		D31353C62833DE8D006485B7 /* UserApiUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31353C52833DE8D006485B7 /* UserApiUseCase.swift */; };
+		D31353C92833E374006485B7 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31353C82833E374006485B7 /* AppButton.swift */; };
+		D31353CB2833E92D006485B7 /* DomainToData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31353CA2833E92D006485B7 /* DomainToData.swift */; };
 		D314834528322E3300C40198 /* DirectionMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D314834428322E3300C40198 /* DirectionMapView.swift */; };
 		D314834F2832497A00C40198 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D314834E2832497A00C40198 /* Helpers.swift */; };
 		D32CD606282A349D00C7FC80 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD605282A349D00C7FC80 /* MainTabView.swift */; };
@@ -95,6 +97,8 @@
 		D31353BF2833DD7E006485B7 /* UserRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRemoteRepository.swift; sourceTree = "<group>"; };
 		D31353C22833DDF0006485B7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D31353C52833DE8D006485B7 /* UserApiUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiUseCase.swift; sourceTree = "<group>"; };
+		D31353C82833E374006485B7 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		D31353CA2833E92D006485B7 /* DomainToData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainToData.swift; sourceTree = "<group>"; };
 		D314834428322E3300C40198 /* DirectionMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionMapView.swift; sourceTree = "<group>"; };
 		D314834E2832497A00C40198 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		D32CD605282A349D00C7FC80 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -252,6 +256,14 @@
 				D31353C52833DE8D006485B7 /* UserApiUseCase.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		D31353C72833E34B006485B7 /* MainComponent */ = {
+			isa = PBXGroup;
+			children = (
+				D31353C82833E374006485B7 /* AppButton.swift */,
+			);
+			path = MainComponent;
 			sourceTree = "<group>";
 		};
 		D32CD604282A348300C7FC80 /* MainTab */ = {
@@ -494,6 +506,7 @@
 		D37F7A182821681200E73EB4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D31353C72833E34B006485B7 /* MainComponent */,
 				D32CD604282A348300C7FC80 /* MainTab */,
 				D3C57B4628239DE10028E4EB /* Tree */,
 				D32CD607282A34C200C7FC80 /* Map */,
@@ -565,6 +578,7 @@
 			children = (
 				D31353B62833D6F2006485B7 /* Users */,
 				D31353B52833D6E5006485B7 /* Tree */,
+				D31353CA2833E92D006485B7 /* DomainToData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -700,8 +714,10 @@
 				D31353AA2833987D006485B7 /* TreeItem.swift in Sources */,
 				D347DDB5282E9B52004311FE /* UnderlineTextField.swift in Sources */,
 				D347DDA7282E8EA7004311FE /* UsersView.swift in Sources */,
+				D31353C92833E374006485B7 /* AppButton.swift in Sources */,
 				D31353BB2833DC66006485B7 /* UsersRemoteRepositoryImpl.swift in Sources */,
 				D31353C02833DD7E006485B7 /* UserRemoteRepository.swift in Sources */,
+				D31353CB2833E92D006485B7 /* DomainToData.swift in Sources */,
 				D347DD98282E5C14004311FE /* BlankBlurView.swift in Sources */,
 				D32CD634282B982800C7FC80 /* NetworkMonitor.swift in Sources */,
 				D32CD614282A55E400C7FC80 /* CleanTreeList.xcdatamodeld in Sources */,

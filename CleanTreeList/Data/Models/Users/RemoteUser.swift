@@ -21,3 +21,14 @@ struct RemoteUser: Decodable {
     let gender: String
     let status: String
 }
+
+extension UserPost: DomainToData {
+    func ToData() -> RemoteUserPost {
+        RemoteUserPost(
+            email: email,
+            name: name,
+            gender: gender,
+            status: status
+        )
+    }
+}

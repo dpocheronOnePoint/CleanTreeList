@@ -21,3 +21,14 @@ struct User: Decodable {
     let gender: String
     let status: String
 }
+
+extension RemoteUser: DataToDomain {
+    func ToDomain() -> User {
+        User(id: id,
+             email: email,
+             name: name,
+             gender: gender,
+             status: status
+        )
+    }
+}
