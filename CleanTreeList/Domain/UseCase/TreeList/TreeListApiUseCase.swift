@@ -13,36 +13,12 @@ enum UseCaseApiError: Error {
 }
 
 protocol TreeListApiUseCaseProtocol {
-//    func loadLocalTrees() async -> Result<[GeolocatedTree], UseCaseError>
     func getTreeList(startIndex: Int) async -> Result<[GeolocatedTree], UseCaseApiError>
 }
 
 struct TreeListApiUseCase: TreeListApiUseCaseProtocol {
     
     var treeListRemoteRepository: TreeListRemoteRepository
-    
-//    func loadLocalTrees() -> Result<[GeolocatedTree], UseCaseError> {
-//
-//        let fetchRequest: NSFetchRequest<CDGeolocatedTree>
-//        fetchRequest = CDGeolocatedTree.fetchRequest()
-//
-//        let context = CoreDataStack.sharedInstance.viewContext
-//
-//        do {
-//            let cdGeolocatedTrees: [CDGeolocatedTree] = try context.fetch(fetchRequest)
-//            let treeList: [GeolocatedTree] = cdGeolocatedTrees.map({ item in
-//                GeolocatedTree(
-//                    tree: item.tree.ToDomain(),
-//                    lng: item.lng,
-//                    lat: item.lat
-//                )
-//            })
-//
-//            return .success(treeList)
-//        }catch {
-//            return .failure(.databaseError)
-//        }
-//    }
     
     func getTreeList(startIndex: Int) async -> Result<[GeolocatedTree], UseCaseApiError> {
         do {

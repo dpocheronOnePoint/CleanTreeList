@@ -18,7 +18,7 @@ struct CheckBox: View {
                 .foregroundColor(Color.secondary)
                 .padding(.vertical, 12)
         } //: TOGGLE
-        .toggleStyle(SelectorStyle())
+        .toggleStyle(CheckBoxStyle())
     }
 }
 

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol UsersRemoteDataSource {
-    func postUser() async throws
+    func postUser(user: RemoteUserPost) async throws -> RemoteUser
 }
