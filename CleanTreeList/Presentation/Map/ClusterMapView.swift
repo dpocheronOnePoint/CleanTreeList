@@ -10,9 +10,21 @@ import MapKit
 
 struct ClusterMapView: View {
     @EnvironmentObject var treeEnvironment: TreeEnvironment
+    @StateObject var mapViewModel = MapViewModel()
     
     var body: some View {
-        ClusterMapViewRepresentable(treeList: $treeEnvironment.geolocatedTrees)
+        ZStack {
+            ClusterMapViewRepresentable(mapViewModel: mapViewModel)
+            
+            BlankBlurView(backgroundColor: Color.gray, backgroundOpacity: 0.5)
+                .onTapGesture {
+                    mapViewModel.deselectTree()
+                }
+                .opacity(mapViewModel.showTreeDetail ? 1.0 : 0.0)
+            
+            MapTreeDetailsView(geolocatedTree: mapViewModel.selectedTree)
+                .opacity(mapViewModel.showTreeDetail ? 1.0 : 0.0)
+        }
     }
 }
 
@@ -22,12 +34,12 @@ struct ForthMapView_Previews: PreviewProvider {
     }
 }
 
- // Interesting link
- // https://thomas-sivilay.github.io/morningswiftui.github.io/swiftui/2019/07/31/build-mapview-app-with-swiftui.html
+// Interesting link
+// https://thomas-sivilay.github.io/morningswiftui.github.io/swiftui/2019/07/31/build-mapview-app-with-swiftui.html
 
 struct ClusterMapViewRepresentable: UIViewRepresentable {
-    
-    @Binding var treeList: [GeolocatedTree]
+    @EnvironmentObject var treeEnvironment: TreeEnvironment
+    @StateObject var mapViewModel: MapViewModel
     
     typealias UIViewType = MKMapView
     
@@ -39,8 +51,15 @@ struct ClusterMapViewRepresentable: UIViewRepresentable {
         return mapRegion
     }()
     
+    // Function to set the map coordinator --> MapView delegate method
+    func makeCoordinator() -> MapViewCoordinator {
+        return MapViewCoordinator(parent: self)
+    }
+    
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
+        
+        mapView.delegate = context.coordinator
         
         mapView.register(
             MapTreeItemAnnotationView.self,
@@ -60,7 +79,31 @@ struct ClusterMapViewRepresentable: UIViewRepresentable {
     
     private func updateAnnotations(from mapView: MKMapView) {
         mapView.removeAnnotations(mapView.annotations)
-        let newAnnotations = treeList.map { TreeItem(coordinate: $0.location) }
-      mapView.addAnnotations(newAnnotations)
+        let newAnnotations = treeEnvironment.geolocatedTrees.map { TreeItem(coordinate: $0.location, geolocatedTree: $0) }
+        mapView.addAnnotations(newAnnotations)
+    }
+    
+    // MARK: - MapViewCoordinator
+    class MapViewCoordinator: NSObject, MKMapViewDelegate {
+        var parent: ClusterMapViewRepresentable
+        
+        init(parent: ClusterMapViewRepresentable) {
+            self.parent = parent
+        }
+        
+        func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+            guard let treeItem = view.annotation as? TreeItem else {
+                return print("Click on cluster pin")
+            }
+
+            if let findedTree = mapView.annotations.first(where: { ($0 as? TreeItem)?.id == treeItem.id }) {
+                if let findedTree = findedTree as? TreeItem {
+                    parent.mapViewModel.selectedTree = findedTree.geolocatedTree
+                    withAnimation() {
+                        parent.mapViewModel.showTreeDetail = true
+                    }
+                }
+            }
+        }
     }
 }

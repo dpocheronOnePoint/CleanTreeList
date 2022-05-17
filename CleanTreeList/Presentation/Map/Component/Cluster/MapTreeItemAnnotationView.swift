@@ -14,7 +14,9 @@ final class MapTreeItemAnnotationView: MKAnnotationView {
                 return
             }
             
+            // Line necessary to activate Clustering !
             clusteringIdentifier = "MapItem"
+            
             image = mapItem.image
         }
     }

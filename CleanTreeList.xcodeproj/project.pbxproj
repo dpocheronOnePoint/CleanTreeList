@@ -195,8 +195,8 @@
 			children = (
 				D347DD9B282E61D4004311FE /* MapViewModel.swift */,
 				D32CD608282A34D400C7FC80 /* MapView.swift */,
-				D314834428322E3300C40198 /* DirectionMapView.swift */,
 				D31353AB28339954006485B7 /* ClusterMapView.swift */,
+				D314834428322E3300C40198 /* DirectionMapView.swift */,
 				D347DD94282E51B2004311FE /* Component */,
 			);
 			path = Map;

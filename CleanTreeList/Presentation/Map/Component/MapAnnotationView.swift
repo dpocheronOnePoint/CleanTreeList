@@ -15,7 +15,6 @@ struct MapAnnotationView: View {
                 .frame(width: 40, height: 40, alignment: .center)
             
             Circle()
-//                .fill(Color.secondary)
                 .stroke(Color.green, lineWidth: 2)
                 .frame(width: 40, height: 40, alignment: .center)
             

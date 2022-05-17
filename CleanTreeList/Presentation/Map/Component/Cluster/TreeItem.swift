@@ -9,12 +9,15 @@ import Foundation
 import MapKit
 
 final class TreeItem: NSObject, MKAnnotation {
+    let id = UUID()
+    let geolocatedTree: GeolocatedTree
     let coordinate: CLLocationCoordinate2D
     var image: UIImage {
-        return #imageLiteral(resourceName: "annotation")
+        return #imageLiteral(resourceName: "treeAnnocation")
     }
     
-    init(coordinate: CLLocationCoordinate2D) {
+    init(coordinate: CLLocationCoordinate2D, geolocatedTree: GeolocatedTree) {
         self.coordinate = coordinate
+        self.geolocatedTree = geolocatedTree
     }
 }
