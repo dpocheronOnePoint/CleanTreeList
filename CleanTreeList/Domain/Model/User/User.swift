@@ -8,10 +8,10 @@
 import Foundation
 
 struct UserPost: Encodable {
-    let email: String
-    let name: String
-    let gender: String
-    let status: String
+    var email: String
+    var name: String
+    var gender: String
+    var status: String
 }
 
 struct User: Decodable {
@@ -31,4 +31,8 @@ extension RemoteUser: DataToDomain {
              status: status
         )
     }
+}
+
+extension UserPost {
+    static let starterUserPost = UserPost(email: "geo@test.com", name: "Mon", gender: "male", status: "active")
 }

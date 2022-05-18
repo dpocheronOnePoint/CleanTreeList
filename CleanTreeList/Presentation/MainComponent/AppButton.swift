@@ -15,7 +15,7 @@ struct AppButton: View {
     var body: some View {
         
         Button(action: {
-            
+            clicked()
         }, label: {
             Image(systemName: systemImage)
                 .imageScale(.large)

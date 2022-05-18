@@ -13,9 +13,9 @@ struct AddPersonView: View {
     
     var body: some View {
         VStack (spacing: 30) {
-            FormTextField(placeholder: "Email", text: $usersViewModel.email)
+            FormTextField(placeholder: "Email", text: $usersViewModel.userPost.email)
             
-            FormTextField(placeholder: "Nom", text: $usersViewModel.name)
+            FormTextField(placeholder: "Nom", text: $usersViewModel.userPost.name)
             
             HStack(spacing: 30) {
                 SexeSelector(
@@ -32,9 +32,10 @@ struct AddPersonView: View {
             
             AppButton(systemImage: "person.crop.circle.fill.badge.plus", buttonTitle: "Ajouter") {
                 Task {
-                    
+                    await usersViewModel.postUser()
                 }
             }
+            
         } // VSTACK
     }
 }

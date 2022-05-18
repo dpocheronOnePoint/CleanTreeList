@@ -65,6 +65,7 @@
 		D37F7A0F282167E200E73EB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37F7A0E282167E200E73EB4 /* Preview Assets.xcassets */; };
 		D3AA66C02823917800862D43 /* trees.json in Resources */ = {isa = PBXBuildFile; fileRef = D3AA66BF2823917800862D43 /* trees.json */; };
 		D3AA66C82823928E00862D43 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AA66C72823928E00862D43 /* Record.swift */; };
+		D3B007602834CB8400030C9E /* UserResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0075F2834CB8400030C9E /* UserResponseError.swift */; };
 		D3C57B3B282395A20028E4EB /* TreeAPIlmpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57B3A282395A20028E4EB /* TreeAPIlmpl.swift */; };
 		D3C57B3D282395BF0028E4EB /* TreeRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57B3C282395BF0028E4EB /* TreeRemoteDataSource.swift */; };
 		D3C57B3F282396630028E4EB /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57B3E282396630028E4EB /* Tree.swift */; };
@@ -143,6 +144,7 @@
 		D37F7A0E282167E200E73EB4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D3AA66BF2823917800862D43 /* trees.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trees.json; sourceTree = "<group>"; };
 		D3AA66C72823928E00862D43 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		D3B0075F2834CB8400030C9E /* UserResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseError.swift; sourceTree = "<group>"; };
 		D3C57B3A282395A20028E4EB /* TreeAPIlmpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeAPIlmpl.swift; sourceTree = "<group>"; };
 		D3C57B3C282395BF0028E4EB /* TreeRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeRemoteDataSource.swift; sourceTree = "<group>"; };
 		D3C57B3E282396630028E4EB /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 		D31353B62833D6F2006485B7 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				D3B0075F2834CB8400030C9E /* UserResponseError.swift */,
 				D31353B72833D7D3006485B7 /* RemoteUser.swift */,
 			);
 			path = Users;
@@ -719,6 +722,7 @@
 				D31353C02833DD7E006485B7 /* UserRemoteRepository.swift in Sources */,
 				D31353CB2833E92D006485B7 /* DomainToData.swift in Sources */,
 				D347DD98282E5C14004311FE /* BlankBlurView.swift in Sources */,
+				D3B007602834CB8400030C9E /* UserResponseError.swift in Sources */,
 				D32CD634282B982800C7FC80 /* NetworkMonitor.swift in Sources */,
 				D32CD614282A55E400C7FC80 /* CleanTreeList.xcdatamodeld in Sources */,
 				D3C57B3D282395BF0028E4EB /* TreeRemoteDataSource.swift in Sources */,
