@@ -20,3 +20,4 @@
 /////////////////////////////////////////////
 
 "usersListTitle" = "Les utilisateurs";
+"email_has_already_been_taken" = "Votre adresse mail est déja utilisée";

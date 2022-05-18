@@ -24,6 +24,13 @@ struct UserApiUseCase: UserApiUseCaseProtocol {
             case APIServiceError.decodingError:
                 return .failure(.decodingError)
                 
+            case APIServiceError.error422(let userResponseError):
+                let concatErrorString = "\(userResponseError.field) \(userResponseError.message)"
+                
+                // Replace spaces by "_" to match with localizeString
+                let underscroredErrorString = concatErrorString.replacingOccurrences(of: " ", with: "_")
+                return .failure(.error422(underscroredErrorString))
+                
             default:
                 return .failure(.networkError)
             }

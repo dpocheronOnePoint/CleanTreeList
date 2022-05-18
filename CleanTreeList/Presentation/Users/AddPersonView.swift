@@ -30,6 +30,12 @@ struct AddPersonView: View {
             } //: HSTACK
             CheckBox(isActivated: $usersViewModel.userIsActive, checkoboxTitle: "Utilisateur actif")
             
+            if usersViewModel.hasError {
+                Text(usersViewModel.postErrorString)
+                    .foregroundColor(.red)
+                    .padding()
+            }
+            
             AppButton(systemImage: "person.crop.circle.fill.badge.plus", buttonTitle: "Ajouter") {
                 Task {
                     await usersViewModel.postUser()

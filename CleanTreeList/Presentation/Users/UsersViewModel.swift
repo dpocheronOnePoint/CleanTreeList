@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class UsersViewModel: ObservableObject {
     
@@ -30,10 +31,23 @@ class UsersViewModel: ObservableObject {
             }
         }
     }
+    @Published var hasError: Bool = false
+    @Published var postErrorString: LocalizedStringKey = ""
     
     func postUser() async {
-         print(userPost)
-        let createdUser = await userApiUseCase.postUser(user: userPost)
-        print(createdUser)
+        let result = await userApiUseCase.postUser(user: userPost)
+        
+        switch result {
+        case .success(let user):
+            print(user)
+        case .failure(let error):
+            switch error {
+            case .error422(let errorString):
+                postErrorString = LocalizedStringKey(errorString)
+                hasError = true
+            default:
+                postErrorString = "Erreur"
+            }
+        }
     }
 }

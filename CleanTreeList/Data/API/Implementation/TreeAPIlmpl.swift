@@ -31,7 +31,7 @@ struct TreeAPIlmpl: TreeRemoteDataSource {
         
         // Check if response.statusCode is 200
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-            throw APIServiceError.statusNotOK
+            throw APIServiceError.statusError
         }
         
         // Map result to Records Object and return it

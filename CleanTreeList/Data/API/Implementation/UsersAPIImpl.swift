@@ -27,7 +27,7 @@ struct UsersAPIImpl: UsersRemoteDataSource {
         }
         
         guard let response = response as? HTTPURLResponse else {
-            throw APIServiceError.statusNotOK
+            throw APIServiceError.statusError
         }
         
         // Check if response.statusCode is 201 else throw error
@@ -36,14 +36,16 @@ struct UsersAPIImpl: UsersRemoteDataSource {
             switch response.statusCode {
                 // MARK: - Error 422: Unprocessable Entity
             case 422:
-                guard let responseError = try? JSONDecoder().decode([UserResponseError].self, from: data) else {
-                    print("Herre")
-                    throw APIServiceError.statusNotOK
+                guard let responseError = try? JSONDecoder().decode([UserResponseError].self, from: data),
+                      !responseError.isEmpty else {
+                    throw APIServiceError.statusError
                 }
                 print(responseError)
-                throw APIServiceError.statusNotOK
+                throw APIServiceError.error422(responseError[0])
+                
+                // MARK: - Other Error Status
             default:
-                throw APIServiceError.statusNotOK
+                throw APIServiceError.statusError
             }
             
         }

@@ -8,10 +8,6 @@
 import Foundation
 import CoreData
 
-enum UseCaseApiError: Error {
-    case networkError, decodingError
-}
-
 protocol TreeListApiUseCaseProtocol {
     func getTreeList(startIndex: Int) async -> Result<[GeolocatedTree], UseCaseApiError>
 }
