@@ -46,19 +46,31 @@ class UsersViewModel: ObservableObject {
     }
     @Published var wsInProgress: Bool = false
     
+    // Error variables
+    @Published var emailLocalizeError: LocalizeError = LocalizeError.undisplayError
+    @Published var nameLocalizeError: LocalizeError = LocalizeError.undisplayError
     @Published var postErrorString: LocalizedStringKey = ""
     
+    // MARK: - Checks
     func checkEmail() {
         let emailTest = NSPredicate(format: Regex.selfMatchRule, Regex.emailRegex)
         if(emailTest.evaluate(with: userPost.email) && !userPost.email.isEmpty) {
             
+            withAnimation(.easeInOut(duration: 0.5)) {
+                emailLocalizeError = .undisplayError
+            }
         }else{
-            print("Email incorrect")
+            withAnimation(.easeInOut(duration: 0.5)) {
+                emailLocalizeError = displayLocalizeError(error: "Votre email est incorrect")
+            }
         }
     }
     
+    // MARK: - Actions
     func postUser() async {
-        postRequestStatus = .InProgress
+        withAnimation(.easeInOut(duration: 0.2)) {
+            postRequestStatus = .InProgress
+        }
         let result = await userApiUseCase.postUser(user: userPost)
         
         switch result {
@@ -67,11 +79,20 @@ class UsersViewModel: ObservableObject {
         case .failure(let error):
             switch error {
             case .error422(let errorString):
-                postErrorString = LocalizedStringKey(errorString)
-                postRequestStatus = .Failure
+                DispatchQueue.main.async {
+                    self.postErrorString = LocalizedStringKey(errorString)
+                    withAnimation(.easeInOut(duration: 0.5)) {
+                        self.postRequestStatus = .Failure
+                    }
+                }
             default:
-                postErrorString = "Erreur"
+                postErrorString = "Une erreur est survenue"
             }
         }
+    }
+    
+    // MARK: - Utils
+    func displayLocalizeError(error: LocalizedStringKey) -> LocalizeError {
+        return LocalizeError(needDisplayError: true, errorString: error)
     }
 }

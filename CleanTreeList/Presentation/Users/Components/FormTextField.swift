@@ -10,6 +10,7 @@ import SwiftUI
 struct FormTextField: View {
     
     let placeholder: String
+    let localizeError: LocalizeError
     
     @Binding var text: String
     
@@ -33,10 +34,13 @@ struct FormTextField: View {
             .underlineTextField()
             .font(.system(.footnote))
             .padding(.horizontal)
-            Text("Test")
-                .font(.system(.footnote))
-                .foregroundColor(.red)
-                .padding(.leading, 25)
+            
+            if(localizeError.needDisplayError){
+                Text(localizeError.errorString)
+                    .font(.system(.footnote))
+                    .foregroundColor(.red)
+                    .padding(.leading, 25)
+            }
         } // VSTACK
     }
 }
@@ -47,7 +51,9 @@ struct FormTextField_Previews: PreviewProvider {
         @State(initialValue: "") var code: String
         
         var body: some View {
-            FormTextField(placeholder: "Email", text: $code)
+            FormTextField(placeholder: "Email", localizeError: LocalizeError.undisplayError, text: $code)
+            
+            FormTextField(placeholder: "Email", localizeError: LocalizeError.displayError, text: $code)
         }
     }
     

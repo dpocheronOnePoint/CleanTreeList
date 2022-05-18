@@ -15,11 +15,16 @@ struct AddPersonView: View {
         VStack (spacing: 30) {
             FormTextField(
                 placeholder: "Email",
+                localizeError: usersViewModel.emailLocalizeError,
                 text: $usersViewModel.userPost.email,
                 unEditingChangedAction: usersViewModel.checkEmail
             )
             
-            FormTextField(placeholder: "Nom", text: $usersViewModel.userPost.name)
+            FormTextField(
+                placeholder: "Nom",
+                localizeError: usersViewModel.nameLocalizeError,
+                text: $usersViewModel.userPost.name
+            )
             
             HStack(spacing: 30) {
                 SexeSelector(
@@ -46,6 +51,7 @@ struct AddPersonView: View {
                     await usersViewModel.postUser()
                 }
             }
+            .animation(.none, value: usersViewModel.wsInProgress)
             
         } // VSTACK
     }
