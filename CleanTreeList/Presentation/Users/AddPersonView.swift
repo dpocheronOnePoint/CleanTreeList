@@ -13,7 +13,11 @@ struct AddPersonView: View {
     
     var body: some View {
         VStack (spacing: 30) {
-            FormTextField(placeholder: "Email", text: $usersViewModel.userPost.email)
+            FormTextField(
+                placeholder: "Email",
+                text: $usersViewModel.userPost.email,
+                unEditingChangedAction: usersViewModel.checkEmail
+            )
             
             FormTextField(placeholder: "Nom", text: $usersViewModel.userPost.name)
             
@@ -32,6 +36,7 @@ struct AddPersonView: View {
             
             if usersViewModel.postRequestStatus == .Failure {
                 Text(usersViewModel.postErrorString)
+                    .font(.footnote)
                     .foregroundColor(.red)
                     .padding()
             }

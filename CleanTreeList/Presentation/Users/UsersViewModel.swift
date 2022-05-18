@@ -45,7 +45,17 @@ class UsersViewModel: ObservableObject {
         }
     }
     @Published var wsInProgress: Bool = false
+    
     @Published var postErrorString: LocalizedStringKey = ""
+    
+    func checkEmail() {
+        let emailTest = NSPredicate(format: Regex.selfMatchRule, Regex.emailRegex)
+        if(emailTest.evaluate(with: userPost.email) && !userPost.email.isEmpty) {
+            
+        }else{
+            print("Email incorrect")
+        }
+    }
     
     func postUser() async {
         postRequestStatus = .InProgress

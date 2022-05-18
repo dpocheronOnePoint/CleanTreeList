@@ -67,6 +67,7 @@
 		D3AA66C82823928E00862D43 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AA66C72823928E00862D43 /* Record.swift */; };
 		D3B007602834CB8400030C9E /* UserResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0075F2834CB8400030C9E /* UserResponseError.swift */; };
 		D3B007622834D13E00030C9E /* UseCaseApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B007612834D13E00030C9E /* UseCaseApiError.swift */; };
+		D3B00764283516DC00030C9E /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B00763283516DC00030C9E /* Regex.swift */; };
 		D3C57B3B282395A20028E4EB /* TreeAPIlmpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57B3A282395A20028E4EB /* TreeAPIlmpl.swift */; };
 		D3C57B3D282395BF0028E4EB /* TreeRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57B3C282395BF0028E4EB /* TreeRemoteDataSource.swift */; };
 		D3C57B3F282396630028E4EB /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57B3E282396630028E4EB /* Tree.swift */; };
@@ -147,6 +148,7 @@
 		D3AA66C72823928E00862D43 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		D3B0075F2834CB8400030C9E /* UserResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseError.swift; sourceTree = "<group>"; };
 		D3B007612834D13E00030C9E /* UseCaseApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseApiError.swift; sourceTree = "<group>"; };
+		D3B00763283516DC00030C9E /* Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		D3C57B3A282395A20028E4EB /* TreeAPIlmpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeAPIlmpl.swift; sourceTree = "<group>"; };
 		D3C57B3C282395BF0028E4EB /* TreeRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeRemoteDataSource.swift; sourceTree = "<group>"; };
 		D3C57B3E282396630028E4EB /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				D32CD633282B982800C7FC80 /* NetworkMonitor.swift */,
 				D347DDA3282E859B004311FE /* MultipleStringFormatter.swift */,
 				D347DDBD282EA4E4004311FE /* BindingInverter.swift */,
+				D3B00763283516DC00030C9E /* Regex.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -750,6 +753,7 @@
 				D347DDC5282EACFB004311FE /* CheckBox.swift in Sources */,
 				D32CD624282A6C1900C7FC80 /* CDTree+CoreDataClass.swift in Sources */,
 				D3AA66C82823928E00862D43 /* Record.swift in Sources */,
+				D3B00764283516DC00030C9E /* Regex.swift in Sources */,
 				D3C57B3B282395A20028E4EB /* TreeAPIlmpl.swift in Sources */,
 				D31353B42833A3D6006485B7 /* MapTreeItemAnnotationView.swift in Sources */,
 				D3E40B49282506B800025D14 /* JSONDecodeError.swift in Sources */,

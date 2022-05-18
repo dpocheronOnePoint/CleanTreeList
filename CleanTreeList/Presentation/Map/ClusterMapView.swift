@@ -28,12 +28,6 @@ struct ClusterMapView: View {
     }
 }
 
-struct ForthMapView_Previews: PreviewProvider {
-    static var previews: some View {
-        ClusterMapView()
-    }
-}
-
 // Interesting link
 // https://thomas-sivilay.github.io/morningswiftui.github.io/swiftui/2019/07/31/build-mapview-app-with-swiftui.html
 
@@ -93,7 +87,7 @@ struct ClusterMapViewRepresentable: UIViewRepresentable {
         
         func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
             guard let treeItem = view.annotation as? TreeItem else {
-                return print("Click on cluster pin")
+                return print("Annotation isn't TreeItem class")
             }
 
             if let findedTree = mapView.annotations.first(where: { ($0 as? TreeItem)?.id == treeItem.id }) {

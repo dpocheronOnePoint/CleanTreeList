@@ -40,7 +40,6 @@ struct UsersAPIImpl: UsersRemoteDataSource {
                       !responseError.isEmpty else {
                     throw APIServiceError.statusError
                 }
-                print(responseError)
                 throw APIServiceError.error422(responseError[0])
                 
                 // MARK: - Other Error Status
