@@ -8,6 +8,10 @@
 import Foundation
 import SwiftUI
 
+enum PostRequestStatus {
+    case NotCalled, InProgress, Failure, Success
+}
+
 class UsersViewModel: ObservableObject {
     
     var userApiUseCase = UserApiUseCase(userRemoteRepository: UsersRemoteRepositoryImpl(usersRemoteDataSource: UsersAPIImpl()))
@@ -31,20 +35,30 @@ class UsersViewModel: ObservableObject {
             }
         }
     }
-    @Published var hasError: Bool = false
+    @Published var postRequestStatus: PostRequestStatus = .NotCalled {
+        didSet {
+            if postRequestStatus == .InProgress {
+                wsInProgress = true
+            }else{
+                wsInProgress = false
+            }
+        }
+    }
+    @Published var wsInProgress: Bool = false
     @Published var postErrorString: LocalizedStringKey = ""
     
     func postUser() async {
+        postRequestStatus = .InProgress
         let result = await userApiUseCase.postUser(user: userPost)
         
         switch result {
-        case .success(let user):
-            print(user)
+        case .success(_):
+            postRequestStatus = .Success
         case .failure(let error):
             switch error {
             case .error422(let errorString):
                 postErrorString = LocalizedStringKey(errorString)
-                hasError = true
+                postRequestStatus = .Failure
             default:
                 postErrorString = "Erreur"
             }

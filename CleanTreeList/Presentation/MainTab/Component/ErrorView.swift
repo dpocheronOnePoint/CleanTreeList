@@ -28,7 +28,7 @@ struct ErrorView: View {
             
             Spacer()
             
-            AppButton(systemImage: "arrow.triangle.2.circlepath.circle.fill", buttonTitle: "Réessayer") {
+            AppButton(wsCallInProgress: .constant(false), systemImage: "arrow.triangle.2.circlepath.circle.fill", buttonTitle: "Réessayer") {
                 Task {
                     await treeEnvironment.getTrees()
                 }
