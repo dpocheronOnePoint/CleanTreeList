@@ -13,6 +13,8 @@ struct AddPersonView: View {
     
     var body: some View {
         VStack (spacing: 30) {
+            
+            #warning("Need to be improved keyboard displaying")
             FormTextField(
                 placeholder: "Email",
                 localizeError: usersViewModel.emailLocalizeError,

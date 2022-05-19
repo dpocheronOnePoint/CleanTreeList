@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct TreeListView: View {
+
+    @EnvironmentObject var treeEnvironment: TreeEnvironment
     
     @State private var searchText: String = ""
     
     var body: some View {
         NavigationView{
-            TreeListComponentView()
-                .navigationTitle("treeListTitle")
+            if(treeEnvironment.networkStatus == .requstInProgress){
+                ProgressView()
+            }else if (treeEnvironment.networkStatus == .networkFail){
+                ErrorView()
+                    .environmentObject(treeEnvironment)
+            }else{
+                TreeListComponentView()
+                    .navigationTitle("treeListTitle")
+            }
         } //: NAVIGATION
         
     }

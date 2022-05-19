@@ -46,11 +46,11 @@ class TreeEnvironment: ObservableObject {
                 if(internetConnexionIsOk) {
                     // To prevent connexion to 4G and after connexion to Wifi --> Double call
                     if(!connexionAlreadyGoBack){
-                        connexionAlreadyGoBack = true
+                        setConnexionAlreadyGoBack(status: true)
                         await getTrees()
                     }
                 }else{
-                    connexionAlreadyGoBack = false
+                    setConnexionAlreadyGoBack(status: false)
                     if(geolocatedTrees.isEmpty){
                         await loadCDGeolocatedTrees()
                     }
@@ -125,7 +125,9 @@ class TreeEnvironment: ObservableObject {
             return
         }
         
-        isLoadingPage = true
+        DispatchQueue.main.async {
+            self.isLoadingPage = true
+        }
         let result = await treeListApiUseCase.getTreeList(startIndex: startIndex)
         switch result {
         case .success(let geolocatedTrees):
@@ -180,6 +182,15 @@ class TreeEnvironment: ObservableObject {
             try await treeListCDUseCase.saveGeolocatedTreeListInCoreDataWith(geolocatedTreeList: geolocatedTrees)
         } catch {
             print("Data connot be inserted in DataBase")
+        }
+    }
+    
+    // MARK: - Utils
+    
+    // Just a function to externalise Main Thread process to call from didSet switcher
+    func setConnexionAlreadyGoBack(status: Bool) {
+        DispatchQueue.main.async {
+            self.connexionAlreadyGoBack = status
         }
     }
 }
