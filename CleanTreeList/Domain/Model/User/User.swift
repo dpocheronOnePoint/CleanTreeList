@@ -34,5 +34,5 @@ extension RemoteUser: DataToDomain {
 }
 
 extension UserPost {
-    static let starterUserPost = UserPost(email: "geo@test.com", name: "Mon", gender: "male", status: "active")
+    static let starterUserPost = UserPost(email: "", name: "", gender: "male", status: "active")
 }

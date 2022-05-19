@@ -12,7 +12,7 @@ struct PasswordTipsView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            CheckBox(isActivated: $checkPassword.lengthIsGood, checkoboxTitle: "password_check_lenght")
+            CheckBox(isActivated: $checkPassword.lengthIsValid, checkoboxTitle: "password_check_lenght")
             
             CheckBox(isActivated: $checkPassword.hasUppercaseCaracter, checkoboxTitle: "password_check_has_uppercase")
             

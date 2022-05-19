@@ -17,6 +17,8 @@ class UsersViewModel: ObservableObject {
     private var userApiUseCase = UserApiUseCase(userRemoteRepository: UsersRemoteRepositoryImpl(usersRemoteDataSource: UsersAPIImpl()))
     
     @Published var userPost: UserPost = UserPost.starterUserPost
+    @Published var checkPostFields: CheckPostFields = CheckPostFields.falseCheckPostFields
+    
     @Published var femaleIsSelected: Bool = true {
         didSet {
             if femaleIsSelected {
@@ -49,6 +51,7 @@ class UsersViewModel: ObservableObject {
     // Error variables
     @Published var emailLocalizeError: LocalizeError = LocalizeError.undisplayError
     @Published var nameLocalizeError: LocalizeError = LocalizeError.undisplayError
+    @Published var passwordLocalizeError: LocalizeError = LocalizeError.undisplayError
     @Published var postErrorString: LocalizedStringKey = ""
     
     // Passwordtext just to test
@@ -56,9 +59,9 @@ class UsersViewModel: ObservableObject {
     @Published var checkPassword: CheckPassword = CheckPassword.falseCheckPassword
     
     // MARK: - Checks
-    func checkEmail() {
+    func checkEmailUnfocus() {
         let emailTest = NSPredicate(format: Regex.selfMatchRule, Regex.emailRegex)
-        if(emailTest.evaluate(with: userPost.email) && !userPost.email.isEmpty) {
+        if(emailTest.evaluate(with: userPost.email)) {
             
             withAnimation(.easeInOut(duration: 0.5)) {
                 emailLocalizeError = .undisplayError
@@ -70,9 +73,48 @@ class UsersViewModel: ObservableObject {
         }
     }
     
-    func checkPasswordField() {
+    func checkEmailWriteInProcess() {
+        let emailTest = NSPredicate(format: Regex.selfMatchRule, Regex.emailRegex)
+        if(emailTest.evaluate(with: userPost.email)) {
+            
+            withAnimation(.easeInOut(duration: 0.5)) {
+                emailLocalizeError = .undisplayError
+            }
+            
+            checkPostFields.emailFieldIsValid = true
+        }else{
+            checkPostFields.emailFieldIsValid = false
+        }
+    }
+    
+    func checkNameUnFocus() {
+        if(userPost.name.count >= 3) {
+            nameLocalizeError = displayLocalizeError(error: "Votre nom doit contenir au moins 3 caractères")
+        }else{
+            nameLocalizeError = LocalizeError.undisplayError
+        }
+    }
+    
+    func checkNameWriteProgess() {
+        if(userPost.name.count < 3) {
+            checkPostFields.nameFieldIsValid = false
+        }else{
+            nameLocalizeError = LocalizeError.undisplayError
+            checkPostFields.nameFieldIsValid = true
+        }
+    }
+    
+    func checkPasswordUnfocus() {
+        if(checkPassword.passwordIsValid){
+            passwordLocalizeError = LocalizeError.undisplayError
+        }else{
+            passwordLocalizeError = displayLocalizeError(error: "Votre mot de passe est incorrect")
+        }
+    }
+    
+    func checkPasswordInWriteProcess() {
         // Check password length
-        checkPassword.lengthIsGood = passwordText.count >= 10
+        checkPassword.lengthIsValid = passwordText.count >= 10
         
         // Check password contains capital character
         let uppercaseTest = NSPredicate(format: Regex.selfMatchRule, Regex.uppercaseRegex)
@@ -81,10 +123,14 @@ class UsersViewModel: ObservableObject {
         // Check password contain digit character
         let digitTest = NSPredicate(format: Regex.selfMatchRule, Regex.digitRegex)
         checkPassword.hasDigitCaracter = digitTest.evaluate(with: passwordText)
-     
+        
         // Check password contain special character
         let specialTest = NSPredicate(format: Regex.selfMatchRule, Regex.specialRegex)
         checkPassword.hasSpecialCaracter = specialTest.evaluate(with: passwordText)
+        
+        if(checkPassword.passwordIsValid) {
+            passwordLocalizeError = LocalizeError.undisplayError
+        }
     }
     
     // MARK: - Actions
@@ -100,20 +146,25 @@ class UsersViewModel: ObservableObject {
         case .failure(let error):
             switch error {
             case .error422(let errorString):
-                DispatchQueue.main.async {
-                    self.postErrorString = LocalizedStringKey(errorString)
-                    withAnimation(.easeInOut(duration: 0.5)) {
-                        self.postRequestStatus = .Failure
-                    }
-                }
+                displayApiError(error: errorString)
             default:
-                postErrorString = "Une erreur est survenue"
+                displayApiError(error: "Une erreur est survenue")
             }
         }
     }
     
     // MARK: - Utils
-   private func displayLocalizeError(error: LocalizedStringKey) -> LocalizeError {
+    private func displayLocalizeError(error: LocalizedStringKey) -> LocalizeError {
         return LocalizeError(needDisplayError: true, errorString: error)
     }
+    
+    private func displayApiError(error: String) {
+        DispatchQueue.main.async {
+            self.postErrorString = LocalizedStringKey(error)
+            withAnimation(.easeInOut(duration: 0.5)) {
+                self.postRequestStatus = .Failure
+            }
+        }
+    }
+    
 }

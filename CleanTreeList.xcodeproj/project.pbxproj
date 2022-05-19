@@ -73,6 +73,7 @@
 		D3B0076B283636B000030C9E /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0076A283636B000030C9E /* HideKeyboard.swift */; };
 		D3B0076D28363AC600030C9E /* PasswordTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0076C28363AC600030C9E /* PasswordTipsView.swift */; };
 		D3B0077028363D9B00030C9E /* CheckPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0076F28363D9B00030C9E /* CheckPassword.swift */; };
+		D3B007732836693D00030C9E /* CheckPostFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B007722836693D00030C9E /* CheckPostFields.swift */; };
 		D3C57B3B282395A20028E4EB /* TreeAPIlmpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57B3A282395A20028E4EB /* TreeAPIlmpl.swift */; };
 		D3C57B3D282395BF0028E4EB /* TreeRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57B3C282395BF0028E4EB /* TreeRemoteDataSource.swift */; };
 		D3C57B3F282396630028E4EB /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57B3E282396630028E4EB /* Tree.swift */; };
@@ -159,6 +160,7 @@
 		D3B0076A283636B000030C9E /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
 		D3B0076C28363AC600030C9E /* PasswordTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTipsView.swift; sourceTree = "<group>"; };
 		D3B0076F28363D9B00030C9E /* CheckPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPassword.swift; sourceTree = "<group>"; };
+		D3B007722836693D00030C9E /* CheckPostFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPostFields.swift; sourceTree = "<group>"; };
 		D3C57B3A282395A20028E4EB /* TreeAPIlmpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeAPIlmpl.swift; sourceTree = "<group>"; };
 		D3C57B3C282395BF0028E4EB /* TreeRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeRemoteDataSource.swift; sourceTree = "<group>"; };
 		D3C57B3E282396630028E4EB /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
@@ -263,7 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				D31353C22833DDF0006485B7 /* User.swift */,
-				D3B0076F28363D9B00030C9E /* CheckPassword.swift */,
+				D3B007712836691F00030C9E /* CheckField */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -615,6 +617,15 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		D3B007712836691F00030C9E /* CheckField */ = {
+			isa = PBXGroup;
+			children = (
+				D3B0076F28363D9B00030C9E /* CheckPassword.swift */,
+				D3B007722836693D00030C9E /* CheckPostFields.swift */,
+			);
+			path = CheckField;
+			sourceTree = "<group>";
+		};
 		D3C57B39282395890028E4EB /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -742,6 +753,7 @@
 				D3D7E284282BF6ED00284215 /* TreesCDRepositoryImpl.swift in Sources */,
 				D3C57B3F282396630028E4EB /* Tree.swift in Sources */,
 				D32CD637282BAAC500C7FC80 /* ConnectionStatusView.swift in Sources */,
+				D3B007732836693D00030C9E /* CheckPostFields.swift in Sources */,
 				D314834528322E3300C40198 /* DirectionMapView.swift in Sources */,
 				D3B0076728351BAB00030C9E /* LocalizeError.swift in Sources */,
 				D3B0077028363D9B00030C9E /* CheckPassword.swift in Sources */,
