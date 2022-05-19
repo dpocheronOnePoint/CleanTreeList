@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CheckBox: View {
     @Binding var isActivated: Bool
-    let checkoboxTitle: String
+    let checkoboxTitle: LocalizedStringKey
     
     var body: some View {
         Toggle(isOn: $isActivated) {

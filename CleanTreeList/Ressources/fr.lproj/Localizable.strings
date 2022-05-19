@@ -21,3 +21,7 @@
 
 "usersListTitle" = "Les utilisateurs";
 "email_has_already_been_taken" = "Votre adresse mail est déja utilisée";
+"password_check_lenght" = "Votre mot de passe doit contenir 10 caractères";
+"password_check_has_uppercase" = "Votre mot de passe doit contenir une majuscule";
+"password_check_has_digit" = "Votre mot de passe doit contenir un chiffre";
+"password_check_has_special" = "Votre mot de passe doit contenir un caractère spécial";

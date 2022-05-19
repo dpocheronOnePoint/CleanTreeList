@@ -99,7 +99,7 @@ struct AddPersonView: View {
                 .animation(.none, value: usersViewModel.wsInProgress)
                 .isHidden(passwordWriteInProgress)
                 
-                PasswordTipsView(lenghtCheck: $usersViewModel.checkPassword.lengthIsGood)
+                PasswordTipsView(checkPassword: $usersViewModel.checkPassword)
                     .isHidden(!passwordWriteInProgress)
                 
                 Spacer()

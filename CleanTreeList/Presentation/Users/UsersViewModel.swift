@@ -71,7 +71,20 @@ class UsersViewModel: ObservableObject {
     }
     
     func checkPasswordField() {
+        // Check password length
         checkPassword.lengthIsGood = passwordText.count >= 10
+        
+        // Check password contains capital character
+        let uppercaseTest = NSPredicate(format: Regex.selfMatchRule, Regex.uppercaseRegex)
+        checkPassword.hasUppercaseCaracter = uppercaseTest.evaluate(with: passwordText)
+        
+        // Check password contain digit character
+        let digitTest = NSPredicate(format: Regex.selfMatchRule, Regex.digitRegex)
+        checkPassword.hasDigitCaracter = digitTest.evaluate(with: passwordText)
+     
+        // Check password contain special character
+        let specialTest = NSPredicate(format: Regex.selfMatchRule, Regex.specialRegex)
+        checkPassword.hasSpecialCaracter = specialTest.evaluate(with: passwordText)
     }
     
     // MARK: - Actions

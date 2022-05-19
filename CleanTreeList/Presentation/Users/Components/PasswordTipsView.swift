@@ -8,19 +8,24 @@
 import SwiftUI
 
 struct PasswordTipsView: View {
-    @Binding var lenghtCheck: Bool
+    @Binding var checkPassword: CheckPassword
     
     var body: some View {
-        VStack {
-            CheckBox(isActivated: $lenghtCheck, checkoboxTitle: "Votre mot de passe doit contenir 10 caractères")
-            CheckBox(isActivated: $lenghtCheck, checkoboxTitle: "Votre mot de passe doit contenir 10 caractères")
+        VStack(alignment: .leading, spacing: 10) {
+            CheckBox(isActivated: $checkPassword.lengthIsGood, checkoboxTitle: "password_check_lenght")
+            
+            CheckBox(isActivated: $checkPassword.hasUppercaseCaracter, checkoboxTitle: "password_check_has_uppercase")
+            
+            CheckBox(isActivated: $checkPassword.hasDigitCaracter, checkoboxTitle: "password_check_has_digit")
+            
+            CheckBox(isActivated: $checkPassword.hasSpecialCaracter, checkoboxTitle: "password_check_has_special")
         } // VSTACK
     }
 }
 
 struct PasswordTipsView_Previews: PreviewProvider {
     static var previews: some View {
-        PasswordTipsView(lenghtCheck: .constant(true))
+        PasswordTipsView(checkPassword: .constant(CheckPassword.falseCheckPassword))
             .previewLayout(.sizeThatFits)
             .padding()
     }
