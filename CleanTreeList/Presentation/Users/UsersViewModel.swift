@@ -14,7 +14,7 @@ enum PostRequestStatus {
 
 class UsersViewModel: ObservableObject {
     
-    var userApiUseCase = UserApiUseCase(userRemoteRepository: UsersRemoteRepositoryImpl(usersRemoteDataSource: UsersAPIImpl()))
+    private var userApiUseCase = UserApiUseCase(userRemoteRepository: UsersRemoteRepositoryImpl(usersRemoteDataSource: UsersAPIImpl()))
     
     @Published var userPost: UserPost = UserPost.starterUserPost
     @Published var femaleIsSelected: Bool = true {
@@ -100,7 +100,7 @@ class UsersViewModel: ObservableObject {
     }
     
     // MARK: - Utils
-    func displayLocalizeError(error: LocalizedStringKey) -> LocalizeError {
+   private func displayLocalizeError(error: LocalizedStringKey) -> LocalizeError {
         return LocalizeError(needDisplayError: true, errorString: error)
     }
 }

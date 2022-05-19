@@ -18,14 +18,14 @@ enum NetworkStatus {
 let feedback = UINotificationFeedbackGenerator()
 
 class TreeEnvironment: ObservableObject {
-    var treeListApiUseCase = TreeListApiUseCase(
+    private var treeListApiUseCase = TreeListApiUseCase(
         treeListRemoteRepository: TreesRemoteRepositoryImpl(
             remoteDataSource: TreeAPIlmpl(),
             localDataSource: TreeLocalImpl()
         )
     )
     
-    var treeListCDUseCase = TreeListCDUseCase(
+    private var treeListCDUseCase = TreeListCDUseCase(
         treeListCDRepository: TreesCDRepositoryImpl(
             treeCDDataSource: TreeCDImpl()
         )
@@ -66,7 +66,7 @@ class TreeEnvironment: ObservableObject {
     
     // MARK: - Initializers
     
-    func initializeNewtorwMonitor() {
+   private func initializeNewtorwMonitor() {
         NWPathMonitor()
             .publisher(queue: monitorQueue)
             .receive(on: DispatchQueue.main)
@@ -86,7 +86,7 @@ class TreeEnvironment: ObservableObject {
             .store(in: &cancellables)
     }
     
-    func loadCDGeolocatedTrees() async {
+    private func loadCDGeolocatedTrees() async {
         self.startIndex = 0
         
         let result = await treeListCDUseCase.loadLocalTrees()
@@ -171,7 +171,7 @@ class TreeEnvironment: ObservableObject {
         }
     }
     
-    func updateDataBase(geolocatedTrees: [GeolocatedTree]) async {
+    private func updateDataBase(geolocatedTrees: [GeolocatedTree]) async {
         do {
             try await treeListCDUseCase.clearDataBase()
         } catch {
@@ -188,7 +188,7 @@ class TreeEnvironment: ObservableObject {
     // MARK: - Utils
     
     // Just a function to externalise Main Thread process to call from didSet switcher
-    func setConnexionAlreadyGoBack(status: Bool) {
+    private func setConnexionAlreadyGoBack(status: Bool) {
         DispatchQueue.main.async {
             self.connexionAlreadyGoBack = status
         }

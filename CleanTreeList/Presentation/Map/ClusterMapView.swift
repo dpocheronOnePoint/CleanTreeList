@@ -10,7 +10,7 @@ import MapKit
 
 struct ClusterMapView: View {
     @EnvironmentObject var treeEnvironment: TreeEnvironment
-    @StateObject var mapViewModel = MapViewModel()
+    @StateObject private var mapViewModel = MapViewModel()
     
     var body: some View {
         ZStack {
@@ -37,7 +37,7 @@ struct ClusterMapViewRepresentable: UIViewRepresentable {
     
     typealias UIViewType = MKMapView
     
-    let region: MKCoordinateRegion = {
+    private let region: MKCoordinateRegion = {
         var mapCoordinates = CLLocationCoordinate2D(latitude: 48.856614, longitude: 2.3522219)
         var mapZoomLevel = MKCoordinateSpan(latitudeDelta: 0.3, longitudeDelta: 0.3)
         var mapRegion = MKCoordinateRegion(center: mapCoordinates, span: mapZoomLevel)

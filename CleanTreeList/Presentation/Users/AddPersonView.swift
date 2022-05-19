@@ -20,7 +20,7 @@ struct AddPersonView: View {
     @State private var passwordWriteInProgress = false
     
     // MARK: - Functions
-    func setPasswordWriteInProgress() {
+    private func setPasswordWriteInProgress() {
         withAnimation(.easeInOut(duration: 0.2)){
             passwordWriteInProgress.toggle()
         }

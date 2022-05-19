@@ -11,7 +11,7 @@ import MapKit
 struct MapView: View {
     @EnvironmentObject var treeEnvironment: TreeEnvironment
     
-    @StateObject var mapViewModel = MapViewModel()
+    @StateObject private var mapViewModel = MapViewModel()
     
     @State private var region: MKCoordinateRegion = {
         var mapCoordinates = CLLocationCoordinate2D(latitude: 48.856614, longitude: 2.3522219)

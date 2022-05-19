@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct MainTabView: View {
-    let isClusterMapView: Bool = false
+    private let isClusterMapView: Bool = false
     
-    @StateObject var treeEnvironment = TreeEnvironment()
+    @StateObject private var treeEnvironment = TreeEnvironment()
     
     var body: some View {
         
