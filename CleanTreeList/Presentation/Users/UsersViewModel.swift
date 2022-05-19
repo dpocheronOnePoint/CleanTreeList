@@ -51,6 +51,10 @@ class UsersViewModel: ObservableObject {
     @Published var nameLocalizeError: LocalizeError = LocalizeError.undisplayError
     @Published var postErrorString: LocalizedStringKey = ""
     
+    // Passwordtext just to test
+    @Published var passwordText: String = ""
+    @Published var checkPassword: CheckPassword = CheckPassword.falseCheckPassword
+    
     // MARK: - Checks
     func checkEmail() {
         let emailTest = NSPredicate(format: Regex.selfMatchRule, Regex.emailRegex)
@@ -64,6 +68,10 @@ class UsersViewModel: ObservableObject {
                 emailLocalizeError = displayLocalizeError(error: "Votre email est incorrect")
             }
         }
+    }
+    
+    func checkPasswordField() {
+        checkPassword.lengthIsGood = passwordText.count >= 10
     }
     
     // MARK: - Actions
