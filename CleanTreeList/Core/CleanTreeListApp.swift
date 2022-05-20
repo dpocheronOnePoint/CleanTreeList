@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct CleanTreeListApp: App {
+    @AppStorage("userConnected") var userIsConnected: Bool = false
+    
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+            if(userIsConnected) {
+                MainTabView()
+            } else {
+                LoginView()
+            }
         }
     }
 }

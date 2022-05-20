@@ -6,23 +6,28 @@
 //
 
 import SwiftUI
+import Resolver
 
 struct TreeListView: View {
-
-    @EnvironmentObject var treeEnvironment: TreeEnvironment
+    
+    @ObservedObject var treeEnvironment: TreeEnvironment = Resolver.resolve()
     
     @State private var searchText: String = ""
     
     var body: some View {
         NavigationView{
-            if(treeEnvironment.networkStatus == .requstInProgress){
+            switch treeEnvironment.networkStatus {
+                
+            case .requstInProgress:
                 ProgressView()
-            }else if (treeEnvironment.networkStatus == .networkFail){
+                
+            case .networkFail:
                 ErrorView()
-                    .environmentObject(treeEnvironment)
-            }else{
+                
+            case .dataLoadedFromCD, .dataLoadedFromWS:
                 TreeListComponentView()
                     .navigationTitle("treeListTitle")
+                
             }
         } //: NAVIGATION
         

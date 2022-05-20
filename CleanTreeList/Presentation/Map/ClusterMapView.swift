@@ -7,9 +7,10 @@
 
 import SwiftUI
 import MapKit
+import Resolver
 
 struct ClusterMapView: View {
-    @EnvironmentObject var treeEnvironment: TreeEnvironment
+    @ObservedObject var treeEnvironment: TreeEnvironment = Resolver.resolve()
     @StateObject private var mapViewModel = MapViewModel()
     
     var body: some View {
@@ -32,7 +33,7 @@ struct ClusterMapView: View {
 // https://thomas-sivilay.github.io/morningswiftui.github.io/swiftui/2019/07/31/build-mapview-app-with-swiftui.html
 
 struct ClusterMapViewRepresentable: UIViewRepresentable {
-    @EnvironmentObject var treeEnvironment: TreeEnvironment
+    @ObservedObject var treeEnvironment: TreeEnvironment = Resolver.resolve()
     @StateObject var mapViewModel: MapViewModel
     
     typealias UIViewType = MKMapView

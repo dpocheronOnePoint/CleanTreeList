@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import Resolver
 
 struct TreeListComponentView: View {
-    @EnvironmentObject var treeEnvironment: TreeEnvironment
+    @ObservedObject var treeEnvironment: TreeEnvironment = Resolver.resolve()
     
     @StateObject var treeListViewModel = TreeListViewModel()
     
@@ -48,6 +49,5 @@ struct TreeListComponentView: View {
 struct TreeListComponentView_Previews: PreviewProvider {
     static var previews: some View {
         TreeListComponentView()
-            .environmentObject(TreeEnvironment())
     }
 }

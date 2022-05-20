@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import Resolver
 
 struct ErrorView: View {
-    @EnvironmentObject var treeEnvironment: TreeEnvironment
-    
+    @ObservedObject var treeEnvironment: TreeEnvironment = Resolver.resolve()
+
     var body: some View {
         VStack(spacing: 20){
             
@@ -42,6 +43,5 @@ struct ErrorView: View {
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
         ErrorView()
-            .environmentObject(TreeEnvironment())
     }
 }

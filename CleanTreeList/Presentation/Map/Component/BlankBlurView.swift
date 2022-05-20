@@ -31,7 +31,6 @@ struct BlankBlurView_Previews: PreviewProvider {
         BlankBlurView(backgroundColor: Color.black, backgroundOpacity: 0.3)
             .background(
                 MapView()
-                    .environmentObject(TreeEnvironment())
             )
     }
 }

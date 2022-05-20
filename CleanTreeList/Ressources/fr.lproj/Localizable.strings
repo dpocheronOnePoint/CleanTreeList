@@ -5,6 +5,11 @@
   Created by Dimitri POCHERON on 12/05/2022.
   
 */
+/////////////////////////////////////////////
+///////////////// General ///////////////////
+/////////////////////////////////////////////
+
+"cancel_button_title" = "Annuler";
 
 /////////////////////////////////////////////
 /////////////// TreeList Text ///////////////
@@ -20,6 +25,10 @@
 /////////////////////////////////////////////
 
 "usersListTitle" = "Les utilisateurs";
+"disconnect_button_title" = "Se déconnecter";
+"disconnect_alert_title" = "Se déconnecter";
+"disconnect_alert_description" = "Etes-vous sur de vouloir vous décnnecter";
+"disconnect_alert_button" = "Se déconnecter";
 "email_has_already_been_taken" = "Votre adresse mail est déja utilisée";
 "password_check_lenght" = "Votre mot de passe doit contenir 10 caractères";
 "password_check_has_uppercase" = "Votre mot de passe doit contenir une majuscule";

@@ -7,9 +7,10 @@
 
 import SwiftUI
 import MapKit
+import Resolver
 
 struct MapView: View {
-    @EnvironmentObject var treeEnvironment: TreeEnvironment
+    @ObservedObject var treeEnvironment: TreeEnvironment = Resolver.resolve()
     
     @StateObject private var mapViewModel = MapViewModel()
     
@@ -47,6 +48,5 @@ struct MapView: View {
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         MapView()
-            .environmentObject(TreeEnvironment())
     }
 }

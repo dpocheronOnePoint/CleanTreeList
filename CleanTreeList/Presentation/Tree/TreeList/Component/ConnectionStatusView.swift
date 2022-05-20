@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import Resolver
 
 struct ConnectionStatusView: View {
-    @EnvironmentObject var treeEnvironment: TreeEnvironment
+    @ObservedObject var treeEnvironment: TreeEnvironment = Resolver.resolve()
     
     var body: some View {
         VStack {
@@ -39,7 +40,6 @@ struct ConnectionStatusView: View {
 struct ConnectionStatusView_Previews: PreviewProvider {
     static var previews: some View {
         ConnectionStatusView()
-            .environmentObject(TreeEnvironment())
             .previewLayout(.sizeThatFits)
     }
 }
