@@ -45,6 +45,12 @@
 		D32CD632282B906E00C7FC80 /* TreeLocalImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD631282B906E00C7FC80 /* TreeLocalImpl.swift */; };
 		D32CD634282B982800C7FC80 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD633282B982800C7FC80 /* NetworkMonitor.swift */; };
 		D32CD637282BAAC500C7FC80 /* ConnectionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD636282BAAC500C7FC80 /* ConnectionStatusView.swift */; };
+		D333B12F283B6EFF00407168 /* RealmGeolocatedTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333B12E283B6EFF00407168 /* RealmGeolocatedTree.swift */; };
+		D333B131283B6F0F00407168 /* RealmTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333B130283B6F0F00407168 /* RealmTree.swift */; };
+		D333B133283B750C00407168 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333B132283B750C00407168 /* RealmManager.swift */; };
+		D333B135283B860B00407168 /* TreeRealmImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333B134283B860B00407168 /* TreeRealmImpl.swift */; };
+		D333B137283B865400407168 /* TreeRealmDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333B136283B865400407168 /* TreeRealmDataSource.swift */; };
+		D333B139283B88E200407168 /* DomainToRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333B138283B88E200407168 /* DomainToRealm.swift */; };
 		D34199E82829096400DB45B0 /* TreeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34199E72829096400DB45B0 /* TreeItemView.swift */; };
 		D34199EA2829103400DB45B0 /* TreeListComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34199E92829103400DB45B0 /* TreeListComponentView.swift */; };
 		D347DD93282E478E004311FE /* TreeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347DD92282E478E004311FE /* TreeListViewModel.swift */; };
@@ -134,6 +140,12 @@
 		D32CD631282B906E00C7FC80 /* TreeLocalImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeLocalImpl.swift; sourceTree = "<group>"; };
 		D32CD633282B982800C7FC80 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		D32CD636282BAAC500C7FC80 /* ConnectionStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatusView.swift; sourceTree = "<group>"; };
+		D333B12E283B6EFF00407168 /* RealmGeolocatedTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGeolocatedTree.swift; sourceTree = "<group>"; };
+		D333B130283B6F0F00407168 /* RealmTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTree.swift; sourceTree = "<group>"; };
+		D333B132283B750C00407168 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		D333B134283B860B00407168 /* TreeRealmImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeRealmImpl.swift; sourceTree = "<group>"; };
+		D333B136283B865400407168 /* TreeRealmDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeRealmDataSource.swift; sourceTree = "<group>"; };
+		D333B138283B88E200407168 /* DomainToRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainToRealm.swift; sourceTree = "<group>"; };
 		D34199E72829096400DB45B0 /* TreeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeItemView.swift; sourceTree = "<group>"; };
 		D34199E92829103400DB45B0 /* TreeListComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListComponentView.swift; sourceTree = "<group>"; };
 		D347DD92282E478E004311FE /* TreeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListViewModel.swift; sourceTree = "<group>"; };
@@ -403,8 +415,21 @@
 		D333B12C283B6E6D00407168 /* RealmStorage */ = {
 			isa = PBXGroup;
 			children = (
+				D333B132283B750C00407168 /* RealmManager.swift */,
+				D333B134283B860B00407168 /* TreeRealmImpl.swift */,
+				D333B12D283B6EE700407168 /* RealmModels */,
 			);
 			path = RealmStorage;
+			sourceTree = "<group>";
+		};
+		D333B12D283B6EE700407168 /* RealmModels */ = {
+			isa = PBXGroup;
+			children = (
+				D333B130283B6F0F00407168 /* RealmTree.swift */,
+				D333B12E283B6EFF00407168 /* RealmGeolocatedTree.swift */,
+				D333B138283B88E200407168 /* DomainToRealm.swift */,
+			);
+			path = RealmModels;
 			sourceTree = "<group>";
 		};
 		D34199E62829094000DB45B0 /* Component */ = {
@@ -454,6 +479,7 @@
 				D3C57B3C282395BF0028E4EB /* TreeRemoteDataSource.swift */,
 				D32CD62E282B8F2900C7FC80 /* TreeLocalDataSource.swift */,
 				D3D7E27D282BDD2200284215 /* TreeCDDataSource.swift */,
+				D333B136283B865400407168 /* TreeRealmDataSource.swift */,
 			);
 			path = Tree;
 			sourceTree = "<group>";
@@ -799,9 +825,11 @@
 				D347DD93282E478E004311FE /* TreeListViewModel.swift in Sources */,
 				D3B0076D28363AC600030C9E /* PasswordTipsView.swift in Sources */,
 				D3D7E284282BF6ED00284215 /* TreesCDRepositoryImpl.swift in Sources */,
+				D333B133283B750C00407168 /* RealmManager.swift in Sources */,
 				D3C57B3F282396630028E4EB /* Tree.swift in Sources */,
 				D32CD637282BAAC500C7FC80 /* ConnectionStatusView.swift in Sources */,
 				D3B007732836693D00030C9E /* CheckPostFields.swift in Sources */,
+				D333B131283B6F0F00407168 /* RealmTree.swift in Sources */,
 				D314834528322E3300C40198 /* DirectionMapView.swift in Sources */,
 				D3B0076728351BAB00030C9E /* LocalizeError.swift in Sources */,
 				D3B0077028363D9B00030C9E /* CheckPassword.swift in Sources */,
@@ -842,6 +870,7 @@
 				D3AA66C82823928E00862D43 /* Record.swift in Sources */,
 				D3B00764283516DC00030C9E /* Regex.swift in Sources */,
 				D3C57B3B282395A20028E4EB /* TreeAPIlmpl.swift in Sources */,
+				D333B137283B865400407168 /* TreeRealmDataSource.swift in Sources */,
 				D31353B42833A3D6006485B7 /* MapTreeItemAnnotationView.swift in Sources */,
 				D3E40B49282506B800025D14 /* JSONDecodeError.swift in Sources */,
 				D32CD61C282A5E2300C7FC80 /* CDGeolocatedTree+CoreDataClass.swift in Sources */,
@@ -853,9 +882,11 @@
 				D31353B82833D7D3006485B7 /* RemoteUser.swift in Sources */,
 				D347DDC3282EA886004311FE /* SexeSelector.swift in Sources */,
 				D31103E32823ADE60021299B /* TreeListView.swift in Sources */,
+				D333B135283B860B00407168 /* TreeRealmImpl.swift in Sources */,
 				D3C57B41282396E50028E4EB /* GeolocatedTree.swift in Sources */,
 				D3251A6428375D080059DBA3 /* LoginView.swift in Sources */,
 				D3D7E286282BF8EC00284215 /* TreeListCDUseCase.swift in Sources */,
+				D333B139283B88E200407168 /* DomainToRealm.swift in Sources */,
 				D347DD96282E51C4004311FE /* MapAnnotationView.swift in Sources */,
 				D3D7E280282BEA6C00284215 /* TreeCDImpl.swift in Sources */,
 				D347DDBE282EA4E4004311FE /* BindingInverter.swift in Sources */,
@@ -864,6 +895,7 @@
 				D31103F02823D3E60021299B /* TreesRemoteRepositoryImpl.swift in Sources */,
 				D34199EA2829103400DB45B0 /* TreeListComponentView.swift in Sources */,
 				D3251A6628375DA00059DBA3 /* LoginViewModel.swift in Sources */,
+				D333B12F283B6EFF00407168 /* RealmGeolocatedTree.swift in Sources */,
 				D347DD9A282E5E30004311FE /* MapTreeDetailsView.swift in Sources */,
 				D347DDB1282E988A004311FE /* AddPersonView.swift in Sources */,
 				D3D7E27E282BDD2200284215 /* TreeCDDataSource.swift in Sources */,
