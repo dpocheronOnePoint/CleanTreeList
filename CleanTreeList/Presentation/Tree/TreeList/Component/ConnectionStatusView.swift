@@ -9,7 +9,6 @@ import SwiftUI
 import Resolver
 
 struct ConnectionStatusView: View {
-    @ObservedObject var treeEnvironment: TreeEnvironment = Resolver.resolve()
     
     var body: some View {
         VStack {

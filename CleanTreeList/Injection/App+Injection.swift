@@ -12,7 +12,7 @@ extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
         defaultScope = .application
         
-        register { TreeEnvironment() }
+        register { TreeGetterListViewModel() }
         
     }
 }

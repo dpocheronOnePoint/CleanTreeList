@@ -10,13 +10,13 @@ import Resolver
 
 struct TreeListView: View {
     
-    @ObservedObject var treeEnvironment: TreeEnvironment = Resolver.resolve()
+    @ObservedObject var treeGetterListViewModel: TreeGetterListViewModel = Resolver.resolve()
     
     @State private var searchText: String = ""
     
     var body: some View {
         NavigationView{
-            switch treeEnvironment.networkStatus {
+            switch treeGetterListViewModel.networkStatus {
                 
             case .requstInProgress:
                 ProgressView()

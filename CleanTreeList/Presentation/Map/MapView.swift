@@ -10,7 +10,7 @@ import MapKit
 import Resolver
 
 struct MapView: View {
-    @ObservedObject var treeEnvironment: TreeEnvironment = Resolver.resolve()
+    @ObservedObject var treeGetterListViewModel: TreeGetterListViewModel = Resolver.resolve()
     
     @StateObject private var mapViewModel = MapViewModel()
     
@@ -24,7 +24,7 @@ struct MapView: View {
     
     var body: some View {
         ZStack {
-            Map(coordinateRegion: $region, annotationItems: treeEnvironment.geolocatedTrees, annotationContent: { item in
+            Map(coordinateRegion: $region, annotationItems: treeGetterListViewModel.geolocatedTrees, annotationContent: { item in
                 MapAnnotation(coordinate: item.location) {
                     MapAnnotationView()
                         .onTapGesture {

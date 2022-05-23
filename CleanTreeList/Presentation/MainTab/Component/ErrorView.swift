@@ -9,7 +9,7 @@ import SwiftUI
 import Resolver
 
 struct ErrorView: View {
-    @ObservedObject var treeEnvironment: TreeEnvironment = Resolver.resolve()
+    @ObservedObject var treeGetterListViewModel: TreeGetterListViewModel = Resolver.resolve()
 
     var body: some View {
         VStack(spacing: 20){
@@ -31,7 +31,7 @@ struct ErrorView: View {
             
             AppButton(wsCallInProgress: .constant(false), systemImage: "arrow.triangle.2.circlepath.circle.fill", buttonTitle: "Réessayer") {
                 Task {
-                    await treeEnvironment.getTrees()
+                    await treeGetterListViewModel.getTrees()
                 }
             }
             

@@ -10,7 +10,6 @@ import MapKit
 import Resolver
 
 struct ClusterMapView: View {
-    @ObservedObject var treeEnvironment: TreeEnvironment = Resolver.resolve()
     @StateObject private var mapViewModel = MapViewModel()
     
     var body: some View {
@@ -33,7 +32,7 @@ struct ClusterMapView: View {
 // https://thomas-sivilay.github.io/morningswiftui.github.io/swiftui/2019/07/31/build-mapview-app-with-swiftui.html
 
 struct ClusterMapViewRepresentable: UIViewRepresentable {
-    @ObservedObject var treeEnvironment: TreeEnvironment = Resolver.resolve()
+    @ObservedObject var treeGetterListViewModel: TreeGetterListViewModel = Resolver.resolve()
     @StateObject var mapViewModel: MapViewModel
     
     typealias UIViewType = MKMapView
@@ -74,7 +73,7 @@ struct ClusterMapViewRepresentable: UIViewRepresentable {
     
     private func updateAnnotations(from mapView: MKMapView) {
         mapView.removeAnnotations(mapView.annotations)
-        let newAnnotations = treeEnvironment.geolocatedTrees.map { TreeItem(coordinate: $0.location, geolocatedTree: $0) }
+        let newAnnotations = treeGetterListViewModel.geolocatedTrees.map { TreeItem(coordinate: $0.location, geolocatedTree: $0) }
         mapView.addAnnotations(newAnnotations)
     }
     

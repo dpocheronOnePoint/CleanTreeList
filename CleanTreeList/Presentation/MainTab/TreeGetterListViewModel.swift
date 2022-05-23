@@ -1,5 +1,5 @@
 //
-//  TreeEnvironment.swift
+//  TreeGetterListViewModel.swift
 //  CleanTreeList
 //
 //  Created by Dimitri POCHERON on 10/05/2022.
@@ -17,7 +17,7 @@ enum NetworkStatus {
 // FeedbackNotification to improve UX experience --> Only work on RealDevice
 let feedback = UINotificationFeedbackGenerator()
 
-class TreeEnvironment: ObservableObject {
+class TreeGetterListViewModel: ObservableObject {
     private var treeListApiUseCase = TreeListApiUseCase(
         treeListRemoteRepository: TreesRemoteRepositoryImpl(
             remoteDataSource: TreeAPIlmpl(),

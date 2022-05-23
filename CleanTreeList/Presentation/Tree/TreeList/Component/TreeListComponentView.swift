@@ -9,7 +9,7 @@ import SwiftUI
 import Resolver
 
 struct TreeListComponentView: View {
-    @ObservedObject var treeEnvironment: TreeEnvironment = Resolver.resolve()
+    @ObservedObject var treeGetterListViewModel: TreeGetterListViewModel = Resolver.resolve()
     
     @StateObject var treeListViewModel = TreeListViewModel()
     
@@ -18,13 +18,13 @@ struct TreeListComponentView: View {
     var body: some View {
         
         // If SearchProcess --> display filter list from TreeListViewModel
-        // Else --> Display all tree from TreeEnvironment
+        // Else --> Display all tree from TreeGetterListViewModel
         
-        List(treeListViewModel.isSearchingProcess ? treeListViewModel.geolocatedTrees : treeEnvironment.geolocatedTrees) { geolocatedTree in
+        List(treeListViewModel.isSearchingProcess ? treeListViewModel.geolocatedTrees : treeGetterListViewModel.geolocatedTrees) { geolocatedTree in
             TreeItemView(geolocatedTree: geolocatedTree)
                 .task {
-                    if(treeEnvironment.internetConnexionIsOk) {
-                        await treeEnvironment.getMoreTreesIfNeeded(currentTree: geolocatedTree)
+                    if(treeGetterListViewModel.internetConnexionIsOk) {
+                        await treeGetterListViewModel.getMoreTreesIfNeeded(currentTree: geolocatedTree)
                     }
                 }
         } //: LIST
@@ -34,11 +34,11 @@ struct TreeListComponentView: View {
             if(searchText.isEmpty) {
                 treeListViewModel.cancelSearchProcess()
             }else{
-                treeListViewModel.filterTreeResult(searchText: searchText, allGeolocatedTrees: treeEnvironment.geolocatedTrees)
+                treeListViewModel.filterTreeResult(searchText: searchText, allGeolocatedTrees: treeGetterListViewModel.geolocatedTrees)
             }
         }
         .overlay {
-            if !treeEnvironment.internetConnexionIsOk {
+            if !treeGetterListViewModel.internetConnexionIsOk {
                 ConnectionStatusView()
                     .transition(.move(edge: .bottom))
             }
