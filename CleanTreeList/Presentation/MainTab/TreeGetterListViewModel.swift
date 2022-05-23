@@ -31,6 +31,12 @@ class TreeGetterListViewModel: ObservableObject {
         )
     )
     
+    private var treeListRealmUseCase = TreeListRealmUseCase(
+        treeListRealmRepository: TreeRealmRepositoryImpl(
+            treeRealmDataSource: TreeRealmImpl()
+        )
+    )
+    
     @Published var geolocatedTrees: [GeolocatedTree] = []
     @Published var connexionAlreadyGoBack = false
     @Published var isLoadingPage = false
@@ -145,7 +151,8 @@ class TreeGetterListViewModel: ObservableObject {
             
             // Store in CoreData only the 20 first
             if self.startIndex == 0 {
-                await self.updateDataBase(geolocatedTrees: geolocatedTrees)
+                await self.updateCDDataBase(geolocatedTrees: geolocatedTrees)
+                await self.updateRealmDataBase(geolocatedTrees: geolocatedTrees)
             }
             
         case .failure:
@@ -171,7 +178,7 @@ class TreeGetterListViewModel: ObservableObject {
         }
     }
     
-    private func updateDataBase(geolocatedTrees: [GeolocatedTree]) async {
+    private func updateCDDataBase(geolocatedTrees: [GeolocatedTree]) async {
         do {
             try await treeListCDUseCase.clearDataBase()
         } catch {
@@ -182,6 +189,14 @@ class TreeGetterListViewModel: ObservableObject {
             try await treeListCDUseCase.saveGeolocatedTreeListInCoreDataWith(geolocatedTreeList: geolocatedTrees)
         } catch {
             print("Data connot be inserted in DataBase")
+        }
+    }
+    
+    private func updateRealmDataBase(geolocatedTrees: [GeolocatedTree]) async {
+        do {
+            try await treeListRealmUseCase.saveGeolocatedTreeListInCoreDataWith(geolocatedTreeList: geolocatedTrees)
+        } catch {
+            print("Data cannot be inserted in realm")
         }
     }
     

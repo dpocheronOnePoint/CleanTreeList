@@ -8,23 +8,23 @@
 import Foundation
 import RealmSwift
 
-final class RealmGeolocatedTree: Object, ObjectKeyIdentifiable {
+final class RealmGeolocatedTree: Object {
     @Persisted(primaryKey: true) var _id: ObjectId
     
-    @Persisted var tree = RealmTree()
+    @Persisted var tree: RealmTree?
     
-    @Persisted var lat: Double = 0.0
+    @Persisted var lat: Double
     
-    @Persisted var lng: Double = 0.0
+    @Persisted var lng: Double
 }
 
-extension GeolocatedTree: DomainToRealm {
-    func toRealm() -> RealmGeolocatedTree {
-        let realmGeolocatedTree = RealmGeolocatedTree(value: [
-            "tree": tree.toRealm(),
-            "lat": lat,
-            "lng": lng
-        ])
-        return realmGeolocatedTree
-    }
-}
+//extension GeolocatedTree: DomainToRealm {
+//    func toRealm() -> RealmGeolocatedTree {
+//        let realmGeolocatedTree = RealmGeolocatedTree(value: [
+//            "tree": tree.toRealm(),
+//            "lat": lat,
+//            "lng": lng
+//        ])
+//        return realmGeolocatedTree
+//    }
+//}

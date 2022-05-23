@@ -50,7 +50,9 @@
 		D333B133283B750C00407168 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333B132283B750C00407168 /* RealmManager.swift */; };
 		D333B135283B860B00407168 /* TreeRealmImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333B134283B860B00407168 /* TreeRealmImpl.swift */; };
 		D333B137283B865400407168 /* TreeRealmDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333B136283B865400407168 /* TreeRealmDataSource.swift */; };
-		D333B139283B88E200407168 /* DomainToRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333B138283B88E200407168 /* DomainToRealm.swift */; };
+		D333B13B283BB21E00407168 /* TreeRealmRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333B13A283BB21E00407168 /* TreeRealmRepositoryImpl.swift */; };
+		D333B13D283BB23700407168 /* TreeListRealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333B13C283BB23700407168 /* TreeListRealmRepository.swift */; };
+		D333B13F283BB37800407168 /* TreeListRealmUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333B13E283BB37800407168 /* TreeListRealmUseCase.swift */; };
 		D34199E82829096400DB45B0 /* TreeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34199E72829096400DB45B0 /* TreeItemView.swift */; };
 		D34199EA2829103400DB45B0 /* TreeListComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34199E92829103400DB45B0 /* TreeListComponentView.swift */; };
 		D347DD93282E478E004311FE /* TreeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347DD92282E478E004311FE /* TreeListViewModel.swift */; };
@@ -145,7 +147,9 @@
 		D333B132283B750C00407168 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		D333B134283B860B00407168 /* TreeRealmImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeRealmImpl.swift; sourceTree = "<group>"; };
 		D333B136283B865400407168 /* TreeRealmDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeRealmDataSource.swift; sourceTree = "<group>"; };
-		D333B138283B88E200407168 /* DomainToRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainToRealm.swift; sourceTree = "<group>"; };
+		D333B13A283BB21E00407168 /* TreeRealmRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeRealmRepositoryImpl.swift; sourceTree = "<group>"; };
+		D333B13C283BB23700407168 /* TreeListRealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListRealmRepository.swift; sourceTree = "<group>"; };
+		D333B13E283BB37800407168 /* TreeListRealmUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListRealmUseCase.swift; sourceTree = "<group>"; };
 		D34199E72829096400DB45B0 /* TreeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeItemView.swift; sourceTree = "<group>"; };
 		D34199E92829103400DB45B0 /* TreeListComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListComponentView.swift; sourceTree = "<group>"; };
 		D347DD92282E478E004311FE /* TreeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListViewModel.swift; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 			children = (
 				D31103EB2823CFB60021299B /* TreeListApiUseCase.swift */,
 				D3D7E285282BF8EC00284215 /* TreeListCDUseCase.swift */,
+				D333B13E283BB37800407168 /* TreeListRealmUseCase.swift */,
 			);
 			path = TreeList;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 			children = (
 				D31103ED2823D00A0021299B /* TreeListRemoteRepository.swift */,
 				D3D7E287282CDCBB00284215 /* TreeListCDRepository.swift */,
+				D333B13C283BB23700407168 /* TreeListRealmRepository.swift */,
 			);
 			path = Tree;
 			sourceTree = "<group>";
@@ -427,7 +433,6 @@
 			children = (
 				D333B130283B6F0F00407168 /* RealmTree.swift */,
 				D333B12E283B6EFF00407168 /* RealmGeolocatedTree.swift */,
-				D333B138283B88E200407168 /* DomainToRealm.swift */,
 			);
 			path = RealmModels;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 			children = (
 				D31103EF2823D3E60021299B /* TreesRemoteRepositoryImpl.swift */,
 				D3D7E283282BF6ED00284215 /* TreesCDRepositoryImpl.swift */,
+				D333B13A283BB21E00407168 /* TreeRealmRepositoryImpl.swift */,
 			);
 			path = Tree;
 			sourceTree = "<group>";
@@ -821,6 +827,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D31353C62833DE8D006485B7 /* UserApiUseCase.swift in Sources */,
+				D333B13D283BB23700407168 /* TreeListRealmRepository.swift in Sources */,
 				D347DD9C282E61D4004311FE /* MapViewModel.swift in Sources */,
 				D347DD93282E478E004311FE /* TreeListViewModel.swift in Sources */,
 				D3B0076D28363AC600030C9E /* PasswordTipsView.swift in Sources */,
@@ -879,6 +886,7 @@
 				D32CD611282A517800C7FC80 /* CoreDataStack.swift in Sources */,
 				D3E40B4C2825224500025D14 /* ApiManager.swift in Sources */,
 				D3251A732837C1290059DBA3 /* App+Injection.swift in Sources */,
+				D333B13B283BB21E00407168 /* TreeRealmRepositoryImpl.swift in Sources */,
 				D31353B82833D7D3006485B7 /* RemoteUser.swift in Sources */,
 				D347DDC3282EA886004311FE /* SexeSelector.swift in Sources */,
 				D31103E32823ADE60021299B /* TreeListView.swift in Sources */,
@@ -886,9 +894,9 @@
 				D3C57B41282396E50028E4EB /* GeolocatedTree.swift in Sources */,
 				D3251A6428375D080059DBA3 /* LoginView.swift in Sources */,
 				D3D7E286282BF8EC00284215 /* TreeListCDUseCase.swift in Sources */,
-				D333B139283B88E200407168 /* DomainToRealm.swift in Sources */,
 				D347DD96282E51C4004311FE /* MapAnnotationView.swift in Sources */,
 				D3D7E280282BEA6C00284215 /* TreeCDImpl.swift in Sources */,
+				D333B13F283BB37800407168 /* TreeListRealmUseCase.swift in Sources */,
 				D347DDBE282EA4E4004311FE /* BindingInverter.swift in Sources */,
 				D31353AC28339954006485B7 /* ClusterMapView.swift in Sources */,
 				D32CD632282B906E00C7FC80 /* TreeLocalImpl.swift in Sources */,
