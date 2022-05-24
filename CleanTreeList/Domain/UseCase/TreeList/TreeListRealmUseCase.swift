@@ -9,17 +9,39 @@ import Foundation
 import RealmSwift
 
 enum UseCaseRealmError: Error {
-    case insertingError
+    case fetchingError, deletingError, insertingError
 }
 
 protocol TreeListRealmProtocol {
-    func saveGeolocatedTreeListInCoreDataWith(geolocatedTreeList: [GeolocatedTree]) async throws
+    func loadLocalTrees() async -> Result<[GeolocatedTree], UseCaseRealmError>
+    func clearDataBase() async throws
+    func saveGeolocatedTreeInRealmwiWith(geolocatedTreeList: [GeolocatedTree]) async throws
 }
 
 struct TreeListRealmUseCase: TreeListRealmProtocol {
     var treeListRealmRepository: TreeListRealmRepository
     
-    func saveGeolocatedTreeListInCoreDataWith(geolocatedTreeList: [GeolocatedTree]) async throws {
+    func loadLocalTrees() async -> Result<[GeolocatedTree], UseCaseRealmError> {
+        do {
+            let realmGeolocatedTrees = try await treeListRealmRepository.loadLocalTrees()
+            let geolocatedTress: [GeolocatedTree] = realmGeolocatedTrees.map({ item in
+                GeolocatedTree(tree: item.tree!.ToDomain(), lng: item.lng, lat: item.lat)
+            })
+            return .success(geolocatedTress)
+        } catch {
+            return .failure(.fetchingError)
+        }
+    }
+    
+    func clearDataBase() async throws {
+        do {
+            try await treeListRealmRepository.clearDataBase()
+        } catch {
+            throw UseCaseRealmError.deletingError
+        }
+    }
+    
+    func saveGeolocatedTreeInRealmwiWith(geolocatedTreeList: [GeolocatedTree]) async throws {
         do {
             try await treeListRealmRepository.saveGeolocatedTreeInRealmwiWith(geolocatedTreeList: geolocatedTreeList)
         } catch {

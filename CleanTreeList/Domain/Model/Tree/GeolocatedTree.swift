@@ -29,6 +29,13 @@ extension CDGeolocatedTree: DataToDomain {
         )
     }
 }
+
+extension RealmGeolocatedTree: DataToDomain {
+    func ToDomain() -> GeolocatedTree {
+        GeolocatedTree(tree: tree!.ToDomain(), lng: lng, lat: lat)
+    }
+}
+
 extension GeolocatedTree {
     static let geolocatedTreeSampleData = GeolocatedTree(tree: Tree.treeSampleData, lng: 10.0, lat: 20.0)
 }

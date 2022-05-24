@@ -24,7 +24,7 @@ struct TreeListView: View {
             case .networkFail:
                 ErrorView()
                 
-            case .dataLoadedFromCD, .dataLoadedFromWS:
+            case .dataLoadedFromLocalDataBase, .dataLoadedFromWS:
                 TreeListComponentView()
                     .navigationTitle("treeListTitle")
                 

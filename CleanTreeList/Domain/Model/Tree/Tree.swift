@@ -38,6 +38,19 @@ extension CDTree: DataToDomain {
     }
 }
 
+extension RealmTree: DataToDomain {
+    func ToDomain() -> Tree {
+        Tree(
+            name: name,
+            species: species,
+            address2: address2,
+            address: address,
+            height: height,
+            circumference: circumference
+        )
+    }
+}
+
 extension Tree {
     static let treeSampleData = Tree(name: "Erable", species: "pseudoplatanus", address2: "", address: "DAVOUT (147-149)", height: 8, circumference: 100)
 }

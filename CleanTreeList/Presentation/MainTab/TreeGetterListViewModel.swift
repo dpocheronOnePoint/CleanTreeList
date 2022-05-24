@@ -10,14 +10,22 @@ import Combine
 import Network
 import SwiftUI
 
+fileprivate enum DatabaseMethod {
+    case CDMethod, RealmMethod
+}
+
 enum NetworkStatus {
-    case requstInProgress, dataLoadedFromWS, dataLoadedFromCD, networkFail
+    case requstInProgress, dataLoadedFromWS, dataLoadedFromLocalDataBase, networkFail
 }
 
 // FeedbackNotification to improve UX experience --> Only work on RealDevice
 let feedback = UINotificationFeedbackGenerator()
 
 class TreeGetterListViewModel: ObservableObject {
+    
+    private var dataBaseMethod: DatabaseMethod = .RealmMethod
+    
+    // Remote UseCase
     private var treeListApiUseCase = TreeListApiUseCase(
         treeListRemoteRepository: TreesRemoteRepositoryImpl(
             remoteDataSource: TreeAPIlmpl(),
@@ -25,12 +33,14 @@ class TreeGetterListViewModel: ObservableObject {
         )
     )
     
+    // CD UseCase
     private var treeListCDUseCase = TreeListCDUseCase(
         treeListCDRepository: TreesCDRepositoryImpl(
             treeCDDataSource: TreeCDImpl()
         )
     )
     
+    // Realm UseCase
     private var treeListRealmUseCase = TreeListRealmUseCase(
         treeListRealmRepository: TreeRealmRepositoryImpl(
             treeRealmDataSource: TreeRealmImpl()
@@ -58,7 +68,15 @@ class TreeGetterListViewModel: ObservableObject {
                 }else{
                     setConnexionAlreadyGoBack(status: false)
                     if(geolocatedTrees.isEmpty){
-                        await loadCDGeolocatedTrees()
+                        self.startIndex = 0
+                        
+                        switch dataBaseMethod {
+                        case .CDMethod:
+                            await loadCDGeolocatedTrees()
+                        case .RealmMethod:
+                            await loadRealmGeolocatedTrees()
+                        }
+                        
                     }
                 }
             }
@@ -72,7 +90,7 @@ class TreeGetterListViewModel: ObservableObject {
     
     // MARK: - Initializers
     
-   private func initializeNewtorwMonitor() {
+    private func initializeNewtorwMonitor() {
         NWPathMonitor()
             .publisher(queue: monitorQueue)
             .receive(on: DispatchQueue.main)
@@ -92,39 +110,8 @@ class TreeGetterListViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-    private func loadCDGeolocatedTrees() async {
-        self.startIndex = 0
-        
-        let result = await treeListCDUseCase.loadLocalTrees()
-        
-        switch result {
-        case .success(let geolocatedTrees):
-            DispatchQueue.main.async {
-                if(geolocatedTrees.isEmpty){
-                    self.networkStatus = .networkFail
-                }else{
-                    self.animateUpdatedList(geolocatedTrees: geolocatedTrees, networkStatus: .dataLoadedFromCD)
-                }
-            }
-        case .failure:
-            self.networkStatus = .networkFail
-            break
-        }
-    }
     
-    private func animateUpdatedList(geolocatedTrees: [GeolocatedTree], networkStatus: NetworkStatus) {
-        withAnimation(.linear(duration: 0.2)){
-            self.geolocatedTrees = []
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            withAnimation(.linear(duration: 0.2)){
-                self.geolocatedTrees = geolocatedTrees
-            }
-            self.networkStatus = networkStatus
-            feedback.notificationOccurred(.success)
-        }
-    }
-    
+    // MARK: - Remote Methods
     func getTrees() async {
         
         guard !isLoadingPage else {
@@ -178,13 +165,36 @@ class TreeGetterListViewModel: ObservableObject {
         }
     }
     
+    
+    // MARK: - CD Methods
+    private func loadCDGeolocatedTrees() async {
+        
+        let result = await treeListCDUseCase.loadLocalTrees()
+        
+        switch result {
+        case .success(let geolocatedTrees):
+            DispatchQueue.main.async {
+                if(geolocatedTrees.isEmpty){
+                    self.networkStatus = .networkFail
+                }else{
+                    self.animateUpdatedList(geolocatedTrees: geolocatedTrees, networkStatus: .dataLoadedFromLocalDataBase)
+                }
+            }
+        case .failure:
+            self.networkStatus = .networkFail
+            break
+        }
+    }
+    
     private func updateCDDataBase(geolocatedTrees: [GeolocatedTree]) async {
+        // Clear Database
         do {
             try await treeListCDUseCase.clearDataBase()
         } catch {
             print("DataBase cannot be cleared")
         }
         
+        // Insert new GeolocatedTree Objects
         do {
             try await treeListCDUseCase.saveGeolocatedTreeListInCoreDataWith(geolocatedTreeList: geolocatedTrees)
         } catch {
@@ -192,11 +202,55 @@ class TreeGetterListViewModel: ObservableObject {
         }
     }
     
+    
+    // MARK: - Realm Methods
+    private func loadRealmGeolocatedTrees() async {
+        let result = await treeListRealmUseCase.loadLocalTrees()
+        
+        switch result {
+        case .success(let geolocatedTrees):
+            DispatchQueue.main.async {
+                if(geolocatedTrees.isEmpty){
+                    self.networkStatus = .networkFail
+                }else{
+                    self.animateUpdatedList(geolocatedTrees: geolocatedTrees, networkStatus: .dataLoadedFromLocalDataBase)
+                }
+            }
+        case .failure:
+            self.networkStatus = .networkFail
+            break
+        }
+    }
+    
     private func updateRealmDataBase(geolocatedTrees: [GeolocatedTree]) async {
+        
+        // Clear Database
         do {
-            try await treeListRealmUseCase.saveGeolocatedTreeListInCoreDataWith(geolocatedTreeList: geolocatedTrees)
+            try await treeListRealmUseCase.clearDataBase()
+        } catch {
+            print("Realm Database cannot be deleted")
+        }
+        
+        // Insert new GeolocatedTree Objects
+        do {
+            try await treeListRealmUseCase.saveGeolocatedTreeInRealmwiWith(geolocatedTreeList: geolocatedTrees)
         } catch {
             print("Data cannot be inserted in realm")
+        }
+    }
+    
+    
+    // MARK: - Animation Method
+    private func animateUpdatedList(geolocatedTrees: [GeolocatedTree], networkStatus: NetworkStatus) {
+        withAnimation(.linear(duration: 0.2)){
+            self.geolocatedTrees = []
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            withAnimation(.linear(duration: 0.2)){
+                self.geolocatedTrees = geolocatedTrees
+            }
+            self.networkStatus = networkStatus
+            feedback.notificationOccurred(.success)
         }
     }
     

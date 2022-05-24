@@ -9,10 +9,33 @@ import Foundation
 import RealmSwift
 
 enum RealmError: Error {
-    case fetchingError
+    case loadingRealmError, fetchingError, deletingError ,insertingError
 }
 
 struct TreeRealmImpl: TreeRealmDataSource {
+    func loadLocalTrees() async throws -> Results<RealmGeolocatedTree> {
+        guard let localRealm = RealmManager().localrealm else {
+            throw RealmError.loadingRealmError
+        }
+        
+        let geolocatedTreesList = localRealm.objects(RealmGeolocatedTree.self)
+        
+        return geolocatedTreesList
+    }
+    
+    func clearDataBase() async throws {
+        if let localRealm = RealmManager().localrealm {
+            do {
+                try localRealm.write {
+                    let allRegisterGeolocatedTree = localRealm.objects(RealmGeolocatedTree.self)
+                    localRealm.delete(allRegisterGeolocatedTree)
+                }
+            } catch {
+                throw RealmError.deletingError
+            }
+        }
+    }
+    
     func saveGeolocatedTreeInRealmwiWith(geolocatedTreeList: [GeolocatedTree]) async throws {
         if let localRealm = RealmManager().localrealm {
             do {
@@ -37,16 +60,10 @@ struct TreeRealmImpl: TreeRealmDataSource {
                         ])
                         
                         localRealm.add(realmGeolocatedTree)
-                        print("Tree is inserted")
-                        
-                        let realmTrees = localRealm.objects(RealmGeolocatedTree.self)
-                        let lastrealm = realmTrees.last
-                        print(realmTrees.count)
-                        print(lastrealm)
                     }
                 }
             } catch {
-                print("Error")
+                throw RealmError.insertingError
             }
         }
     }

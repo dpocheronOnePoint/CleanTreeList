@@ -6,7 +6,10 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol TreeListRealmRepository {
+    func loadLocalTrees() async throws -> Results<RealmGeolocatedTree>
+    func clearDataBase() async throws
     func saveGeolocatedTreeInRealmwiWith(geolocatedTreeList: [GeolocatedTree]) async throws
 }
