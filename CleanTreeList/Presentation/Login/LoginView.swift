@@ -9,10 +9,9 @@ import SwiftUI
 
 struct LoginView: View {
     @AppStorage("userConnected") var userIsConnected: Bool = false
-    @StateObject private var loginViewModel = LoginViewModel()
     
     var body: some View {
-        AppButton(wsCallInProgress: $loginViewModel.wsInProgress, systemImage: "figure.walk.circle.fill", buttonTitle: "Se connecter") {
+        AppButton(wsCallInProgress: .constant(false), systemImage: "figure.walk.circle.fill", buttonTitle: "Se connecter") {
             userIsConnected = true
         }
     }

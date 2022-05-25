@@ -24,3 +24,18 @@ class RealmTree: Object {
     
     @Persisted var circumference: Int16
 }
+
+extension Tree: DomainToRealm {
+    func ToRealm() -> RealmTree {
+        let realmTree = RealmTree(value: [
+            "name": name ?? "",
+            "species": species ?? "",
+            "address": address,
+            "address2": address2 ?? "",
+            "height": height,
+            "circumference": circumference
+        ])
+        
+        return realmTree
+    }
+}

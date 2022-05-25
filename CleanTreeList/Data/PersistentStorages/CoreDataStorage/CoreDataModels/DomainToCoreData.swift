@@ -11,4 +11,3 @@ protocol DomainToCoreData {
     associatedtype M: Any
     func ToCoreData() -> M
 }
-

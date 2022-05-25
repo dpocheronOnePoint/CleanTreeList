@@ -9,7 +9,7 @@ import SwiftUI
 import Resolver
 
 struct TreeListComponentView: View {
-    @ObservedObject var treeGetterListViewModel: TreeGetterListViewModel = Resolver.resolve()
+    @StateObject var treeGetterListViewModel: TreeGetterListViewModel = Resolver.resolve()
     
     @StateObject var treeListViewModel = TreeListViewModel()
     

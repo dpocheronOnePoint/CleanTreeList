@@ -42,22 +42,7 @@ struct TreeRealmImpl: TreeRealmDataSource {
                 try localRealm.write {
                     for geolocatedTree in geolocatedTreeList {
                         
-                        #warning("Need to add protocol")
-                        
-                        let realmTree = RealmTree(value: [
-                            "name": geolocatedTree.tree.name ?? "",
-                            "species": geolocatedTree.tree.species ?? "",
-                            "address": geolocatedTree.tree.address,
-                            "address2": geolocatedTree.tree.address2 ?? "",
-                            "height": geolocatedTree.tree.height,
-                            "circumference": geolocatedTree.tree.circumference
-                        ])
-                        
-                        let realmGeolocatedTree = RealmGeolocatedTree(value: [
-                            "tree": realmTree,
-                            "lat": geolocatedTree.lat,
-                            "lng": geolocatedTree.lng
-                        ])
+                        let realmGeolocatedTree = geolocatedTree.ToRealm()
                         
                         localRealm.add(realmGeolocatedTree)
                     }

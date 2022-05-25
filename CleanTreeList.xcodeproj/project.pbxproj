@@ -27,7 +27,6 @@
 		D31E7DC72838294900FF3700 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = D31E7DC62838294900FF3700 /* Realm */; };
 		D31E7DC92838294900FF3700 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D31E7DC82838294900FF3700 /* RealmSwift */; };
 		D3251A6428375D080059DBA3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3251A6328375D080059DBA3 /* LoginView.swift */; };
-		D3251A6628375DA00059DBA3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3251A6528375DA00059DBA3 /* LoginViewModel.swift */; };
 		D3251A702837C0F00059DBA3 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = D3251A6F2837C0F00059DBA3 /* Resolver */; };
 		D3251A732837C1290059DBA3 /* App+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3251A722837C1290059DBA3 /* App+Injection.swift */; };
 		D32CD606282A349D00C7FC80 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD605282A349D00C7FC80 /* MainTabView.swift */; };
@@ -77,6 +76,7 @@
 		D37F7A08282167E200E73EB4 /* CleanTreeListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37F7A07282167E200E73EB4 /* CleanTreeListApp.swift */; };
 		D37F7A0C282167E200E73EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37F7A0B282167E200E73EB4 /* Assets.xcassets */; };
 		D37F7A0F282167E200E73EB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37F7A0E282167E200E73EB4 /* Preview Assets.xcassets */; };
+		D3870010283E143F002D414E /* DomainToRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D387000F283E143F002D414E /* DomainToRealm.swift */; };
 		D3AA66C02823917800862D43 /* trees.json in Resources */ = {isa = PBXBuildFile; fileRef = D3AA66BF2823917800862D43 /* trees.json */; };
 		D3AA66C82823928E00862D43 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AA66C72823928E00862D43 /* Record.swift */; };
 		D3B007602834CB8400030C9E /* UserResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0075F2834CB8400030C9E /* UserResponseError.swift */; };
@@ -101,10 +101,22 @@
 		D3D7E288282CDCBB00284215 /* TreeListCDRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E287282CDCBB00284215 /* TreeListCDRepository.swift */; };
 		D3D7E28A282D25E300284215 /* DomainToCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E289282D25E300284215 /* DomainToCoreData.swift */; };
 		D3D7E28D282D3CF300284215 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3D7E28F282D3CF300284215 /* Localizable.strings */; };
+		D3E28413283CC0FE005FCF66 /* CleanTreeList_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E28412283CC0FE005FCF66 /* CleanTreeList_Tests.swift */; };
+		D3E2841A283CCBC6005FCF66 /* TreeGetterListViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E28419283CCBC6005FCF66 /* TreeGetterListViewModel_Tests.swift */; };
 		D3E40B47282502FD00025D14 /* CodableBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E40B46282502FC00025D14 /* CodableBundleExtension.swift */; };
 		D3E40B49282506B800025D14 /* JSONDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E40B48282506B800025D14 /* JSONDecodeError.swift */; };
 		D3E40B4C2825224500025D14 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E40B4B2825224500025D14 /* ApiManager.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D3E28414283CC0FE005FCF66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D37F79FC282167E200E73EB4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D37F7A03282167E200E73EB4;
+			remoteInfo = CleanTreeList;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D31103E22823ADE60021299B /* TreeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListView.swift; sourceTree = "<group>"; };
@@ -125,7 +137,6 @@
 		D314834428322E3300C40198 /* DirectionMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionMapView.swift; sourceTree = "<group>"; };
 		D314834E2832497A00C40198 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		D3251A6328375D080059DBA3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		D3251A6528375DA00059DBA3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D3251A722837C1290059DBA3 /* App+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+Injection.swift"; sourceTree = "<group>"; };
 		D32CD605282A349D00C7FC80 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		D32CD608282A34D400C7FC80 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -175,6 +186,7 @@
 		D37F7A07282167E200E73EB4 /* CleanTreeListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTreeListApp.swift; sourceTree = "<group>"; };
 		D37F7A0B282167E200E73EB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D37F7A0E282167E200E73EB4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D387000F283E143F002D414E /* DomainToRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainToRealm.swift; sourceTree = "<group>"; };
 		D3AA66BF2823917800862D43 /* trees.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trees.json; sourceTree = "<group>"; };
 		D3AA66C72823928E00862D43 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		D3B0075F2834CB8400030C9E /* UserResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseError.swift; sourceTree = "<group>"; };
@@ -199,6 +211,9 @@
 		D3D7E287282CDCBB00284215 /* TreeListCDRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListCDRepository.swift; sourceTree = "<group>"; };
 		D3D7E289282D25E300284215 /* DomainToCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainToCoreData.swift; sourceTree = "<group>"; };
 		D3D7E295282D3E4100284215 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D3E28410283CC0FE005FCF66 /* CleanTreeList_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanTreeList_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3E28412283CC0FE005FCF66 /* CleanTreeList_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTreeList_Tests.swift; sourceTree = "<group>"; };
+		D3E28419283CCBC6005FCF66 /* TreeGetterListViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeGetterListViewModel_Tests.swift; sourceTree = "<group>"; };
 		D3E40B46282502FC00025D14 /* CodableBundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableBundleExtension.swift; sourceTree = "<group>"; };
 		D3E40B48282506B800025D14 /* JSONDecodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodeError.swift; sourceTree = "<group>"; };
 		D3E40B4B2825224500025D14 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
@@ -212,6 +227,13 @@
 				D31E7DC92838294900FF3700 /* RealmSwift in Frameworks */,
 				D31E7DC72838294900FF3700 /* Realm in Frameworks */,
 				D3251A702837C0F00059DBA3 /* Resolver in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3E2840D283CC0FE005FCF66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +342,6 @@
 			isa = PBXGroup;
 			children = (
 				D3251A6328375D080059DBA3 /* LoginView.swift */,
-				D3251A6528375DA00059DBA3 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -433,6 +454,7 @@
 			children = (
 				D333B130283B6F0F00407168 /* RealmTree.swift */,
 				D333B12E283B6EFF00407168 /* RealmGeolocatedTree.swift */,
+				D387000F283E143F002D414E /* DomainToRealm.swift */,
 			);
 			path = RealmModels;
 			sourceTree = "<group>";
@@ -532,6 +554,7 @@
 			isa = PBXGroup;
 			children = (
 				D37F7A06282167E200E73EB4 /* CleanTreeList */,
+				D3E28411283CC0FE005FCF66 /* CleanTreeList_Tests */,
 				D37F7A05282167E200E73EB4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -540,6 +563,7 @@
 			isa = PBXGroup;
 			children = (
 				D37F7A04282167E200E73EB4 /* CleanTreeList.app */,
+				D3E28410283CC0FE005FCF66 /* CleanTreeList_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -726,6 +750,15 @@
 			path = TreeList;
 			sourceTree = "<group>";
 		};
+		D3E28411283CC0FE005FCF66 /* CleanTreeList_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D3E28412283CC0FE005FCF66 /* CleanTreeList_Tests.swift */,
+				D3E28419283CCBC6005FCF66 /* TreeGetterListViewModel_Tests.swift */,
+			);
+			path = CleanTreeList_Tests;
+			sourceTree = "<group>";
+		};
 		D3E40B44282502D400025D14 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -768,6 +801,24 @@
 			productReference = D37F7A04282167E200E73EB4 /* CleanTreeList.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D3E2840F283CC0FE005FCF66 /* CleanTreeList_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3E28418283CC0FE005FCF66 /* Build configuration list for PBXNativeTarget "CleanTreeList_Tests" */;
+			buildPhases = (
+				D3E2840C283CC0FE005FCF66 /* Sources */,
+				D3E2840D283CC0FE005FCF66 /* Frameworks */,
+				D3E2840E283CC0FE005FCF66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3E28415283CC0FE005FCF66 /* PBXTargetDependency */,
+			);
+			name = CleanTreeList_Tests;
+			productName = CleanTreeList_Tests;
+			productReference = D3E28410283CC0FE005FCF66 /* CleanTreeList_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -780,6 +831,10 @@
 				TargetAttributes = {
 					D37F7A03282167E200E73EB4 = {
 						CreatedOnToolsVersion = 13.3.1;
+					};
+					D3E2840F283CC0FE005FCF66 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = D37F7A03282167E200E73EB4;
 					};
 				};
 			};
@@ -802,6 +857,7 @@
 			projectRoot = "";
 			targets = (
 				D37F7A03282167E200E73EB4 /* CleanTreeList */,
+				D3E2840F283CC0FE005FCF66 /* CleanTreeList_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -816,6 +872,13 @@
 				D37F7A0F282167E200E73EB4 /* Preview Assets.xcassets in Resources */,
 				D347DD9F282E7E26004311FE /* Localizable.stringsdict in Resources */,
 				D37F7A0C282167E200E73EB4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3E2840E283CC0FE005FCF66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,8 +964,8 @@
 				D31353AC28339954006485B7 /* ClusterMapView.swift in Sources */,
 				D32CD632282B906E00C7FC80 /* TreeLocalImpl.swift in Sources */,
 				D31103F02823D3E60021299B /* TreesRemoteRepositoryImpl.swift in Sources */,
+				D3870010283E143F002D414E /* DomainToRealm.swift in Sources */,
 				D34199EA2829103400DB45B0 /* TreeListComponentView.swift in Sources */,
-				D3251A6628375DA00059DBA3 /* LoginViewModel.swift in Sources */,
 				D333B12F283B6EFF00407168 /* RealmGeolocatedTree.swift in Sources */,
 				D347DD9A282E5E30004311FE /* MapTreeDetailsView.swift in Sources */,
 				D347DDB1282E988A004311FE /* AddPersonView.swift in Sources */,
@@ -918,7 +981,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3E2840C283CC0FE005FCF66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3E28413283CC0FE005FCF66 /* CleanTreeList_Tests.swift in Sources */,
+				D3E2841A283CCBC6005FCF66 /* TreeGetterListViewModel_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D3E28415283CC0FE005FCF66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D37F7A03282167E200E73EB4 /* CleanTreeList */;
+			targetProxy = D3E28414283CC0FE005FCF66 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D347DDA1282E7E26004311FE /* Localizable.stringsdict */ = {
@@ -1114,6 +1194,40 @@
 			};
 			name = Release;
 		};
+		D3E28416283CC0FE005FCF66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "OnePoint.CleanTreeList-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CleanTreeList.app/CleanTreeList";
+			};
+			name = Debug;
+		};
+		D3E28417283CC0FE005FCF66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "OnePoint.CleanTreeList-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CleanTreeList.app/CleanTreeList";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1131,6 +1245,15 @@
 			buildConfigurations = (
 				D37F7A13282167E200E73EB4 /* Debug */,
 				D37F7A14282167E200E73EB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3E28418283CC0FE005FCF66 /* Build configuration list for PBXNativeTarget "CleanTreeList_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3E28416283CC0FE005FCF66 /* Debug */,
+				D3E28417283CC0FE005FCF66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

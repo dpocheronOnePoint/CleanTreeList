@@ -19,7 +19,7 @@ extension CDGeolocatedTree {
     @NSManaged public var id: UUID?
     @NSManaged public var tree: CDTree
     @NSManaged public var lat, lng: Double
-
+    
 }
 
 extension CDGeolocatedTree : Identifiable {
@@ -27,6 +27,7 @@ extension CDGeolocatedTree : Identifiable {
 }
 
 extension GeolocatedTree: DomainToCoreData {
+    
     func ToCoreData() -> CDGeolocatedTree {
         let cdGeolocatedTree = CDGeolocatedTree(context: CoreDataStack.sharedInstance.viewContext)
         cdGeolocatedTree.tree = tree.ToCoreData()

@@ -18,13 +18,13 @@ final class RealmGeolocatedTree: Object {
     @Persisted var lng: Double
 }
 
-//extension GeolocatedTree: DomainToRealm {
-//    func toRealm() -> RealmGeolocatedTree {
-//        let realmGeolocatedTree = RealmGeolocatedTree(value: [
-//            "tree": tree.toRealm(),
-//            "lat": lat,
-//            "lng": lng
-//        ])
-//        return realmGeolocatedTree
-//    }
-//}
+extension GeolocatedTree: DomainToRealm {
+    func ToRealm() -> RealmGeolocatedTree {
+        let realmGeolocatedTree = RealmGeolocatedTree(value: [
+            "tree": tree.ToRealm(),
+            "lat": lat,
+            "lng": lng
+        ])
+        return realmGeolocatedTree
+    }
+}

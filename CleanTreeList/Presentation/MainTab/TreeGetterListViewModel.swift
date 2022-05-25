@@ -26,7 +26,7 @@ class TreeGetterListViewModel: ObservableObject {
     private var dataBaseMethod: DatabaseMethod = .RealmMethod
     
     // Remote UseCase
-    private var treeListApiUseCase = TreeListApiUseCase(
+    var treeListApiUseCase = TreeListApiUseCase(
         treeListRemoteRepository: TreesRemoteRepositoryImpl(
             remoteDataSource: TreeAPIlmpl(),
             localDataSource: TreeLocalImpl()
@@ -50,7 +50,7 @@ class TreeGetterListViewModel: ObservableObject {
     @Published var geolocatedTrees: [GeolocatedTree] = []
     @Published var connexionAlreadyGoBack = false
     @Published var isLoadingPage = false
-    private var startIndex = 0
+    var startIndex = 0
     
     // Network Check
     private var cancellables = Set<AnyCancellable>()

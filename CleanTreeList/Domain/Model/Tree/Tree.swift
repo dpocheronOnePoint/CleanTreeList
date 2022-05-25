@@ -21,7 +21,8 @@ extension Record: DataToDomain {
              address2: address2,
              address: address,
              height: height,
-             circumference: circumference)
+             circumference: circumference
+        )
     }
 }
 
@@ -33,7 +34,7 @@ extension CDTree: DataToDomain {
             address2: address2,
             address: address,
             height: height,
-            circumference: height
+            circumference: circumference
         )
     }
 }
