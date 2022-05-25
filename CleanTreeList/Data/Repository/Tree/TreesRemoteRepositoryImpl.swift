@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Resolver
 
 enum LoadingDataMethod {
     case Default, WithApiManager, FromLocalJson
@@ -16,8 +17,8 @@ struct TreesRemoteRepositoryImpl: TreeListRemoteRepository {
     // Constant to select the loading method
     let loadingMethod: LoadingDataMethod = .Default
     
-    var remoteDataSource: TreeRemoteDataSource
-    var localDataSource: TreeLocalDataSource
+    @Injected var remoteDataSource: TreeRemoteDataSource
+    @Injected var localDataSource: TreeLocalDataSource
     
     func getTreeList(startIndex: Int) async throws -> [RecordData] {
         let records: [RecordData]

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TreeAPIlmpl: TreeRemoteDataSource {
+struct TreeRemoteImpl: TreeRemoteDataSource {
     
     func getTreeList(startIndex: Int) async throws -> [RecordData] {
         

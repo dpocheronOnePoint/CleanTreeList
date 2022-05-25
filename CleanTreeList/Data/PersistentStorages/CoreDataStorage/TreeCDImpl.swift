@@ -13,6 +13,11 @@ enum CoreDataError : Error {
 }
 
 struct TreeCDImpl: TreeCDDataSource {
+    func getTreeList(startIndex: Int) async throws -> [RecordData] {
+        return []
+    }
+    
+    
     
     func loadLocalTrees() async throws -> [CDGeolocatedTree] {
         

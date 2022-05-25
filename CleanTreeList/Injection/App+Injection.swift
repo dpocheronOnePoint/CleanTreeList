@@ -11,8 +11,9 @@ import Resolver
 extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
         defaultScope = .application
-        
         register { TreeGetterListViewModel() }
+        
+        registerRepositories()
         
     }
 }

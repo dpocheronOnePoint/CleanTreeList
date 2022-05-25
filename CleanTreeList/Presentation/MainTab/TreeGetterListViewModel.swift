@@ -21,16 +21,20 @@ enum NetworkStatus {
 // FeedbackNotification to improve UX experience --> Only work on RealDevice
 let feedback = UINotificationFeedbackGenerator()
 
-class TreeGetterListViewModel: ObservableObject {
+protocol TreeGetterListViewProtocol {
+    func getTrees() async
+}
+
+class TreeGetterListViewModel: ObservableObject, TreeGetterListViewProtocol {
     
     private var dataBaseMethod: DatabaseMethod = .RealmMethod
     
+    // --> Il faut avoir qu'un seul Usecase
+    // Il faut injecter les UseCase depuis un fichier UseCase+Injection
+    
     // Remote UseCase
     var treeListApiUseCase = TreeListApiUseCase(
-        treeListRemoteRepository: TreesRemoteRepositoryImpl(
-            remoteDataSource: TreeAPIlmpl(),
-            localDataSource: TreeLocalImpl()
-        )
+        treeListRemoteRepository: TreesRemoteRepositoryImpl()
     )
     
     // CD UseCase
