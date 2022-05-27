@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Resolver
 @testable import CleanTreeList
 
 class TreeGetterListViewModel_Tests: XCTestCase {
@@ -19,17 +20,11 @@ class TreeGetterListViewModel_Tests: XCTestCase {
     }
 
     func test_TreeGetterListViewModel_geolocatedTrees_notEmpty() async throws{
-        let vm = TreeGetterListViewModel()
+        @Injected var localDataSource: TreeLocalDataSource
         
-        let result = await vm.treeUseCase.getTreeList(startIndex: 0, withConnexion: true)
+        let mockRecordData = try await localDataSource.getTreeListFromLocal()
         
-        switch result {
-        case .success(let geolocatedTrees):
-            XCTAssertFalse(geolocatedTrees.isEmpty)
-        case .failure(_):
-            // Just to indicated the WS has failure Response
-            XCTAssertFalse(true)
-        }
+        XCTAssertNotNil(mockRecordData)
     }
     
     func testExample() throws {
