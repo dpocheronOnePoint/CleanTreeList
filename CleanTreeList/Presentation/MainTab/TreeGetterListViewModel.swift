@@ -11,10 +11,6 @@ import Network
 import SwiftUI
 import Resolver
 
-//fileprivate enum DatabaseMethod {
-//    case CDMethod, RealmMethod
-//}
-
 enum NetworkStatus {
     case requstInProgress, dataLoadedFromWS, dataLoadedFromLocalDataBase, networkFail
 }
@@ -25,32 +21,10 @@ protocol TreeGetterListViewProtocol {
 }
 
 class TreeGetterListViewModel: ObservableObject, TreeGetterListViewProtocol {
-    
-//    private var dataBaseMethod: DatabaseMethod = .RealmMethod
 
     @Injected var treeUseCase: TreeUseCase
     
-    // Remote UseCase
-//    var treeListApiUseCase = TreeListApiUseCase(
-//        treeListRemoteRepository: TreesRemoteRepositoryImpl()
-//    )
-    
-    // CD UseCase
-//    private var treeListCDUseCase = TreeListCDUseCase(
-//        treeListCDRepository: TreesCDRepositoryImpl(
-//            treeCDDataSource: TreeCDImpl()
-//        )
-//    )
-    
-    // Realm UseCase
-//    private var treeListRealmUseCase = TreeListRealmUseCase(
-//        treeListRealmRepository: TreeRealmRepositoryImpl(
-//            treeRealmDataSource: TreeRealmImpl()
-//        )
-//    )
-    
     @Published var geolocatedTrees: [GeolocatedTree] = []
-//    @Published var connexionAlreadyGoBack = false
     @Published var isLoadingPage = false
     var startIndex = 0
     
@@ -61,30 +35,7 @@ class TreeGetterListViewModel: ObservableObject, TreeGetterListViewProtocol {
     @Published var internetConnexionIsOk: Bool = true {
         didSet {
             Task{
-                if(geolocatedTrees.isEmpty && !internetConnexionIsOk){
-                    self.startIndex = 0
-                }
-//                if(internetConnexionIsOk) {
-//                    // To prevent connexion to 4G and after connexion to Wifi --> Double call
-//                    if(!connexionAlreadyGoBack){
-//                        setConnexionAlreadyGoBack(status: true)
-//                        await getTrees()
-//                    }
-//                }else{
-//                    setConnexionAlreadyGoBack(status: false)
-//                    if(geolocatedTrees.isEmpty && !internetConnexionIsOk){
-//                        self.startIndex = 0
-//
-//                        switch dataBaseMethod {
-//                        case .CDMethod:
-//                            await loadCDGeolocatedTrees()
-//                        case .RealmMethod:
-//                            await loadRealmGeolocatedTrees()
-//                        }
-//
-//                    }
-//                }
-                
+                self.startIndex = 0
                 await getTrees()
             }
         }
@@ -143,12 +94,6 @@ class TreeGetterListViewModel: ObservableObject, TreeGetterListViewProtocol {
                 self.isLoadingPage = false
             }
             
-            // Store in CoreData only the 20 first
-//            if self.startIndex == 0 {
-//                await self.updateCDDataBase(geolocatedTrees: geolocatedTrees)
-//                await self.updateRealmDataBase(geolocatedTrees: geolocatedTrees)
-//            }
-            
         case .failure:
             DispatchQueue.main.async {
                 self.isLoadingPage = false
@@ -159,7 +104,6 @@ class TreeGetterListViewModel: ObservableObject, TreeGetterListViewProtocol {
     
     func getMoreTreesIfNeeded(currentTree tree: GeolocatedTree?) async {
         guard let tree = tree else {
-            await getTrees()
             return
         }
         
@@ -171,65 +115,6 @@ class TreeGetterListViewModel: ObservableObject, TreeGetterListViewProtocol {
             await getTrees()
         }
     }
-    
-    
-    // MARK: - CD Methods
-//    private func loadCDGeolocatedTrees() async {
-//
-//        let result = await treeListCDUseCase.loadLocalTrees()
-//
-//        switch result {
-//        case .success(let geolocatedTrees):
-//            DispatchQueue.main.async {
-//                if(geolocatedTrees.isEmpty){
-//                    self.networkStatus = .networkFail
-//                }else{
-//                    self.animateUpdatedList(geolocatedTrees: geolocatedTrees, networkStatus: .dataLoadedFromLocalDataBase)
-//                }
-//            }
-//        case .failure:
-//            self.networkStatus = .networkFail
-//            break
-//        }
-//    }
-    
-    
-    // MARK: - Realm Methods
-//    private func loadRealmGeolocatedTrees() async {
-//        let result = await treeListRealmUseCase.loadLocalTrees()
-//
-//        switch result {
-//        case .success(let geolocatedTrees):
-//            DispatchQueue.main.async {
-//                if(geolocatedTrees.isEmpty){
-//                    self.networkStatus = .networkFail
-//                }else{
-//                    self.animateUpdatedList(geolocatedTrees: geolocatedTrees, networkStatus: .dataLoadedFromLocalDataBase)
-//                }
-//            }
-//        case .failure:
-//            self.networkStatus = .networkFail
-//            break
-//        }
-//    }
-    
-//    private func updateRealmDataBase(geolocatedTrees: [GeolocatedTree]) async {
-//
-//        // Clear Database
-//        do {
-//            try await treeListRealmUseCase.clearDataBase()
-//        } catch {
-//            print("Realm Database cannot be deleted")
-//        }
-//
-//        // Insert new GeolocatedTree Objects
-//        do {
-//            try await treeListRealmUseCase.saveGeolocatedTreeInRealmwiWith(geolocatedTreeList: geolocatedTrees)
-//        } catch {
-//            print("Data cannot be inserted in realm")
-//        }
-//    }
-    
     
     // MARK: - Animation Method
     private func animateUpdatedList(geolocatedTrees: [GeolocatedTree], networkStatus: NetworkStatus) {
@@ -245,12 +130,4 @@ class TreeGetterListViewModel: ObservableObject, TreeGetterListViewProtocol {
         }
     }
     
-    // MARK: - Utils
-    
-    // Just a function to externalise Main Thread process to call from didSet switcher
-//    private func setConnexionAlreadyGoBack(status: Bool) {
-//        DispatchQueue.main.async {
-//            self.connexionAlreadyGoBack = status
-//        }
-//    }
 }

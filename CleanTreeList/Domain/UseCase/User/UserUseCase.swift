@@ -6,15 +6,16 @@
 //
 
 import Foundation
+import Resolver
 
-protocol UserApiUseCaseProtocol {
-    func postUser(user: UserPost) async -> Result<User, UseCaseApiError>
+protocol UserUseCaseProtocol {
+    func postUser(user: UserPost) async -> Result<User, UseCaseError>
 }
 
-struct UserApiUseCase: UserApiUseCaseProtocol {
-    var userRemoteRepository: UserRemoteRepository
+struct UserUseCase: UserUseCaseProtocol {
+    @Injected var userRemoteRepository: UserRemoteRepository
     
-    func postUser(user: UserPost) async -> Result<User, UseCaseApiError> {
+    func postUser(user: UserPost) async -> Result<User, UseCaseError> {
         do {
             let user = try await userRemoteRepository.postuser(user: user)
             

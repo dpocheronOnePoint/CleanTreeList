@@ -10,11 +10,11 @@ import MapKit
 import Resolver
 
 struct ClusterMapView: View {
-    @StateObject private var mapViewModel = MapViewModel()
+    @InjectedObject var mapViewModel: MapViewModel
     
     var body: some View {
         ZStack {
-            ClusterMapViewRepresentable(mapViewModel: mapViewModel)
+            ClusterMapViewRepresentable()
             
             BlankBlurView(backgroundColor: Color.gray, backgroundOpacity: 0.5)
                 .onTapGesture {
@@ -33,7 +33,7 @@ struct ClusterMapView: View {
 
 struct ClusterMapViewRepresentable: UIViewRepresentable {
     @InjectedObject var treeGetterListViewModel: TreeGetterListViewModel
-    @StateObject var mapViewModel: MapViewModel
+    @InjectedObject var mapViewModel: MapViewModel
     
     typealias UIViewType = MKMapView
     

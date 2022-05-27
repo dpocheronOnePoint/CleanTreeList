@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Resolver
 
 struct UsersRemoteRepositoryImpl: UserRemoteRepository {
-    var usersRemoteDataSource: UsersRemoteDataSource
+   @Injected var usersRemoteDataSource: UsersRemoteDataSource
 
     func postuser(user: UserPost) async throws -> User {
         let user = try await usersRemoteDataSource.postUser(user: user.ToData())

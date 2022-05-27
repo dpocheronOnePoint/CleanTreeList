@@ -15,5 +15,8 @@ extension Resolver {
             .implements(TreeGetterListViewProtocol.self)
             .scope(.application)
         
+        register { MapViewModel() }
+            .implements(MapViewModelProtocol.self)
+            .scope(.application)
     }
 }

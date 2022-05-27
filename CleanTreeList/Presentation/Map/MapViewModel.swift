@@ -8,7 +8,12 @@
 import Foundation
 import SwiftUI
 
-class MapViewModel: ObservableObject {
+protocol MapViewModelProtocol {
+    func selectTree(geolocatedTree: GeolocatedTree)
+    func deselectTree()
+}
+
+class MapViewModel: ObservableObject, MapViewModelProtocol {
     @Published var showTreeDetail: Bool = false
     @Published var selectedTree: GeolocatedTree = GeolocatedTree.geolocatedTreeSampleData
     

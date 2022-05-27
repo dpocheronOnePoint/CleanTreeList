@@ -11,6 +11,7 @@ import Resolver
 extension Resolver {
     public static func registerRepositories() {
         
+        // TreeList Registration
         register { TreeRemoteImpl() }
             .implements(TreeRemoteDataSource.self)
             .scope(.application)
@@ -37,6 +38,17 @@ extension Resolver {
         
         register { TreeRealmImpl() }
             .implements(TreeRealmDataSource.self)
+            .scope(.application)
+        
+        
+        // User Registration
+        
+        register { UsersRemoteImpl() }
+            .implements(UsersRemoteDataSource.self)
+            .scope(.application)
+        
+        register { UsersRemoteRepositoryImpl() }
+            .implements(UserRemoteRepository.self)
             .scope(.application)
     }
 }

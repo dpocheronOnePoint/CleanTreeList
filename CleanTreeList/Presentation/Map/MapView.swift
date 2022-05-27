@@ -12,7 +12,7 @@ import Resolver
 struct MapView: View {
     @InjectedObject var treeGetterListViewModel: TreeGetterListViewModel
     
-    @StateObject private var mapViewModel = MapViewModel()
+    @InjectedObject var mapViewModel: MapViewModel
     
     @State private var region: MKCoordinateRegion = {
         var mapCoordinates = CLLocationCoordinate2D(latitude: 48.856614, longitude: 2.3522219)

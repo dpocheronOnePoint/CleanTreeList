@@ -9,7 +9,7 @@ import Foundation
 
 // https://gorest.co.in
 
-struct UsersAPIImpl: UsersRemoteDataSource {
+struct UsersRemoteImpl: UsersRemoteDataSource {
     func postUser(user: RemoteUserPost) async throws -> RemoteUser {
         guard let url = URL(string: "\(GorestAPI.baseUrl)") else {
             throw APIServiceError.badUrl

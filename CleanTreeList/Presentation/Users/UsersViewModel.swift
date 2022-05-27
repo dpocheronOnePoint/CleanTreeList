@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Resolver
 
 enum PostRequestStatus {
     case NotCalled, InProgress, Failure, Success
@@ -14,7 +15,7 @@ enum PostRequestStatus {
 
 class UsersViewModel: ObservableObject {
     
-    private var userApiUseCase = UserApiUseCase(userRemoteRepository: UsersRemoteRepositoryImpl(usersRemoteDataSource: UsersAPIImpl()))
+    @Injected var userUseCase: UserUseCase
     
     @Published var userPost: UserPost = UserPost.starterUserPost
     @Published var checkPostFields: CheckPostFields = CheckPostFields.falseCheckPostFields
@@ -138,7 +139,7 @@ class UsersViewModel: ObservableObject {
         withAnimation(.easeInOut(duration: 0.2)) {
             postRequestStatus = .InProgress
         }
-        let result = await userApiUseCase.postUser(user: userPost)
+        let result = await userUseCase.postUser(user: userPost)
         
         switch result {
         case .success(_):
