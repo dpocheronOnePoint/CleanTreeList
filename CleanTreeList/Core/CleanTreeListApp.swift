@@ -13,11 +13,12 @@ struct CleanTreeListApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if(userIsConnected) {
-                MainTabView()
-            } else {
-                LoginView()
-            }
+            ContentView()
+//            if(userIsConnected) {
+//                MainTabView()
+//            } else {
+//                LoginView()
+//            }
         }
     }
 }

@@ -38,6 +38,16 @@
                ReferencedContainer = "container:CleanTreeList.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D3D691FE2841121100C28C66"
+               BuildableName = "CleanTreeListUITests.xctest"
+               BlueprintName = "CleanTreeListUITests"
+               ReferencedContainer = "container:CleanTreeList.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

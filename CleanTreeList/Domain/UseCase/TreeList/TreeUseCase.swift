@@ -69,18 +69,13 @@ struct TreeUseCase: TreeUseCaseProtocol {
         }
     }
     
+    // MARK: - Remote Call
     func getRemoteTreeList(startIndex: Int) async -> Result<[GeolocatedTree], UseCaseError> {
         do {
             
-            let records = try await treeListRemoteRepository.getTreeList(startIndex: startIndex)
+            let recordsData = try await treeListRemoteRepository.getTreeList(startIndex: startIndex)
             return .success(
-                records.map({ item in
-                    GeolocatedTree(
-                        tree: item.fields.ToDomain(),
-                        lng: item.geometry.coordinates[0],
-                        lat: item.geometry.coordinates[1]
-                    )
-                })
+                convertRecordsArrayToGeolocatedTreeArray(recordsData: recordsData)
             )
             
         } catch (let error) {
@@ -96,24 +91,40 @@ struct TreeUseCase: TreeUseCaseProtocol {
         }
     }
     
+    func convertRecordsArrayToGeolocatedTreeArray(recordsData: [RecordData]) -> [GeolocatedTree] {
+        return recordsData.map({ item in
+            GeolocatedTree(
+                tree: item.fields.ToDomain(),
+                lng: item.geometry.coordinates[0],
+                lat: item.geometry.coordinates[1]
+            )
+        })
+    }
+    
+    // MARK: - CoreData Call
     func getCDLocalTrees() async -> Result<[GeolocatedTree], UseCaseError> {
         do {
             let cdGeolocatedTrees = try await treeListCDRepository.loadLocalTrees()
             
-            let geolocatedTrees: [GeolocatedTree] = cdGeolocatedTrees.map({ item in
-                GeolocatedTree(
-                    tree: item.tree.ToDomain(),
-                    lng: item.lng,
-                    lat: item.lat
-                )
-            })
-            
-            return .success(geolocatedTrees)
+            return .success(convertCDGeolocatedTreesArrayToGeolocatedTreeArray(cdGeolocatedTrees: cdGeolocatedTrees))
         } catch {
             return .failure(.decodingError)
         }
     }
     
+    func convertCDGeolocatedTreesArrayToGeolocatedTreeArray(cdGeolocatedTrees: [CDGeolocatedTree]) -> [GeolocatedTree] {
+        let geolocatedTrees: [GeolocatedTree] = cdGeolocatedTrees.map({ item in
+            GeolocatedTree(
+                tree: item.tree.ToDomain(),
+                lng: item.lng,
+                lat: item.lat
+            )
+        })
+        
+        return geolocatedTrees
+    }
+    
+    // MARK: - Realm Call
     func getRealmLocalTrees() async -> Result<[GeolocatedTree], UseCaseError> {
         do {
             let realmGeolocatedTrees = try await treeListRealmRepository.loadLocalTrees()
@@ -128,7 +139,7 @@ struct TreeUseCase: TreeUseCaseProtocol {
     
     // MARK: - DataBase Register Method
     
-    private func updateCDDataBase(geolocatedTrees: [GeolocatedTree]) async {
+    func updateCDDataBase(geolocatedTrees: [GeolocatedTree]) async {
         // Clear Database
         do {
             try await treeListCDRepository.clearDataBase()
@@ -138,7 +149,7 @@ struct TreeUseCase: TreeUseCaseProtocol {
         }
     }
     
-    private func updateRealmDataBase(geolocatedTrees: [GeolocatedTree]) async {
+    func updateRealmDataBase(geolocatedTrees: [GeolocatedTree]) async {
         
         // Clear Database
         do {

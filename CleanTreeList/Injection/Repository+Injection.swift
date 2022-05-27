@@ -20,7 +20,7 @@ extension Resolver {
             .implements(TreeLocalDataSource.self)
             .scope(.application)
         
-        register { TreesRemoteRepositoryImpl() }
+        register { TreesRemoteRepositoryImpl(loadingMethod: .Default) }
             .implements(TreeListRemoteRepository.self)
             .scope(.application)
         

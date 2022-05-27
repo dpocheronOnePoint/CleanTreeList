@@ -15,7 +15,7 @@ enum LoadingDataMethod {
 struct TreesRemoteRepositoryImpl: TreeListRemoteRepository {
     
     // Constant to select the loading method
-    var loadingMethod: LoadingDataMethod = .Default
+    var loadingMethod: LoadingDataMethod
     
     @Injected var remoteDataSource: TreeRemoteDataSource
     @Injected var localDataSource: TreeLocalDataSource
