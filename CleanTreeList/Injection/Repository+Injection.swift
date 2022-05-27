@@ -18,5 +18,25 @@ extension Resolver {
         register { TreeLocalImpl() }
             .implements(TreeLocalDataSource.self)
             .scope(.application)
+        
+        register { TreesRemoteRepositoryImpl() }
+            .implements(TreeListRemoteRepository.self)
+            .scope(.application)
+        
+        register { TreesCDRepositoryImpl() }
+            .implements(TreeListCDRepository.self)
+            .scope(.application)
+        
+        register { TreeRealmRepositoryImpl() }
+            .implements(TreeListRealmRepository.self)
+            .scope(.application)
+        
+        register { TreeCDImpl() }
+            .implements(TreeCDDataSource.self)
+            .scope(.application)
+        
+        register { TreeRealmImpl() }
+            .implements(TreeRealmDataSource.self)
+            .scope(.application)
     }
 }

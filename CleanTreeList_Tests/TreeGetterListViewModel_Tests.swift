@@ -21,7 +21,7 @@ class TreeGetterListViewModel_Tests: XCTestCase {
     func test_TreeGetterListViewModel_geolocatedTrees_notEmpty() async throws{
         let vm = TreeGetterListViewModel()
         
-        let result = await vm.treeListApiUseCase.getTreeList(startIndex: 0)
+        let result = await vm.treeUseCase.getTreeList(startIndex: 0, withConnexion: true)
         
         switch result {
         case .success(let geolocatedTrees):

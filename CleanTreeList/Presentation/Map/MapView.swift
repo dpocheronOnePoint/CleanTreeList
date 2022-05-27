@@ -10,7 +10,7 @@ import MapKit
 import Resolver
 
 struct MapView: View {
-    @StateObject var treeGetterListViewModel: TreeGetterListViewModel = Resolver.resolve()
+    @InjectedObject var treeGetterListViewModel: TreeGetterListViewModel
     
     @StateObject private var mapViewModel = MapViewModel()
     

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3088943283E948D00305A64 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3088942283E948D00305A64 /* Constants.swift */; };
+		D3088945283EA51900305A64 /* ViewModel+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3088944283EA51900305A64 /* ViewModel+Injection.swift */; };
 		D31103E32823ADE60021299B /* TreeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103E22823ADE60021299B /* TreeListView.swift */; };
 		D31103EC2823CFB60021299B /* TreeListApiUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103EB2823CFB60021299B /* TreeListApiUseCase.swift */; };
 		D31103EE2823D00A0021299B /* TreeListRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31103ED2823D00A0021299B /* TreeListRemoteRepository.swift */; };
@@ -73,6 +75,9 @@
 		D347DDC0282EA619004311FE /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347DDBF282EA619004311FE /* FormTextField.swift */; };
 		D347DDC3282EA886004311FE /* SexeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347DDC2282EA886004311FE /* SexeSelector.swift */; };
 		D347DDC5282EACFB004311FE /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347DDC4282EACFB004311FE /* CheckBox.swift */; };
+		D357B8A8283E315500FA2C97 /* TreeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357B8A7283E315500FA2C97 /* TreeUseCase.swift */; };
+		D357B8AA283E559300FA2C97 /* UseCaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357B8A9283E559300FA2C97 /* UseCaseError.swift */; };
+		D357B8AC283E570900FA2C97 /* UseCase+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357B8AB283E570900FA2C97 /* UseCase+Injection.swift */; };
 		D37F7A08282167E200E73EB4 /* CleanTreeListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37F7A07282167E200E73EB4 /* CleanTreeListApp.swift */; };
 		D37F7A0C282167E200E73EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37F7A0B282167E200E73EB4 /* Assets.xcassets */; };
 		D37F7A0F282167E200E73EB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37F7A0E282167E200E73EB4 /* Preview Assets.xcassets */; };
@@ -120,6 +125,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D3088942283E948D00305A64 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D3088944283EA51900305A64 /* ViewModel+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+Injection.swift"; sourceTree = "<group>"; };
 		D31103E22823ADE60021299B /* TreeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListView.swift; sourceTree = "<group>"; };
 		D31103EB2823CFB60021299B /* TreeListApiUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListApiUseCase.swift; sourceTree = "<group>"; };
 		D31103ED2823D00A0021299B /* TreeListRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListRemoteRepository.swift; sourceTree = "<group>"; };
@@ -183,6 +190,9 @@
 		D347DDBF282EA619004311FE /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
 		D347DDC2282EA886004311FE /* SexeSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SexeSelector.swift; sourceTree = "<group>"; };
 		D347DDC4282EACFB004311FE /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		D357B8A7283E315500FA2C97 /* TreeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeUseCase.swift; sourceTree = "<group>"; };
+		D357B8A9283E559300FA2C97 /* UseCaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseError.swift; sourceTree = "<group>"; };
+		D357B8AB283E570900FA2C97 /* UseCase+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UseCase+Injection.swift"; sourceTree = "<group>"; };
 		D37F7A04282167E200E73EB4 /* CleanTreeList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanTreeList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37F7A07282167E200E73EB4 /* CleanTreeListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTreeListApp.swift; sourceTree = "<group>"; };
 		D37F7A0B282167E200E73EB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -245,6 +255,7 @@
 		D31103E82823AE9D0021299B /* TreeList */ = {
 			isa = PBXGroup;
 			children = (
+				D357B8A7283E315500FA2C97 /* TreeUseCase.swift */,
 				D31103EB2823CFB60021299B /* TreeListApiUseCase.swift */,
 				D3D7E285282BF8EC00284215 /* TreeListCDUseCase.swift */,
 				D333B13E283BB37800407168 /* TreeListRealmUseCase.swift */,
@@ -353,6 +364,8 @@
 			children = (
 				D3251A722837C1290059DBA3 /* App+Injection.swift */,
 				D387005B283E256F002D414E /* Repository+Injection.swift */,
+				D357B8AB283E570900FA2C97 /* UseCase+Injection.swift */,
+				D3088944283EA51900305A64 /* ViewModel+Injection.swift */,
 			);
 			path = Injection;
 			sourceTree = "<group>";
@@ -660,6 +673,7 @@
 		D37F7A1D2821686400E73EB4 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				D357B8A9283E559300FA2C97 /* UseCaseError.swift */,
 				D3B007612834D13E00030C9E /* UseCaseApiError.swift */,
 				D31353C42833DE7B006485B7 /* User */,
 				D31103E82823AE9D0021299B /* TreeList */,
@@ -675,6 +689,7 @@
 				D3AA66BF2823917800862D43 /* trees.json */,
 				D3D7E28F282D3CF300284215 /* Localizable.strings */,
 				D347DDA1282E7E26004311FE /* Localizable.stringsdict */,
+				D3088942283E948D00305A64 /* Constants.swift */,
 			);
 			path = Ressources;
 			sourceTree = "<group>";
@@ -912,9 +927,11 @@
 				D3B0076928362FBD00030C9E /* IsHiddenBinding.swift in Sources */,
 				D347DDB5282E9B52004311FE /* UnderlineTextField.swift in Sources */,
 				D347DDA7282E8EA7004311FE /* UsersView.swift in Sources */,
+				D3088943283E948D00305A64 /* Constants.swift in Sources */,
 				D31353C92833E374006485B7 /* AppButton.swift in Sources */,
 				D31353BB2833DC66006485B7 /* UsersRemoteRepositoryImpl.swift in Sources */,
 				D31353C02833DD7E006485B7 /* UserRemoteRepository.swift in Sources */,
+				D357B8A8283E315500FA2C97 /* TreeUseCase.swift in Sources */,
 				D31353CB2833E92D006485B7 /* DomainToData.swift in Sources */,
 				D347DD98282E5C14004311FE /* BlankBlurView.swift in Sources */,
 				D3B007602834CB8400030C9E /* UserResponseError.swift in Sources */,
@@ -930,6 +947,7 @@
 				D32CD62B282AA8F600C7FC80 /* ErrorView.swift in Sources */,
 				D32CD609282A34D400C7FC80 /* MapView.swift in Sources */,
 				D347DDAF282E9205004311FE /* UsersRemoteDataSource.swift in Sources */,
+				D357B8AC283E570900FA2C97 /* UseCase+Injection.swift in Sources */,
 				D314834F2832497A00C40198 /* Helpers.swift in Sources */,
 				D37F7A08282167E200E73EB4 /* CleanTreeListApp.swift in Sources */,
 				D347DDC0282EA619004311FE /* FormTextField.swift in Sources */,
@@ -965,8 +983,10 @@
 				D3D7E280282BEA6C00284215 /* TreeCDImpl.swift in Sources */,
 				D333B13F283BB37800407168 /* TreeListRealmUseCase.swift in Sources */,
 				D347DDBE282EA4E4004311FE /* BindingInverter.swift in Sources */,
+				D3088945283EA51900305A64 /* ViewModel+Injection.swift in Sources */,
 				D31353AC28339954006485B7 /* ClusterMapView.swift in Sources */,
 				D32CD632282B906E00C7FC80 /* TreeLocalImpl.swift in Sources */,
+				D357B8AA283E559300FA2C97 /* UseCaseError.swift in Sources */,
 				D31103F02823D3E60021299B /* TreesRemoteRepositoryImpl.swift in Sources */,
 				D3870010283E143F002D414E /* DomainToRealm.swift in Sources */,
 				D34199EA2829103400DB45B0 /* TreeListComponentView.swift in Sources */,

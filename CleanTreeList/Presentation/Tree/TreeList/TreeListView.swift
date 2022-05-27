@@ -10,7 +10,7 @@ import Resolver
 
 struct TreeListView: View {
     
-    @ObservedObject var treeGetterListViewModel: TreeGetterListViewModel = Resolver.resolve()
+    @InjectedObject var treeGetterListViewModel: TreeGetterListViewModel
     
     @State private var searchText: String = ""
     

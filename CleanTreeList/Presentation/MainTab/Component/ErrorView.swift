@@ -9,7 +9,7 @@ import SwiftUI
 import Resolver
 
 struct ErrorView: View {
-    @ObservedObject var treeGetterListViewModel: TreeGetterListViewModel = Resolver.resolve()
+    @InjectedObject var treeGetterListViewModel: TreeGetterListViewModel
 
     var body: some View {
         VStack(spacing: 20){

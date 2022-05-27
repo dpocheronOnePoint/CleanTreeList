@@ -7,9 +7,10 @@
 
 import Foundation
 import RealmSwift
+import Resolver
 
 struct TreeRealmRepositoryImpl: TreeListRealmRepository {
-    var treeRealmDataSource: TreeRealmDataSource
+    @Injected var treeRealmDataSource: TreeRealmDataSource
     
     func loadLocalTrees() async throws -> Results<RealmGeolocatedTree> {
         let realmGeolocatedtrees = try await treeRealmDataSource.loadLocalTrees()

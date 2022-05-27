@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Resolver
 
 struct TreesCDRepositoryImpl: TreeListCDRepository {
-    var treeCDDataSource: TreeCDDataSource
+    @Injected var treeCDDataSource: TreeCDDataSource
     
     func loadLocalTrees() async throws -> [CDGeolocatedTree] {
         let cdGeolocatedTrees = try await treeCDDataSource.loadLocalTrees()

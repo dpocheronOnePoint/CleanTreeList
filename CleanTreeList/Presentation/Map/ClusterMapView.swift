@@ -32,7 +32,7 @@ struct ClusterMapView: View {
 // https://thomas-sivilay.github.io/morningswiftui.github.io/swiftui/2019/07/31/build-mapview-app-with-swiftui.html
 
 struct ClusterMapViewRepresentable: UIViewRepresentable {
-    @ObservedObject var treeGetterListViewModel: TreeGetterListViewModel = Resolver.resolve()
+    @InjectedObject var treeGetterListViewModel: TreeGetterListViewModel
     @StateObject var mapViewModel: MapViewModel
     
     typealias UIViewType = MKMapView
