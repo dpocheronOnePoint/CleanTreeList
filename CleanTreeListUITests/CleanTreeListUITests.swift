@@ -22,15 +22,25 @@ class CleanTreeListUITests: XCTestCase {
 
     func test_UITestingBootcampView_signUpButton_shouldNotSignin() {
         
+        // Given
+        let textfield = app.textFields["SignUpTextField"]
         
-        app.textFields["Add your name..."].tap()
         
-        let aKey = app/*@START_MENU_TOKEN@*/.keys["A"]/*[[".keyboards.keys[\"A\"]",".keys[\"A\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        aKey.tap()
-        aKey.tap()
+        textfield.tap()
         
-        app/*@START_MENU_TOKEN@*/.buttons["Return"]/*[[".keyboards",".buttons[\"retour\"]",".buttons[\"Return\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app.buttons["Sign Up"].tap()
+        let keyA = app/*@START_MENU_TOKEN@*/.keys["A"]/*[[".keyboards.keys[\"A\"]",".keys[\"A\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        keyA.tap()
+        let keya = app.keys["a"]
+        keya.tap()
         
+        let returnButton = app/*@START_MENU_TOKEN@*/.buttons["Return"]/*[[".keyboards",".buttons[\"retour\"]",".buttons[\"Return\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/
+        returnButton.tap()
+        
+        let signUpButton = app.buttons["SignUpButton"]
+        signUpButton.tap()
+        
+        let navBar = app.navigationBars["Welcome"]
+        
+        XCTAssertTrue(navBar.exists)
     }
 }
