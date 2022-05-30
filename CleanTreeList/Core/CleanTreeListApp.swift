@@ -13,7 +13,7 @@ struct CleanTreeListApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            UITestingBootcampView()
 //            if(userIsConnected) {
 //                MainTabView()
 //            } else {

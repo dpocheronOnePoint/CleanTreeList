@@ -98,8 +98,7 @@
 		D3C57B43282398960028E4EB /* APIServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57B42282398960028E4EB /* APIServiceError.swift */; };
 		D3C57B4528239D2F0028E4EB /* DataToDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C57B4428239D2F0028E4EB /* DataToDomain.swift */; };
 		D3D691F42840D7B000C28C66 /* TreeUseCase_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D691F32840D7B000C28C66 /* TreeUseCase_Tests.swift */; };
-		D3D691F828410F0600C28C66 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D691F728410F0600C28C66 /* ContentView.swift */; };
-		D3D691FA28410FB700C28C66 /* ContentView_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D691F928410FB700C28C66 /* ContentView_Tests.swift */; };
+		D3D691F828410F0600C28C66 /* UITestingBootcampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D691F728410F0600C28C66 /* UITestingBootcampView.swift */; };
 		D3D692022841121100C28C66 /* CleanTreeListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D692012841121100C28C66 /* CleanTreeListUITests.swift */; };
 		D3D692042841121100C28C66 /* CleanTreeListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D692032841121100C28C66 /* CleanTreeListUITestsLaunchTests.swift */; };
 		D3D7E27E282BDD2200284215 /* TreeCDDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7E27D282BDD2200284215 /* TreeCDDataSource.swift */; };
@@ -221,8 +220,7 @@
 		D3C57B42282398960028E4EB /* APIServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceError.swift; sourceTree = "<group>"; };
 		D3C57B4428239D2F0028E4EB /* DataToDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataToDomain.swift; sourceTree = "<group>"; };
 		D3D691F32840D7B000C28C66 /* TreeUseCase_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeUseCase_Tests.swift; sourceTree = "<group>"; };
-		D3D691F728410F0600C28C66 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		D3D691F928410FB700C28C66 /* ContentView_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView_Tests.swift; sourceTree = "<group>"; };
+		D3D691F728410F0600C28C66 /* UITestingBootcampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestingBootcampView.swift; sourceTree = "<group>"; };
 		D3D691FF2841121100C28C66 /* CleanTreeListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanTreeListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D692012841121100C28C66 /* CleanTreeListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTreeListUITests.swift; sourceTree = "<group>"; };
 		D3D692032841121100C28C66 /* CleanTreeListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTreeListUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -660,7 +658,7 @@
 				D3C57B4628239DE10028E4EB /* Tree */,
 				D32CD607282A34C200C7FC80 /* Map */,
 				D347DDA5282E8E8E004311FE /* Users */,
-				D3D691F728410F0600C28C66 /* ContentView.swift */,
+				D3D691F728410F0600C28C66 /* UITestingBootcampView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -782,23 +780,6 @@
 			path = TreeList;
 			sourceTree = "<group>";
 		};
-		D3D691F528410E3700C28C66 /* UITests */ = {
-			isa = PBXGroup;
-			children = (
-				D3D691F928410FB700C28C66 /* ContentView_Tests.swift */,
-			);
-			path = UITests;
-			sourceTree = "<group>";
-		};
-		D3D691F628410E5100C28C66 /* FunctionnalTests */ = {
-			isa = PBXGroup;
-			children = (
-				D3E28419283CCBC6005FCF66 /* TreesRemoteRepositoryImpl_Tests.swift */,
-				D3D691F32840D7B000C28C66 /* TreeUseCase_Tests.swift */,
-			);
-			path = FunctionnalTests;
-			sourceTree = "<group>";
-		};
 		D3D692002841121100C28C66 /* CleanTreeListUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -811,8 +792,8 @@
 		D3E28411283CC0FE005FCF66 /* CleanTreeList_Tests */ = {
 			isa = PBXGroup;
 			children = (
-				D3D691F628410E5100C28C66 /* FunctionnalTests */,
-				D3D691F528410E3700C28C66 /* UITests */,
+				D3E28419283CCBC6005FCF66 /* TreesRemoteRepositoryImpl_Tests.swift */,
+				D3D691F32840D7B000C28C66 /* TreeUseCase_Tests.swift */,
 			);
 			path = CleanTreeList_Tests;
 			sourceTree = "<group>";
@@ -1012,7 +993,7 @@
 				D3D7E28A282D25E300284215 /* DomainToCoreData.swift in Sources */,
 				D31353B22833A0D5006485B7 /* ClusterTreeAnnotationView.swift in Sources */,
 				D347DDBC282EA0AE004311FE /* SelectorBoxStyle.swift in Sources */,
-				D3D691F828410F0600C28C66 /* ContentView.swift in Sources */,
+				D3D691F828410F0600C28C66 /* UITestingBootcampView.swift in Sources */,
 				D3D7E288282CDCBB00284215 /* TreeListCDRepository.swift in Sources */,
 				D32CD62B282AA8F600C7FC80 /* ErrorView.swift in Sources */,
 				D32CD609282A34D400C7FC80 /* MapView.swift in Sources */,
@@ -1087,7 +1068,6 @@
 			files = (
 				D3E2841A283CCBC6005FCF66 /* TreesRemoteRepositoryImpl_Tests.swift in Sources */,
 				D3D691F42840D7B000C28C66 /* TreeUseCase_Tests.swift in Sources */,
-				D3D691FA28410FB700C28C66 /* ContentView_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
