@@ -95,11 +95,12 @@ struct SignedInHomeView: View {
                         .background(Color.red)
                         .cornerRadius(10)
                 })
+                .accessibilityIdentifier("ShowAlertButton")
                 .alert(isPresented: $showAlert, content: {
                     return Alert(title: Text("Welcome to the app!"))
                 })
                 
-                NavigationLink(destination: Text("Destination!"), label: {
+                NavigationLink(destination: Text("Destination !"), label: {
                     Text("Navigate")
                         .font(.headline)
                         .padding()
@@ -108,6 +109,7 @@ struct SignedInHomeView: View {
                         .background(Color.blue)
                         .cornerRadius(10)
                 })
+                .accessibilityIdentifier("NavigationLinkToDestination")
             } // VSTACK
             .padding()
             .navigationTitle("Welcome")
