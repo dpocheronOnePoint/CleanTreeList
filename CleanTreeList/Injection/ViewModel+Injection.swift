@@ -18,5 +18,9 @@ extension Resolver {
         register { MapViewModel() }
             .implements(MapViewModelProtocol.self)
             .scope(.application)
+        
+        register { UsersViewModel() }
+            .implements(UsersViewModelProtocol.self)
+            .scope(.application)
     }
 }

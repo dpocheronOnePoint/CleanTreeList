@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Resolver
 
 // Interesting link to get focusField
 // https://stackoverflow.com/questions/56491386/how-to-hide-keyboard-when-using-swiftui
@@ -13,21 +14,8 @@ import SwiftUI
 struct AddPersonView: View {
     
     // MARK: - Properties
-    
     //    @Environment(\.dismiss) var dismissView
-    @StateObject private var usersViewModel = UsersViewModel()
-    
-    @State private var passwordWriteInProgress = false
-    
-    // MARK: - Functions
-    private func setPasswordWriteInProgress() {
-        withAnimation(.easeInOut(duration: 0.2)){
-            passwordWriteInProgress.toggle()
-            if(!passwordWriteInProgress){
-                usersViewModel.checkPasswordUnfocus()
-            }
-        }
-    }
+    @InjectedObject private var usersViewModel: UsersViewModel
     
     // MARK: - Body
     var body: some View {
@@ -44,7 +32,7 @@ struct AddPersonView: View {
                         text: $usersViewModel.userPost.email,
                         unEditingChangedAction: usersViewModel.checkEmailUnfocus
                     )
-                    .isHidden(passwordWriteInProgress)
+                    .isHidden(usersViewModel.passwordWriteInProgress)
                     .onChange(of: usersViewModel.userPost.email) {emailText in
                         usersViewModel.checkEmailWriteInProcess()
                     }
@@ -56,7 +44,7 @@ struct AddPersonView: View {
                         text: $usersViewModel.userPost.name,
                         unEditingChangedAction: usersViewModel.checkNameUnFocus
                     )
-                    .isHidden(passwordWriteInProgress)
+                    .isHidden(usersViewModel.passwordWriteInProgress)
                     .onChange(of: usersViewModel.userPost.name) { name in
                         usersViewModel.checkNameWriteProgess()
                     }
@@ -67,8 +55,8 @@ struct AddPersonView: View {
                             placeholder: "Mot de passe",
                             localizeError: usersViewModel.passwordLocalizeError,
                             text: $usersViewModel.passwordText,
-                            editingChangedAction: setPasswordWriteInProgress,
-                            unEditingChangedAction: setPasswordWriteInProgress
+                            editingChangedAction: usersViewModel.setPasswordWriteInProgress,
+                            unEditingChangedAction: usersViewModel.setPasswordWriteInProgress
                         )
                         .onChange(of: usersViewModel.passwordText) {passwordText in
                             usersViewModel.checkPasswordInWriteProcess()
@@ -86,17 +74,17 @@ struct AddPersonView: View {
                             sexeTitle: "Homme"
                         )
                     } //: HSTACK
-                    .isHidden(passwordWriteInProgress)
+                    .isHidden(usersViewModel.passwordWriteInProgress)
                     
                     CheckBox(isActivated: $usersViewModel.userIsActive, checkoboxTitle: "Utilisateur actif")
-                        .isHidden(passwordWriteInProgress)
+                        .isHidden(usersViewModel.passwordWriteInProgress)
                     
                     if usersViewModel.postRequestStatus == .Failure {
                         Text(usersViewModel.postErrorString)
                             .font(.footnote)
                             .foregroundColor(.red)
                             .padding()
-                            .isHidden(passwordWriteInProgress)
+                            .isHidden(usersViewModel.passwordWriteInProgress)
                     }
                     
                     AppButton(wsCallInProgress: $usersViewModel.wsInProgress, systemImage: "person.crop.circle.fill.badge.plus", buttonTitle: "Ajouter") {
@@ -105,12 +93,12 @@ struct AddPersonView: View {
                         }
                     }
                     .animation(.none, value: usersViewModel.wsInProgress)
-                    .isHidden(passwordWriteInProgress)
+                    .isHidden(usersViewModel.passwordWriteInProgress)
                     .disabled(!usersViewModel.checkPostFields.postFieldsAreValids)
                     .opacity(usersViewModel.checkPostFields.postFieldsAreValids ? 1.0 : 0.5)
                     
                     PasswordTipsView(checkPassword: $usersViewModel.checkPassword)
-                        .isHidden(!passwordWriteInProgress)
+                        .isHidden(!usersViewModel.passwordWriteInProgress)
                     
                     Spacer()
                     

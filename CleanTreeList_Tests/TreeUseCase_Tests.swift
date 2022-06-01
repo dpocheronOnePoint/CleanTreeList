@@ -11,9 +11,11 @@ import Resolver
 import CoreData
 
 class TreeUseCase_Tests: XCTestCase {
-
+    
     @Injected var treeUseCase: TreeUseCase
     var geolocatedTrees: [GeolocatedTree] = []
+    
+    // MARK: - SetUp And TearDown functions
     
     // Function call before every tests start
     override func setUpWithError() throws {
@@ -23,13 +25,15 @@ class TreeUseCase_Tests: XCTestCase {
         
         geolocatedTrees = treeUseCase.convertRecordsArrayToGeolocatedTreeArray(recordsData: records.records)
     }
-
+    
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    
+    // MARK: - Tests functions
+    
     func test_TreeUseCase_ConvertRecordDataToGeolocatedTrees_Success() throws {
-                
+        
         XCTAssertNotNil(geolocatedTrees)
         XCTAssertTrue(geolocatedTrees.count == 10)
         
@@ -43,7 +47,7 @@ class TreeUseCase_Tests: XCTestCase {
     func test_TreeUseCase_SaveAndLoadCDGeolocatedTrees_Success() async throws {
         XCTAssertTrue(
             geolocatedTrees.count == 10,
-                      "Check if mockData is loaded"
+            "Check if mockData is loaded"
         )
         
         await treeUseCase.updateCDDataBase(geolocatedTrees: geolocatedTrees)
@@ -52,14 +56,14 @@ class TreeUseCase_Tests: XCTestCase {
         
         XCTAssertEqual(
             cdGeolocatedTRees.count, geolocatedTrees.count ,
-                       "Check if CoreData geolocatedTrees count equal to mockData Count"
+            "Check if CoreData geolocatedTrees count equal to mockData Count"
         )
     }
     
     func test_TreeUseCase_ClearSaveAndLoadRealmGeolocatedTrees_Success() async throws {
         XCTAssertTrue(
             geolocatedTrees.count == 10,
-                      "Check if mockData is loaded"
+            "Check if mockData is loaded"
         )
         
         await treeUseCase.updateRealmDataBase(geolocatedTrees: geolocatedTrees)
@@ -68,7 +72,7 @@ class TreeUseCase_Tests: XCTestCase {
         
         XCTAssertEqual(
             realmGeolocatedTrees.count, geolocatedTrees.count ,
-                       "Check if Realm geolocatedTrees count equal to mockData Count"
+            "Check if Realm geolocatedTrees count equal to mockData Count"
         )
         
     }

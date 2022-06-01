@@ -34,3 +34,4 @@
 "password_check_has_uppercase" = "Votre mot de passe doit contenir une majuscule";
 "password_check_has_digit" = "Votre mot de passe doit contenir un chiffre";
 "password_check_has_special" = "Votre mot de passe doit contenir un caractère spécial";
+"form_email_error" = "Votre email est incorrect";

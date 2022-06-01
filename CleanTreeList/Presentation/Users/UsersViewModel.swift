@@ -13,12 +13,25 @@ enum PostRequestStatus {
     case NotCalled, InProgress, Failure, Success
 }
 
-class UsersViewModel: ObservableObject {
+protocol UsersViewModelProtocol {
+    func checkEmailUnfocus()
+    func checkEmailWriteInProcess()
+    func checkNameUnFocus()
+    func checkNameWriteProgess()
+    func setPasswordWriteInProgress()
+    func checkPasswordUnfocus()
+    func checkPasswordInWriteProcess()
+    func postUser() async
+}
+
+class UsersViewModel: ObservableObject, UsersViewModelProtocol {
     
     @Injected var userUseCase: UserUseCase
     
     @Published var userPost: UserPost = UserPost.starterUserPost
     @Published var checkPostFields: CheckPostFields = CheckPostFields.falseCheckPostFields
+    
+    @Published var passwordWriteInProgress = false
     
     @Published var femaleIsSelected: Bool = true {
         didSet {
@@ -69,7 +82,7 @@ class UsersViewModel: ObservableObject {
             }
         }else{
             withAnimation(.easeInOut(duration: 0.5)) {
-                emailLocalizeError = displayLocalizeError(error: "Votre email est incorrect")
+                emailLocalizeError = displayLocalizeError(error: "form_email_error")
             }
         }
     }
@@ -102,6 +115,15 @@ class UsersViewModel: ObservableObject {
         }else{
             nameLocalizeError = LocalizeError.undisplayError
             checkPostFields.nameFieldIsValid = true
+        }
+    }
+    
+    func setPasswordWriteInProgress() {
+        withAnimation(.easeInOut(duration: 0.2)){
+            passwordWriteInProgress.toggle()
+            if(!passwordWriteInProgress){
+                checkPasswordUnfocus()
+            }
         }
     }
     

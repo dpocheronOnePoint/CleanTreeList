@@ -1,0 +1,6 @@
+framework module Pods_CleanTreeList {
+  umbrella header "Pods-CleanTreeList-umbrella.h"
+
+  export *
+  module * { export * }
+}

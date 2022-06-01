@@ -1,0 +1,6 @@
+framework module Pods_CleanTreeList_CleanTreeListUITests {
+  umbrella header "Pods-CleanTreeList-CleanTreeListUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
