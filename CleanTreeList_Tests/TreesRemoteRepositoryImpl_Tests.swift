@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Nimble
 @testable import CleanTreeList
 
 class TreesRemoteRepositoryImpl_Tests: XCTestCase {
@@ -26,6 +27,8 @@ class TreesRemoteRepositoryImpl_Tests: XCTestCase {
             throw UseCaseError.decodingError
         }
         
-        XCTAssertNotNil(mockGeolocatedTrees)
+        expect(mockGeolocatedTrees).notTo(haveCount(0))
+        
+//        XCTAssertNotNil(mockGeolocatedTrees)
     }
 }

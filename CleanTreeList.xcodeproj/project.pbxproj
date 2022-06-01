@@ -79,6 +79,7 @@
 		D357B8AA283E559300FA2C97 /* UseCaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357B8A9283E559300FA2C97 /* UseCaseError.swift */; };
 		D357B8AC283E570900FA2C97 /* UseCase+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357B8AB283E570900FA2C97 /* UseCase+Injection.swift */; };
 		D37C2E222847532F00A0BDEC /* TreesRemoteRepositoryImplSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C2E212847532F00A0BDEC /* TreesRemoteRepositoryImplSpec.swift */; };
+		D37C2E25284762B500A0BDEC /* TReeUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C2E24284762B500A0BDEC /* TReeUseCaseSpec.swift */; };
 		D37F7A08282167E200E73EB4 /* CleanTreeListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37F7A07282167E200E73EB4 /* CleanTreeListApp.swift */; };
 		D37F7A0C282167E200E73EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37F7A0B282167E200E73EB4 /* Assets.xcassets */; };
 		D37F7A0F282167E200E73EB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37F7A0E282167E200E73EB4 /* Preview Assets.xcassets */; };
@@ -210,6 +211,7 @@
 		D357B8A9283E559300FA2C97 /* UseCaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseError.swift; sourceTree = "<group>"; };
 		D357B8AB283E570900FA2C97 /* UseCase+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UseCase+Injection.swift"; sourceTree = "<group>"; };
 		D37C2E212847532F00A0BDEC /* TreesRemoteRepositoryImplSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreesRemoteRepositoryImplSpec.swift; sourceTree = "<group>"; };
+		D37C2E24284762B500A0BDEC /* TReeUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TReeUseCaseSpec.swift; sourceTree = "<group>"; };
 		D37F7A04282167E200E73EB4 /* CleanTreeList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanTreeList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37F7A07282167E200E73EB4 /* CleanTreeListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTreeListApp.swift; sourceTree = "<group>"; };
 		D37F7A0B282167E200E73EB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -616,6 +618,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		D37C2E232847629800A0BDEC /* Quick */ = {
+			isa = PBXGroup;
+			children = (
+				D37C2E212847532F00A0BDEC /* TreesRemoteRepositoryImplSpec.swift */,
+				D37C2E24284762B500A0BDEC /* TReeUseCaseSpec.swift */,
+			);
+			path = Quick;
+			sourceTree = "<group>";
+		};
 		D37F79FB282167E200E73EB4 = {
 			isa = PBXGroup;
 			children = (
@@ -834,9 +845,9 @@
 		D3E28411283CC0FE005FCF66 /* CleanTreeList_Tests */ = {
 			isa = PBXGroup;
 			children = (
+				D37C2E232847629800A0BDEC /* Quick */,
 				D3E28419283CCBC6005FCF66 /* TreesRemoteRepositoryImpl_Tests.swift */,
 				D3D691F32840D7B000C28C66 /* TreeUseCase_Tests.swift */,
-				D37C2E212847532F00A0BDEC /* TreesRemoteRepositoryImplSpec.swift */,
 			);
 			path = CleanTreeList_Tests;
 			sourceTree = "<group>";
@@ -1199,6 +1210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D37C2E25284762B500A0BDEC /* TReeUseCaseSpec.swift in Sources */,
 				D37C2E222847532F00A0BDEC /* TreesRemoteRepositoryImplSpec.swift in Sources */,
 				D3E2841A283CCBC6005FCF66 /* TreesRemoteRepositoryImpl_Tests.swift in Sources */,
 				D3D691F42840D7B000C28C66 /* TreeUseCase_Tests.swift in Sources */,
