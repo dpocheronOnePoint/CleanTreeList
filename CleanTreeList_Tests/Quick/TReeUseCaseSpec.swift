@@ -12,22 +12,38 @@ import Resolver
 import SwiftUI
 
 class TReeUseCaseSpec: QuickSpec {
+    
+    // Needed to place variable out of spec function to be use in async process
+    @Injected var treeUseCase: TreeUseCase
+    var geolocatedTrees: [GeolocatedTree] = []
+    var cdGeolocatedTRees: [CDGeolocatedTree] = []
+    
     override func spec() {
-        @Injected var treeUseCase: TreeUseCase
-        var geolocatedTrees: [GeolocatedTree] = []
+        
         guard  let records: Records = try? Bundle.main.decode(Records.self, from: "trees.json") else {
             return
         }
         
         beforeSuite {
-            waitUntil { done in
-                geolocatedTrees = treeUseCase.convertRecordsArrayToGeolocatedTreeArray(recordsData: records.records)
-                done()
-            }
+            self.geolocatedTrees = self.treeUseCase.convertRecordsArrayToGeolocatedTreeArray(recordsData: records.records)
         }
         
-        it("should do some async operation") {
-            expect(geolocatedTrees).notTo(haveCount(0))
+        it("Check if Mock Data is valid") {
+            expect(self.geolocatedTrees).to(haveCount(10))
+            
+            let firstGeolocatedTree = self.geolocatedTrees.first
+            
+            expect(firstGeolocatedTree?.tree.name).to(equal("Erable"))
+        }
+        
+        it("Save Mock Data to CoreData") {
+            expect(self.geolocatedTrees).to(haveCount(10))
+            
+            Task {
+                await self.treeUseCase.updateCDDataBase(geolocatedTrees: self.geolocatedTrees)
+                self.cdGeolocatedTRees = try await self.treeUseCase.treeListCDRepository.loadLocalTrees()
+                expect(self.cdGeolocatedTRees).to(haveCount(10))
+            }
         }
     }
 }
