@@ -16,33 +16,47 @@ class TReeUseCaseSpec: QuickSpec {
     // Needed to place variable out of spec function to be use in async process
     @Injected var treeUseCase: TreeUseCase
     var geolocatedTrees: [GeolocatedTree] = []
-    var cdGeolocatedTRees: [CDGeolocatedTree] = []
     
     override func spec() {
         
-        guard  let records: Records = try? Bundle.main.decode(Records.self, from: "trees.json") else {
-            return
-        }
-        
-        beforeSuite {
-            self.geolocatedTrees = self.treeUseCase.convertRecordsArrayToGeolocatedTreeArray(recordsData: records.records)
-        }
-        
-        it("Check if Mock Data is valid") {
-            expect(self.geolocatedTrees).to(haveCount(10))
+        describe("Save MockData to database") {
+            guard  let records: Records = try? Bundle.main.decode(Records.self, from: "trees.json") else {
+                return
+            }
             
-            let firstGeolocatedTree = self.geolocatedTrees.first
+            beforeSuite {
+                self.geolocatedTrees = self.treeUseCase.convertRecordsArrayToGeolocatedTreeArray(recordsData: records.records)
+            }
             
-            expect(firstGeolocatedTree?.tree.name).to(equal("Erable"))
-        }
-        
-        it("Save Mock Data to CoreData") {
-            expect(self.geolocatedTrees).to(haveCount(10))
+            context("Mock data validity") {
+                it("Count is valid") {
+                    expect(self.geolocatedTrees).to(haveCount(10))
+                }
+                
+                it("Firt item title is valid") {
+                    let firstGeolocatedTree = self.geolocatedTrees.first
+                    expect(firstGeolocatedTree?.tree.name).to(equal("Erable"))
+                }
+            }
             
-            Task {
-                await self.treeUseCase.updateCDDataBase(geolocatedTrees: self.geolocatedTrees)
-                self.cdGeolocatedTRees = try await self.treeUseCase.treeListCDRepository.loadLocalTrees()
-                expect(self.cdGeolocatedTRees).to(haveCount(10))
+            context("CoreData") {
+                it("Save and load Mock Data") {
+                    Task {
+                        await self.treeUseCase.updateCDDataBase(geolocatedTrees: self.geolocatedTrees)
+                        let cdGeolocatedTrees = try await self.treeUseCase.treeListCDRepository.loadLocalTrees()
+                        expect(cdGeolocatedTrees).to(haveCount(self.geolocatedTrees.count))
+                    }
+                }
+            }
+            
+            context("Realm") {
+                it("Save and load Mock Data") {
+                    Task {
+                        await self.treeUseCase.updateRealmDataBase(geolocatedTrees:self.geolocatedTrees)
+                        let realmGeolocatedTrees = try await self.treeUseCase.treeListRealmRepository.loadLocalTrees()
+                        expect(realmGeolocatedTrees).to(haveCount(self.geolocatedTrees.count))
+                    }
+                }
             }
         }
     }
