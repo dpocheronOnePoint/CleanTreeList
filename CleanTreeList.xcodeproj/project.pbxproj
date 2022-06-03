@@ -75,6 +75,7 @@
 		D347DDC0282EA619004311FE /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347DDBF282EA619004311FE /* FormTextField.swift */; };
 		D347DDC3282EA886004311FE /* SexeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347DDC2282EA886004311FE /* SexeSelector.swift */; };
 		D347DDC5282EACFB004311FE /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347DDC4282EACFB004311FE /* CheckBox.swift */; };
+		D352F2942849FDB40054445B /* TreeListViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D352F2932849FDB40054445B /* TreeListViewModelSpec.swift */; };
 		D357B8A8283E315500FA2C97 /* TreeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357B8A7283E315500FA2C97 /* TreeUseCase.swift */; };
 		D357B8AA283E559300FA2C97 /* UseCaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357B8A9283E559300FA2C97 /* UseCaseError.swift */; };
 		D357B8AC283E570900FA2C97 /* UseCase+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357B8AB283E570900FA2C97 /* UseCase+Injection.swift */; };
@@ -207,6 +208,7 @@
 		D347DDBF282EA619004311FE /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
 		D347DDC2282EA886004311FE /* SexeSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SexeSelector.swift; sourceTree = "<group>"; };
 		D347DDC4282EACFB004311FE /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		D352F2932849FDB40054445B /* TreeListViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListViewModelSpec.swift; sourceTree = "<group>"; };
 		D357B8A7283E315500FA2C97 /* TreeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeUseCase.swift; sourceTree = "<group>"; };
 		D357B8A9283E559300FA2C97 /* UseCaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseError.swift; sourceTree = "<group>"; };
 		D357B8AB283E570900FA2C97 /* UseCase+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UseCase+Injection.swift"; sourceTree = "<group>"; };
@@ -623,6 +625,7 @@
 			children = (
 				D37C2E212847532F00A0BDEC /* TreesRemoteRepositoryImplSpec.swift */,
 				D37C2E24284762B500A0BDEC /* TreeUseCaseSpec.swift */,
+				D352F2932849FDB40054445B /* TreeListViewModelSpec.swift */,
 			);
 			path = Quick;
 			sourceTree = "<group>";
@@ -969,7 +972,7 @@
 			mainGroup = D37F79FB282167E200E73EB4;
 			packageReferences = (
 				D3251A6E2837C0F00059DBA3 /* XCRemoteSwiftPackageReference "Resolver" */,
-				D31E7DC52838294900FF3700 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				D31E7DC52838294900FF3700 /* XCRemoteSwiftPackageReference "realm-swift.git" */,
 			);
 			productRefGroup = D37F7A05282167E200E73EB4 /* Products */;
 			projectDirPath = "";
@@ -1210,6 +1213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D352F2942849FDB40054445B /* TreeListViewModelSpec.swift in Sources */,
 				D37C2E25284762B500A0BDEC /* TreeUseCaseSpec.swift in Sources */,
 				D37C2E222847532F00A0BDEC /* TreesRemoteRepositoryImplSpec.swift in Sources */,
 				D3E2841A283CCBC6005FCF66 /* TreesRemoteRepositoryImpl_Tests.swift in Sources */,
@@ -1438,12 +1442,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = OnePoint.CleanTreeListUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = CleanTreeList;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -1455,12 +1461,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = OnePoint.CleanTreeListUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = CleanTreeList;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
@@ -1542,7 +1550,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D31E7DC52838294900FF3700 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		D31E7DC52838294900FF3700 /* XCRemoteSwiftPackageReference "realm-swift.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -1563,12 +1571,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		D31E7DC62838294900FF3700 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D31E7DC52838294900FF3700 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = D31E7DC52838294900FF3700 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
 			productName = Realm;
 		};
 		D31E7DC82838294900FF3700 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D31E7DC52838294900FF3700 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = D31E7DC52838294900FF3700 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
 			productName = RealmSwift;
 		};
 		D3251A6F2837C0F00059DBA3 /* Resolver */ = {
