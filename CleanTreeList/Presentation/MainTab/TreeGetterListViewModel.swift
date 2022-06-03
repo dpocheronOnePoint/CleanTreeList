@@ -86,9 +86,9 @@ class TreeGetterListViewModel: ObservableObject, TreeGetterListViewProtocol {
                 if self.startIndex == 0 {
                     self.animateUpdatedList(geolocatedTrees: geolocatedTrees.sorted { $0.tree.name! < $1.tree.name! }, networkStatus: .dataLoadedFromWS)
                 } else {
-                    var unSortedGeolocatedTree = geolocatedTrees
-                    unSortedGeolocatedTree.append(contentsOf: self.geolocatedTrees)
-                    self.geolocatedTrees = unSortedGeolocatedTree.sorted { $0.tree.name! < $1.tree.name! }
+                    var unSortedGeolocatedTree = self.geolocatedTrees
+                    unSortedGeolocatedTree.append(contentsOf: geolocatedTrees)
+                    self.geolocatedTrees = unSortedGeolocatedTree.sorted { $0.tree.name ?? "" < $1.tree.name ?? "" }
                 }
                 self.startIndex += Int(OpenDataAPI.nbrRowPerRequest) ?? 0
                 self.isLoadingPage = false

@@ -11,7 +11,7 @@ import Nimble
 import Resolver
 import SwiftUI
 
-class TReeUseCaseSpec: QuickSpec {
+class TreeUseCaseSpec: QuickSpec {
     
     // Needed to place variable out of spec function to be use in async process
     @Injected var treeUseCase: TreeUseCase
