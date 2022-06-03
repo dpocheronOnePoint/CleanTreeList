@@ -11,7 +11,7 @@ import Resolver
 struct TreeListComponentView: View {
     @InjectedObject var treeGetterListViewModel: TreeGetterListViewModel
     
-    @StateObject var treeListViewModel = TreeListViewModel()
+    @InjectedObject var treeListViewModel: TreeListViewModel
     
     @State private var searchText: String = ""
     

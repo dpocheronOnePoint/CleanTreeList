@@ -16,12 +16,12 @@ struct TreeItemView: View {
                 Text(geolocatedTree.tree.name ?? "")
                     .font(.title2)
                     .fontWeight(.bold)
+                
                 Text(geolocatedTree.tree.address)
                     .font(.caption)
                     .foregroundColor(.secondary)
                     .lineLimit(2)
             } // VSTACK
-            .frame(width: 130)
             
             Spacer()
             

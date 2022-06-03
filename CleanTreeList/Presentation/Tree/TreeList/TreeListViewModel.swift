@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol TreeListViewModelProtocol {
+    func filterTreeResult(searchText: String, allGeolocatedTrees: [GeolocatedTree])
+}
+
 class TreeListViewModel: ObservableObject {
     @Published var isSearchingProcess: Bool = false
     @Published var geolocatedTrees: [GeolocatedTree] = []
