@@ -5,6 +5,8 @@ target 'CleanTreeList' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   
+  pod 'Moya/Combine', '~> 15.0'
+  
   target 'CleanTreeList_Tests' do
     inherit! :search_paths
     pod 'ViewInspector'
@@ -15,5 +17,4 @@ target 'CleanTreeList' do
   target 'CleanTreeListUITests' do
     # Pods for testing
   end
-  
 end

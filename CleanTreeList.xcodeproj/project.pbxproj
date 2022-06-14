@@ -76,6 +76,7 @@
 		D347DDC3282EA886004311FE /* SexeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347DDC2282EA886004311FE /* SexeSelector.swift */; };
 		D347DDC5282EACFB004311FE /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347DDC4282EACFB004311FE /* CheckBox.swift */; };
 		D352F2942849FDB40054445B /* TreeListViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D352F2932849FDB40054445B /* TreeListViewModelSpec.swift */; };
+		D352F2B4284A55BF0054445B /* ViewInspectorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D352F2B3284A55BF0054445B /* ViewInspectorTest.swift */; };
 		D357B8A8283E315500FA2C97 /* TreeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357B8A7283E315500FA2C97 /* TreeUseCase.swift */; };
 		D357B8AA283E559300FA2C97 /* UseCaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357B8A9283E559300FA2C97 /* UseCaseError.swift */; };
 		D357B8AC283E570900FA2C97 /* UseCase+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357B8AB283E570900FA2C97 /* UseCase+Injection.swift */; };
@@ -86,6 +87,7 @@
 		D37F7A0F282167E200E73EB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37F7A0E282167E200E73EB4 /* Preview Assets.xcassets */; };
 		D3870010283E143F002D414E /* DomainToRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D387000F283E143F002D414E /* DomainToRealm.swift */; };
 		D387005C283E256F002D414E /* Repository+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D387005B283E256F002D414E /* Repository+Injection.swift */; };
+		D39A4A0F2858B0BF002D59E5 /* TreeMoyaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A4A0E2858B0BF002D59E5 /* TreeMoyaProvider.swift */; };
 		D3AA66C02823917800862D43 /* trees.json in Resources */ = {isa = PBXBuildFile; fileRef = D3AA66BF2823917800862D43 /* trees.json */; };
 		D3AA66C82823928E00862D43 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AA66C72823928E00862D43 /* Record.swift */; };
 		D3B007602834CB8400030C9E /* UserResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0075F2834CB8400030C9E /* UserResponseError.swift */; };
@@ -209,6 +211,7 @@
 		D347DDC2282EA886004311FE /* SexeSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SexeSelector.swift; sourceTree = "<group>"; };
 		D347DDC4282EACFB004311FE /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		D352F2932849FDB40054445B /* TreeListViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListViewModelSpec.swift; sourceTree = "<group>"; };
+		D352F2B3284A55BF0054445B /* ViewInspectorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInspectorTest.swift; sourceTree = "<group>"; };
 		D357B8A7283E315500FA2C97 /* TreeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeUseCase.swift; sourceTree = "<group>"; };
 		D357B8A9283E559300FA2C97 /* UseCaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseError.swift; sourceTree = "<group>"; };
 		D357B8AB283E570900FA2C97 /* UseCase+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UseCase+Injection.swift"; sourceTree = "<group>"; };
@@ -220,6 +223,7 @@
 		D37F7A0E282167E200E73EB4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D387000F283E143F002D414E /* DomainToRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainToRealm.swift; sourceTree = "<group>"; };
 		D387005B283E256F002D414E /* Repository+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repository+Injection.swift"; sourceTree = "<group>"; };
+		D39A4A0E2858B0BF002D59E5 /* TreeMoyaProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeMoyaProvider.swift; sourceTree = "<group>"; };
 		D3AA66BF2823917800862D43 /* trees.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trees.json; sourceTree = "<group>"; };
 		D3AA66C72823928E00862D43 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		D3B0075F2834CB8400030C9E /* UserResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseError.swift; sourceTree = "<group>"; };
@@ -620,6 +624,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		D352F2B2284A558E0054445B /* ViewInspector */ = {
+			isa = PBXGroup;
+			children = (
+				D352F2B3284A55BF0054445B /* ViewInspectorTest.swift */,
+			);
+			path = ViewInspector;
+			sourceTree = "<group>";
+		};
 		D37C2E232847629800A0BDEC /* Quick */ = {
 			isa = PBXGroup;
 			children = (
@@ -848,6 +860,7 @@
 		D3E28411283CC0FE005FCF66 /* CleanTreeList_Tests */ = {
 			isa = PBXGroup;
 			children = (
+				D352F2B2284A558E0054445B /* ViewInspector */,
 				D37C2E232847629800A0BDEC /* Quick */,
 				D3E28419283CCBC6005FCF66 /* TreesRemoteRepositoryImpl_Tests.swift */,
 				D3D691F32840D7B000C28C66 /* TreeUseCase_Tests.swift */,
@@ -868,6 +881,7 @@
 			isa = PBXGroup;
 			children = (
 				D3E40B4B2825224500025D14 /* ApiManager.swift */,
+				D39A4A0E2858B0BF002D59E5 /* TreeMoyaProvider.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -883,6 +897,7 @@
 				D37F7A00282167E200E73EB4 /* Sources */,
 				D37F7A01282167E200E73EB4 /* Frameworks */,
 				D37F7A02282167E200E73EB4 /* Resources */,
+				4F39F9AB89B8CB5B362922E3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -906,6 +921,7 @@
 				D3D691FB2841121100C28C66 /* Sources */,
 				D3D691FC2841121100C28C66 /* Frameworks */,
 				D3D691FD2841121100C28C66 /* Resources */,
+				D9AF2239974969AD6FA9DC6E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1059,6 +1075,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4F39F9AB89B8CB5B362922E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CleanTreeList/Pods-CleanTreeList-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CleanTreeList/Pods-CleanTreeList-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CleanTreeList/Pods-CleanTreeList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B265C0C9ED4C96A669B09B07 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1098,6 +1131,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D9AF2239974969AD6FA9DC6E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CleanTreeList-CleanTreeListUITests/Pods-CleanTreeList-CleanTreeListUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CleanTreeList-CleanTreeListUITests/Pods-CleanTreeList-CleanTreeListUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CleanTreeList-CleanTreeListUITests/Pods-CleanTreeList-CleanTreeListUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1106,6 +1156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D31353C62833DE8D006485B7 /* UserUseCase.swift in Sources */,
+				D39A4A0F2858B0BF002D59E5 /* TreeMoyaProvider.swift in Sources */,
 				D333B13D283BB23700407168 /* TreeListRealmRepository.swift in Sources */,
 				D347DD9C282E61D4004311FE /* MapViewModel.swift in Sources */,
 				D347DD93282E478E004311FE /* TreeListViewModel.swift in Sources */,
@@ -1215,6 +1266,7 @@
 			files = (
 				D352F2942849FDB40054445B /* TreeListViewModelSpec.swift in Sources */,
 				D37C2E25284762B500A0BDEC /* TreeUseCaseSpec.swift in Sources */,
+				D352F2B4284A55BF0054445B /* ViewInspectorTest.swift in Sources */,
 				D37C2E222847532F00A0BDEC /* TreesRemoteRepositoryImplSpec.swift in Sources */,
 				D3E2841A283CCBC6005FCF66 /* TreesRemoteRepositoryImpl_Tests.swift in Sources */,
 				D3D691F42840D7B000C28C66 /* TreeUseCase_Tests.swift in Sources */,
