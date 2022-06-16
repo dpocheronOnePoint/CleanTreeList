@@ -10,4 +10,5 @@ import Foundation
 protocol TreeRemoteDataSource {
     func getTreeList(startIndex: Int) async throws -> [RecordData]
     func getTreeListWithApiManager(startIndex: Int) async throws -> [RecordData]
+    func getTreeListWithMoya(startIndew: Int) async throws -> [RecordData]
 }

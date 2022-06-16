@@ -38,7 +38,7 @@ extension TreeMoyaProvider: TargetType {
         case .search:
             return .requestParameters(parameters: [
                 "dataset": "les-arbres",
-                "start": "\(2)",
+                "start": "\(20)",
                 "rows": OpenDataAPI.nbrRowPerRequest
             ], encoding: URLEncoding.default)
         }

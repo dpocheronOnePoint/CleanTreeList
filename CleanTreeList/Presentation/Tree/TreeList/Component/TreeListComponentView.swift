@@ -34,6 +34,8 @@ struct TreeListComponentView: View {
             if(searchText.isEmpty) {
                 treeListViewModel.cancelSearchProcess()
             }else{
+                // #### MoyaExemple ####
+//                let TestData = treeListViewModel.getTreeListWithMoya(startIndew: 0)
                 treeListViewModel.filterTreeResult(searchText: searchText, allGeolocatedTrees: treeGetterListViewModel.geolocatedTrees)
             }
         }

@@ -9,7 +9,7 @@ import Foundation
 import Resolver
 
 enum LoadingDataMethod {
-    case Default, WithApiManager, FromLocalJson
+    case Default, WithApiManager, WithMoya, FromLocalJson
 }
 
 struct TreesRemoteRepositoryImpl: TreeListRemoteRepository {
@@ -31,6 +31,9 @@ struct TreesRemoteRepositoryImpl: TreeListRemoteRepository {
         case .WithApiManager:
             records = try await remoteDataSource.getTreeListWithApiManager(startIndex: startIndex)
         
+        case .WithMoya:
+            records = try await remoteDataSource.getTreeListWithMoya(startIndew: startIndex)
+            
         case .FromLocalJson:
             records = try await localDataSource.getTreeListFromLocal()
         }
